@@ -6,8 +6,8 @@
 
 {% block beforeContent %}
   {{ breadcrumb({
-    href: "/docs",
-    text: "Home"
+    href: "/v1/index",
+    text: "Manage your NHS login"
   }) }}
 {% endblock %}
 
@@ -17,26 +17,25 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-          Settings
+          Manage your NHS login
       </h1>
 
       <h2>Email</h2>
 
       <p>Your email is <b>jonsmythe@gmail.com</b>.</p> 
-    
 
-      <button class="nhsuk-button" type="submit">
-        Change email
-      </button>
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="email-change">
+        Change your email
+      </a>
 
       <hr>
 
       <h2>Password</h2>
     
 
-      <button class="nhsuk-button" type="submit">
-        Change password
-      </button>
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="password-change">
+        Change your password
+      </a>
 
       <hr>
 
@@ -45,20 +44,17 @@
       <p>Your phone number is <b>07789 123838</b>.</p> 
     
 
-      <button class="nhsuk-button" type="submit">
-        Change phone number
-      </button>
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="phone-change">
+        Change your phone number
+      </a>
 
       <hr>
 
       <h2>Delete your NHS login</h2>
 
-      <p>Your email is <b>jonsmythe@gmail.com</b>.</p> 
-    
-
-      <button class="nhsuk-button" type="submit">
-        Change email
-      </button>
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="delete-login">
+        Delete your NHS login
+      </a>
 
       <hr>
 

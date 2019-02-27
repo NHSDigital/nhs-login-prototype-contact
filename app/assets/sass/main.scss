@@ -9,3 +9,12 @@
 @import 'components/related-nav';
 
 // Add your extra styles here...
+
+.nhsuk-button-red {
+	background-color: $color_nhsuk-red;
+	box-shadow: 0 4px 0 #5d0903;
+}
+
+.nhsuk-button-red:hover, .nhsuk-button-red:focus {
+	background-color: #a5190e;
+}
