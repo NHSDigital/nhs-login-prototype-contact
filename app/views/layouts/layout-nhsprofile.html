@@ -1,0 +1,76 @@
+<!-- This layout is setup for NHS.UK pages -->
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends "layouts/layout.html" %}
+
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+<!-- Header goes inside this block -->
+{% block header %}
+  {{ header({
+      "transactionalService": {
+        "name": "Manage your NHS login",
+        "href": "/nhs-profile"
+      },
+      "showNav": "true",
+      "showSearch": "false",
+      "primaryLinks": [
+        {
+          "url"  : "/nhs-profile/index",
+          "label" : "General settings"
+        },
+        {
+          'url' : '#',
+          'label' : 'Profile'
+        },
+        {
+          'url'  : '#',
+          'label' : 'Identity level'
+        },
+        {
+          'url'  : '#',
+          'label' : 'Services'
+        },
+        {
+          'url' : '#',
+          'label' : 'Your GP'
+        }
+      ]
+    })
+  }}
+{% endblock %}
+
+<!-- Breadcrumb goes inside this block -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    text: "Home",
+    href: "/nhs-profile/index"
+  }) }}
+{% endblock %}
+
+<!-- Footer goes inside this block -->
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "#",
+        "label": "Terms and conditions"
+      },
+      {
+        "URL": "#",
+        "label": "Privacy notice"
+      },
+      {
+        "URL": "#",
+        "label": "Cookies"
+      },
+      {
+        "URL": "#",
+        "label": "Accessibility statement"
+      }
+    ]
+  })}}
+{% endblock %}
