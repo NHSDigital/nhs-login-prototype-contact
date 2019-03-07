@@ -1,0 +1,178 @@
+{% extends 'layouts/layout-nhsprofile.html' %}
+
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Services available with NHS login
+      </h1>
+
+      <nav class="nhsuk-nav-a-z" id="nhsuk-nav-a-z" role="navigation" aria-label="A to Z Navigation">
+  <ol class="nhsuk-nav-a-z__list" role="list">
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">A</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">B</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">C</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <a class="nhsuk-nav-a-z__link" href="#D">D</a>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <a class="nhsuk-nav-a-z__link" href="#E">E</a>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <a class="nhsuk-nav-a-z__link" href="#F">F</a>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">G</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <a class="nhsuk-nav-a-z__link" href="#H">H</a>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">I</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">J</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">K</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">L</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">M</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <a class="nhsuk-nav-a-z__link" href="#N">N</a>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">O</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">P</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">Q</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">R</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">S</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">T</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">U</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">V</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">W</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">X</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">Y</span>
+    </li>
+    <li class="nhsuk-nav-a-z__item">
+      <span class="nhsuk-nav-a-z__link--disabled">Z</span>
+    </li>
+  </ol>
+</nav>
+
+      {{ listPanel({
+        "label": "D",
+        "id": "D",
+        "backToTop": "true",
+        "backToTopLink": "#nhsuk-nav-a-z",
+        "items": [
+          {
+            "URL": "https://tinymedicalapps.com",
+            "link": "Digital Health Passport"
+          }
+        ]
+      }) }}
+
+
+      {{ listPanel({
+        "label": "E",
+        "id": "E",
+        "backToTop": "true",
+        "backToTopLink": "#nhsuk-nav-a-z",
+        "items": [
+          {
+            "URL": "https://econsult.net",
+            "link": "eConsult"
+          },
+          {
+            "URL": "https://www.eredbook.org.uk",
+            "link": "eRedbook"
+          }
+        ]
+      }) }}
+
+      {{ listPanel({
+        "label": "F",
+        "id": "F",
+        "backToTop": "true",
+        "backToTopLink": "#nhsuk-nav-a-z",
+        "items": [
+          {
+            "URL": "https://nhs-audit.herokuapp.com/release-dec/start",
+            "link": "Find out who's looked at your health records"
+          }
+        ]
+      }) }}
+
+      {{ listPanel({
+        "label": "H",
+        "id": "H",
+        "backToTop": "true",
+        "backToTopLink": "#nhsuk-nav-a-z",
+        "items": [
+          {
+            "URL": "https://myhelm.org",
+            "link": "Helm"
+          }
+        ]
+      }) }}
+
+      {{ listPanel({
+        "label": "N",
+        "id": "N",
+        "backToTop": "true",
+        "backToTopLink": "#nhsuk-nav-a-z",
+        "items": [
+          {
+            "URL": "https://www.nhs.uk/using-the-nhs/nhs-services/the-nhs-app/",
+            "link": "NHS App"
+          }
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+{% endblock %}
