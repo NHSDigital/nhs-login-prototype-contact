@@ -1,12 +1,12 @@
 {% extends 'layouts/layout-nhsprofile.html' %}
 
 {% block pageTitle %}
-  Your password has been changed
+  Manage your NHS login
 {% endblock %}
 
 {% block beforeContent %}
   {{ breadcrumb({
-    href: "/v1/index",
+    href: "/nhs-profile/index",
     text: "Manage your NHS login"
   }) }}
 {% endblock %}
@@ -16,15 +16,20 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-fieldset__legend--l">
-          Your password has been changed
+      <h1>
+          Your GP
       </h1>
 
-      {{ backLink({
-        "href": "/nhs-profile/index",
-        "text": "Back",
-        "classes": "nhsuk-u-margin-top-7"
-      }) }}
+      <h2>Street Lane Practice</h2>
+
+
+      <p>12 Devonshire Ave,<br>
+        Leeds LS8 1AY</p>
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile/your-gp/gp-address-change">
+        Update your GP
+      </a>
 
     </div>
 
