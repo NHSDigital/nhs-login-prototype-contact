@@ -1,0 +1,108 @@
+{% extends 'layouts/layout-nhsprofile.html' %}
+
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+  items: [
+    {
+      href: "/nhs-profile/settings/index",
+      text: "Manage your NHS login"
+    }
+  ],
+  href: "/nhs-profile/services/services",
+  text: "Your services"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <style>
+
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  figure {
+    margin: 0;
+    width: 45px;
+    height: 45px;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+    display:block;
+    border-radius: 50%;
+  }
+
+  </style>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        eRedbook
+      </h1>
+
+      {{ actionLink({
+        "text": "Visit eRedbook",
+        "href": "https://www.eredbook.org"
+      }) }}
+
+      <p>eRedbook is lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis sem id suscipit bibendum. Fusce vehicula enim vitae tellus condimentum, a fermentum dolor rhoncus. </p>
+
+      <p>
+        Last accessed: <b>18:42 on 12th March 2019</b>
+      </p>
+
+      <hr>
+
+      <h2>
+        People you use this service for
+      </h2>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col"></th>
+              <th class="nhsuk-table__header" scope="col">Name</th>
+              <th class="nhsuk-table__header" scope="col">Relationship</th>
+              <th class="nhsuk-table__header" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <figure>
+                  <img src="/images/avatar-pugsley.png" alt="Pugsley Addams">
+                </figure>
+              </td>
+              <td class="nhsuk-table__cell">Pugsley Addams</td>
+              <td class="nhsuk-table__cell ">Son</td>
+              <td class="nhsuk-table__cell"><a href="#">Manage</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <figure>
+                  <img src="/images/avatar-wednesday.png" alt="Wednesday Addams">
+                </figure>
+              </td>
+              <td class="nhsuk-table__cell">Wednesday Addams</td>
+              <td class="nhsuk-table__cell ">Daughter</td>
+              <td class="nhsuk-table__cell"><a href="#">Manage</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
