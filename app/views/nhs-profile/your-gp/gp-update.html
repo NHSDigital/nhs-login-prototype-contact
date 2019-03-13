@@ -1,0 +1,46 @@
+{% extends 'layouts/layout-nhsprofile.html' %}
+
+{% block pageTitle %}
+  Update your GP
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+          Update your GP
+      </h1>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">If you change your GP details</h3>
+        <ul>
+          <li>you will affect any services that are connected to your GP</li>
+          <li>you might need have some disruption for some services</li>
+        </ul>
+      </div>
+
+      <p>Do you want to update your GP?</p>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="/nhs-profile/your-gp/gp-update-details">
+        Yes - continue
+      </a>
+
+      {{ backLink({
+        "href": "/nhs-profile/your-gp",
+        "text": "I do not want to update my GP",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

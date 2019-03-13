@@ -27,9 +27,45 @@
         Leeds LS8 1AY</p>
     
 
-      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile/your-gp/gp-address-change">
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile/your-gp/gp-update">
         Update your GP
       </a>
+
+      <hr>
+
+      <h2>GP connection details</h2>
+
+      {{ table({
+        panel: false,
+        caption: "GP connection details",
+        firstCellIsHeader: false,
+        rows: [
+          [
+            {
+              text: "Account linkage key"
+            },
+            {
+              text: "gVAB gCc3 hADy4"
+            }
+          ],
+          [
+            {
+              text: "Practice O.D.S. code"
+            },
+            {
+              text: "HB5021"
+            }
+          ],
+          [
+            {
+              text: "Account I.D."
+            },
+            {
+              text: "9407001777"
+            }
+          ]
+        ]
+      }) }}
 
     </div>
 
