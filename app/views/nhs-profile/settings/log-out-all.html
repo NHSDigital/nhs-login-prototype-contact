@@ -1,0 +1,49 @@
+{% extends 'layouts/layout-nhsprofile.html' %}
+
+{% block pageTitle %}
+  Log out of all sessions but this one
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+          Log out of all sessions but this one
+      </h1>
+
+      {{ warningCallout({
+        "heading": "When you choose to log out everywhere",
+        "HTML": "<p>This will log you out in all places that you are currently logged in (apart from this browser).</p>
+        <p>It will reset your cookies on those devices but not delete them.</p>"
+      }) }}
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="current-password">
+          Enter your password to log out everywhere
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="current-password" name="test-width-10" type="text">
+      </div>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="/nhs-profile/settings/log-out-done">
+        Log me out everywhere but here
+      </a>
+
+      {{ backLink({
+        "href": "/nhs-profile/settings/index",
+        "text": "I do not want to log out everywhere",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

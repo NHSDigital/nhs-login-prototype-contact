@@ -22,13 +22,13 @@
 
       <p>You might have used your NHS login to access one or more websites or apps.</p>
 
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">After you've deleted your NHS login</h3>
-        <ul>
+      {{ warningCallout({
+        "heading": "After you've deleted your NHS login",
+        "HTML": "<ul>
           <li>you will not be able to access those websites or apps using your NHS login (you might have to set up a new login if you want to access them)</li>
           <li>they might keep some information about you</li>
-        </ul>
-      </div>
+        </ul>"
+      }) }}
 
       <p>Do you want to delete your NHS login?</p>
 
