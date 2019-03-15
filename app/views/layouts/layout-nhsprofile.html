@@ -10,41 +10,152 @@
 
 <!-- Header goes inside this block -->
 {% block header %}
-  {{ header({
-      "transactionalService": {
-        "name": "Manage your NHS login",
-        "href": "/nhs-profile"
-      },
-      "showNav": "true",
-      "showSearch": "false",
-      "primaryLinks": [
-        {
-          "url"  : "/nhs-profile/settings/index",
-          "label" : "General settings"
-        },
-        {
-          'url' : '/nhs-profile/profile/profile',
-          'label' : 'Your profile'
-        },
-        {
-          'url'  : '/identity-level',
-          'label' : 'Identity level'
-        },
-        {
-          'url'  : '/nhs-profile/services/services',
-          'label' : 'Your services'
-        },
-        {
-          'url'  : '/nhs-profile/health-profiles/health-profiles',
-          'label' : 'People you care for'
-        },
-        {
-          'url' : '/nhs-profile/your-gp/your-gp',
-          'label' : 'Your GP'
-        }
-      ]
-    })
-  }}
+<style>
+
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .user {
+    width: 300px;
+    margin-top: 13px;
+    display: inline-block;
+  }
+
+  .user .user-name {
+    color: #fff;
+    font-size: 1.1em;
+    text-align: right;
+    float: left;
+    width: 230px;
+    line-height: 1.3em;
+  }
+
+  .user .user-name span {
+    font-size: 0.8em;
+    display: block;
+  }
+
+  figure.user-avatar {
+    float: right;
+    width: 45px;
+    height: 45px;
+    -webkit-margin-before: 0.15em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 10px;
+    -webkit-margin-end: 10px;
+  }
+
+  figure.user-avatar img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 0 3px #fff;
+  }
+
+  img {
+    display:block;
+    border-radius: 50%;
+  }
+
+</style>
+
+<header class="nhsuk-header nhsuk-header--transactional" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo">
+      <a class="nhsuk-header__link" href="/" aria-label="NHS homepage">
+        <svg class="nhsuk-logo nhsuk-logo--white" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
+          <path fill="#fff" d="M0 0h40v16H0z"></path>
+          <path fill="#005eb8" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+          <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+        </svg>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+      <div class="nhsuk-header__menu nhsuk-header__menu--only">
+        <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
+      </div>
+
+      <div class="user">
+        <div class="user-name"><span>You are logged in as </span>Morticia Addams</div>
+        <figure class="user-avatar">
+          <img src="/images/avatar-morticia.png" alt="Uncle Fester">
+        </figure>
+      </div>
+
+    </div>
+  </div>
+
+    <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation">
+      <p class="nhsuk-header__navigation-title"><span id="label-navigation">Menu</span>
+        <button class="nhsuk-header__navigation-close" id="close-menu">
+          <svg class="nhsuk-icon nhsuk-icon__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M13.41 12l5.3-5.29a1 1 0 1 0-1.42-1.42L12 10.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
+          </svg>
+          <span class="nhsuk-u-visually-hidden">Close menu</span>
+        </button>
+      </p>
+      <ul class="nhsuk-header__navigation-list">
+        <li class="nhsuk-header__navigation-item nhsuk-header__navigation-item--for-mobile">
+          <a class="nhsuk-header__navigation-link" href="/">
+            Home
+            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="/nhs-profile/settings/index">
+            General settings
+            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="/nhs-profile/profile/profile">
+            Your profile
+            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="/nhs-profile/identity/identity">
+            Your identity
+            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="/nhs-profile/services/services">
+            Your services
+            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="/nhs-profile/health-profiles/health-profiles">
+            People you care for
+            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="/nhs-profile/your-gp/your-gp">
+            Your GP
+            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 {% endblock %}
 
 <!-- Breadcrumb goes inside this block -->

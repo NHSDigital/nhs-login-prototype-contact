@@ -1,0 +1,46 @@
+{% extends 'layouts/layout-nhsprofile.html' %}
+
+{% block pageTitle %}
+  Your profile
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+          Prove who you are
+      </h1>
+
+      <h2>I.D. documents</h2>
+
+      <p>Provide an I.D. document.</p>
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile/identity/document01">
+        Provide your I.D.
+      </a>
+
+      <hr>
+
+      <h2>Scan your face</h2>
+
+      <p>We use software call iProov to scan your face. This will just helpp us to see that you match your I.D. document.</p>
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile/identity/face-scan01">
+        Scan your face
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}
