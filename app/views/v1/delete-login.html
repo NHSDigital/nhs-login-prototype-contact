@@ -1,14 +1,7 @@
-{% extends 'layouts/layout.html' %}
+{% extends 'layouts/layout-manage.html' %}
 
 {% block pageTitle %}
   Delete your NHS login
-{% endblock %}
-
-{% block beforeContent %}
-  {{ breadcrumb({
-    href: "/v1/index",
-    text: "Manage your NHS login"
-  }) }}
 {% endblock %}
 
 {% block content %}

@@ -1,0 +1,51 @@
+{% extends 'layouts/layout-nhsprofile.html' %}
+
+{% block pageTitle %}
+  Your services
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Where do you want to log out?
+      </h1>
+
+      {{ radios({
+        "idPrefix": "example-divider",
+        "name": "example",
+        
+        "items": [
+          {
+            "value": "nhsuk-login",
+            "text": "Log out of this service"
+          },
+              {
+            "value": "government-verify",
+            "text": "Log out of this browser or device"
+          },
+          {
+            "divider": "or"
+          },
+          {
+            "value": "create-account",
+            "text": "Log out of everywhere"
+          }
+        ]
+      }) }}
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile/log-out/log-out-done">
+        Log out
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

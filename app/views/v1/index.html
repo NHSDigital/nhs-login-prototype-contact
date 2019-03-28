@@ -1,14 +1,7 @@
-{% extends 'layouts/layout.html' %}
+{% extends 'layouts/layout-manage.html' %}
 
 {% block pageTitle %}
   Manage your NHS login
-{% endblock %}
-
-{% block beforeContent %}
-  {{ breadcrumb({
-    href: "/v1/index",
-    text: "Manage your NHS login"
-  }) }}
 {% endblock %}
 
 {% block content %}
@@ -38,7 +31,7 @@
       <p>Your phone number is <b>07789 123838</b>.</p> 
     
 
-      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="phone-change">
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/v1/phone-change">
         Change your phone number
       </a>
 
@@ -46,7 +39,7 @@
 
       <h2>Delete your NHS login</h2>
 
-      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="delete-login">
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="/v1/delete-login">
         Delete your NHS login
       </a>
 

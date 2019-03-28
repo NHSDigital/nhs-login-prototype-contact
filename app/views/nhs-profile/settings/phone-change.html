@@ -1,7 +1,7 @@
-{% extends 'layouts/layout-manage.html' %}
+{% extends 'layouts/layout-nhsprofile.html' %}
 
 {% block pageTitle %}
-  Delete your NHS login
+  Enter your password to change your phone number
 {% endblock %}
 
 {% block content %}
@@ -10,20 +10,20 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-fieldset__legend--l">
-          Enter your password to delete your NHS login
+          Enter your password to change your phone number
       </h1>
 
       <div class="nhsuk-form-group">
         <input class="nhsuk-input nhsuk-input--width-10" id="current-password" name="test-width-10" type="text">
       </div>
 
-      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="/nhs-profile/settings/delete-login-done">
-        Delete NHS login
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile/settings/phone-change-number">
+        Continue
       </a>
 
       {{ backLink({
-        "href": "/v1/index",
-        "text": "I do not want to delete my NHS login",
+        "href": "/nhs-profile/settings/index",
+        "text": "I do not want to change my phone number",
         "classes": "nhsuk-u-margin-top-7"
       }) }}
 
