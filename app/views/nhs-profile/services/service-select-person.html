@@ -1,20 +1,14 @@
 {% extends 'layouts/layout-nhsprofile.html' %}
 
 {% block pageTitle %}
-  Your services - eRedbook
+  Manage your NHS login
 {% endblock %}
 
 {% block beforeContent %}
   {{ breadcrumb({
-  items: [
-    {
-      href: "/nhs-profile/settings/index",
-      text: "Manage your NHS login"
-    }
-  ],
-  href: "/nhs-profile/services/services",
-  text: "Your services"
-}) }}
+    href: "/nhs-profile/settings/index",
+    text: "Manage your NHS login"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -44,31 +38,15 @@
 
   </style>
 
+      
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-fieldset__legend--l">
-        eRedbook
+        Choose a person to give access to Helm
       </h1>
 
-      {{ actionLink({
-        "text": "Visit eRedbook",
-        "href": "https://www.eredbook.org"
-      }) }}
-
-      <p>eRedbook is lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis sem id suscipit bibendum. Fusce vehicula enim vitae tellus condimentum, a fermentum dolor rhoncus. </p>
-
-      <div class="nhsuk-review-date">
-        <p class="nhsuk-body-s">
-          Last visit: 18:42 on 12th March 2019
-        </p>
-      </div>
-
-      <hr>
-
-      <h2>
-        People you use this service for
-      </h2>
 
       <div class="nhsuk-table-responsive">
         <table class="nhsuk-table">
@@ -84,26 +62,36 @@
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell">
                 <figure>
-                  <img src="/images/avatar-pugsley.png" alt="Pugsley Addams">
+                  <img src="/images/avatar-fester.png" alt="Uncle Fester">
                 </figure>
               </td>
-              <td class="nhsuk-table__cell">Pugsley Addams</td>
-              <td class="nhsuk-table__cell ">Son</td>
-              <td class="nhsuk-table__cell"><a href="#">Manage</a></td>
+              <td class="nhsuk-table__cell">Fester Addams</td>
+              <td class="nhsuk-table__cell ">Uncle or brother-in-law</td>
+              <td class="nhsuk-table__cell"><a href="service-person-confirm">Choose</a></td>
             </tr>
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell">
                 <figure>
-                  <img src="/images/avatar-wednesday.png" alt="Wednesday Addams">
+                  <img src="/images/avatar-grandmama.png" alt="Grandmama Addams">
                 </figure>
               </td>
-              <td class="nhsuk-table__cell">Wednesday Addams</td>
-              <td class="nhsuk-table__cell ">Daughter</td>
-              <td class="nhsuk-table__cell"><a href="#">Manage</a></td>
+              <td class="nhsuk-table__cell">Grandmama Addams</td>
+              <td class="nhsuk-table__cell ">Grandmother</td>
+              <td class="nhsuk-table__cell"><a href="service-person-confirm">Choose</a></td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="profile-add">
+        Choose someone else
+      </a>
+
+      {{ backLink({
+        "href": "/nhs-profile/services/services",
+        "text": "I do not want to give access",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
 
     </div>
   </div>

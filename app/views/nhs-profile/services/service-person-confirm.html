@@ -1,0 +1,77 @@
+{% extends 'layouts/layout-nhsprofile.html' %}
+
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <style>
+
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  figure {
+    margin: 0;
+    width: 45px;
+    height: 45px;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+    display:block;
+    border-radius: 50%;
+  }
+
+  </style>
+
+      
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Give Fester Addams access to your Helm
+      </h1>
+
+      <p>Are you sure that you want to give the following person access to your Helm?</p>
+
+      <div class="nhsuk-panel">
+
+        <h2>You are inviting this person</h2>
+
+        <p>Name: <b>Fester Addams</b><br>
+        Date of birth: 23rd January 1935 <br>
+        Realtionship to you: Uncle</p>
+
+      </div>
+
+      <p>You can remove access at any time.</p>
+
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="service-person-invited">
+        Yes - give access to Helm
+      </a>
+
+      {{ backLink({
+        "href": "/nhs-profile/services/services",
+        "text": "I do not want to give access",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
