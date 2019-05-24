@@ -1,0 +1,81 @@
+{% extends 'layouts/layout-nhsprofile-fester.html' %}
+
+{% block pageTitle %}
+  Your profile
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile-fester/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+          Your profile
+      </h1>
+
+      <p>
+        Name: <b>Uncle Fester</b><br>
+        Date of birth: <b>12th October 1942</b><br>
+        NHS Number: <b>6660666000</b>
+      </p> 
+
+      <hr>
+
+      <h2>Address</h2>
+
+      <p>21 Chester Place,<br>
+        Leeds LS7 2LA</p>
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile-fester/address-change">
+        Change your address
+      </a>
+
+      <hr>
+
+      <h2>Profile picture</h2>
+
+      <style>
+
+      * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      figure {
+        width: 100px;
+        height: 100px;
+      }
+
+      figure img {
+        width: 100%;
+        height: auto;
+      }
+
+      img {
+        display:block;
+        border-radius: 50%;
+      }
+
+      </style>
+
+      <figure>
+        <img src="/images/avatar-fester.png" alt="Your profile picture">
+      </figure> 
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="picture-change">
+        Change your profile picture
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}

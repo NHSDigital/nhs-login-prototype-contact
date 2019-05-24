@@ -1,0 +1,67 @@
+{% extends 'layouts/layout-nhsprofile-fester.html' %}
+
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile-fester/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+          General settings
+      </h1>
+
+      <p>NHS login: <b>uncle-fester@gmail.com</b></p> 
+
+      <hr>
+
+      <h2>Password</h2>
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="password-change">
+        Change your password
+      </a>
+
+      <hr>
+
+      <h2>Phone number</h2>
+
+      <p>Your phone number is <b>07666 666656</b>.</p> 
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="phone-change">
+        Change your phone number
+      </a>
+
+      <hr>
+
+      <h2>Log out all other sessions</h2>
+
+      <p>Lost your phone? Worried you are still logged in on another computer? Use this option to log out of all other computers but this one.</p> 
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="log-out-all">
+        Log out all other sessions
+      </a>
+
+      <hr>
+
+      <h2>Delete your NHS login</h2>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="delete-login">
+        Delete your NHS login
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}

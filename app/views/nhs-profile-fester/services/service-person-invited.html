@@ -1,4 +1,4 @@
-{% extends 'layouts/layout-nhsprofile.html' %}
+{% extends 'layouts/layout-nhsprofile-fester.html' %}
 
 {% block pageTitle %}
   Manage your NHS login
@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {{ breadcrumb({
-    href: "/nhs-profile/settings/index",
+    href: "/nhs-profile-fester/settings/index",
     text: "Manage your NHS login"
   }) }}
 {% endblock %}
@@ -50,7 +50,7 @@
       <p>We will send them an <a href="/emails/email-da-invite">email</a> telling them how to get access.</p>
 
       {{ backLink({
-        "href": "/nhs-profile/services/services",
+        "href": "/nhs-profile-fester/services/services",
         "text": "Back",
         "classes": "nhsuk-u-margin-top-7"
       }) }}

@@ -1,0 +1,73 @@
+{% extends 'layouts/layout-nhsprofile-fester.html' %}
+
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile-fester/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+          Your GP
+      </h1>
+
+      <h2>Street Lane Practice</h2>
+
+
+      <p>12 Devonshire Ave,<br>
+        Leeds LS8 1AY</p>
+    
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile-fester/your-gp/gp-update">
+        Update your GP
+      </a>
+
+      <hr>
+
+      <h2>GP connection details</h2>
+
+      {{ table({
+        panel: false,
+        caption: "GP connection details",
+        firstCellIsHeader: false,
+        rows: [
+          [
+            {
+              text: "Account linkage key"
+            },
+            {
+              text: "gVAB gCc3 hADy4"
+            }
+          ],
+          [
+            {
+              text: "Practice O.D.S. code"
+            },
+            {
+              text: "HB5021"
+            }
+          ],
+          [
+            {
+              text: "Account I.D."
+            },
+            {
+              text: "9407001777"
+            }
+          ]
+        ]
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

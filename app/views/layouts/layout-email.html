@@ -1,11 +1,12 @@
 <!-- This layout is setup for transactional pages -->
 
 <!-- Extends the layout from /app/views/layouts/layout.html -->
-{% extends "layouts/layout.html" %}
+{% extends "layouts/layout-email-base.html" %}
 
 <!-- Adds a custom class to the <main> wrapper -->
 <!-- nhsuk-main-wrapper--s reduces top and bottom padding of the page -->
-{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+{% set bodyClasses = 'body-email' %}
+{% set mainClasses = 'email-content' %}
 
 <!-- Set the page title inside this block -->
 {% block pageTitle %}
@@ -41,6 +42,10 @@
       {
         "URL": "#",
         "label": "Our policies"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
       }
     ]
   })}}

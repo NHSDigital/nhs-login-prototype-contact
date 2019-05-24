@@ -1,0 +1,205 @@
+{% extends 'layouts/layout-nhsprofile-fester.html' %}
+
+{% block pageTitle %}
+  NHS login cookies
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile-fester/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+  .terms-heading {
+    padding-top: 1em;
+    font-size: 24px;
+    display: inline-block;
+  }
+
+  .terms-heading-secondary {
+    font-size: 20px;
+    display: inline-block;
+  }
+</style>
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="first-item">
+
+        <h1 class="nhsuk-fieldset__legend--l">NHS login - cookies</h1>
+
+        <section id="intro">
+          <p>We put small files called cookies onto your device (for example your phone). </p>
+          <p>We use:</p>
+          <ul>
+            <li>cookies that we need to put on your device for our platform to work</li>
+            <li>analytic cookies to collect information about how you use our platform to help us make improvements to it</li>
+          </ul>
+          <p>We ask you to accept our privacy notice when you set up your <abbr title="National Health Service">NHS</abbr> login. By accepting our privacy notice, you agree to let us put both the cookies we need to set for our platform to work and analytic cookies on your device. </p>
+        </section>
+        
+        <section id="cookies-we-need">
+          <h2 class="terms-heading">Cookies we need to set</h2>
+          <p>The cookies we need to put on your device for our platform to work include:</p>
+          <div class="cookie-table">
+            <table>
+              <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Purpose</th>
+                    <th>Expires</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>id_token</b></td>
+                    <td>
+                      <p>This is set when you log in.</p>
+                      <p>It lets us know that you have logged in and tells us who you are so we can keep your information secure.</p></td>
+                    <td>When you close your browser</td>
+                  </tr>
+                  <tr>
+                    <td><b>nhs_authorization_cookie</b></td>
+                    <td>
+                      <p>This is set when you use our platform for the first time.</p>
+                      <p>It stores information passed to us by the health websites and apps you are using your <abbr>NHS</abbr> login with. We use it to make sure only they can see your information.</p>
+                      <p>It will only be set if the health websites and apps are approved by us when you try to use them.</p>
+                    </td>
+                    <td>Deleted when you get to the service you came from</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="analytics-cookies">
+          <h2 class="terms-heading">Analytic cookies</h2>
+          <p>We use Adobe and Hotjar analytic tools to collect information about how you use our platform, for example the steps you make, what you click and when you leave. This helps us identify what doesn’t work so we can improve it.</p>
+          <p>These tools do not collect or store your personal information (for example your name or address). This means we cannot identify who you are.</p>
+          <p>We do not allow Adobe or Hotjar to use or share our analytics data.</p>
+          <p>Adobe Analytics will be used to set the following cookies: </p>
+
+          <div class="cookie-table">
+            <table>
+              <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Purpose</th>
+                    <th>Expires</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>s_cc</b></td>
+                    <td>This lets us know if your browser allows cookies.</td>
+                    <td>When you close your browser</td>
+                  </tr>
+                  <tr>
+                    <td><b>s_sq</b></td>
+                    <td>This lets us know what the previous link you clicked on was.</td>
+                    <td>When you close your browser</td>
+                  </tr>
+                  <tr>
+                    <td><b>s_vi</b></td>
+                    <td>This lets us know your unique visitor ID time/date stamp that tells us the time and date you first visit our platform.</td>
+                    <td>2 years</td>
+                  </tr>
+                  <tr>
+                    <td><b>s_fid</b></td>
+                    <td>This lets us know your unique visitor ID time/date stamp. It is only used if the s_vi cookie is blocked by your browser.</td>
+                    <td>2 years</td>
+                  </tr>
+                  <tr>
+                    <td><b>AMCV_###@AdobeOrg</b></td>
+                    <td>This lets us know your unique visitor ID when you use our platform.</td>
+                    <td>2 years</td>
+                  </tr>
+
+                  <tr>
+                    <td><b>s_ppv and s_ppvl</b></td>
+                    <td> This stores information which lets us know how far you scroll down the page.</td>
+                    <td>When you leave the platform</td>
+                  </tr>
+                  <tr>
+                    <td><b>s_nr</b></td>
+                    <td>This stores information which lets us know the dates you visit our platform and if you have used the platform before.</td>
+                    <td>2 years</td>
+                  </tr>
+                  <tr>
+                    <td><b>gpv</b></td>
+                    <td>This stores information which lets us know how many of our pages you visited.</td>
+                    <td>The end of session</td>
+                  </tr>
+                  <tr>
+                    <td><b>AMCVS</b></td>
+                    <td>This is set when you first log in. It lets us know your unique visitor ID each time you use our platform.</td>
+                    <td>2 years</td>
+                  </tr>
+                  <tr>
+                    <td><b>Demdex</b></td>
+                    <td>This uses a tool called Audience Manager which allows us know your unique visitor ID each time you use our platform and other NHS online services.</td>
+                    <td>2 years</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Hotjar will be use to set the following cookies: </p>
+
+          <div class="cookie-table">
+            <table>
+              <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Purpose</th>
+                    <th>Expires</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><b>_hjShownFeedbackMessage</b></td>
+                    <td><p>This is set when you complete feedback or minimise the feedback option.</p>
+                      <p>It keeps the feedback option minimised so you do not see it open when you go to another page.</p></td>
+                    <td>1 year</td>
+                  </tr>
+                  <tr>
+                    <td><b>_hjIncludedInSample</b></td>
+                    <td>This is set to tell Hotjar if you are included in a sample of user journeys used to generate heatmaps and funnels (ways to display data), and recordings.</td>
+                    <td>1 year</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="managing-cookies">
+          <h2 class="terms-heading">Managing analytics cookies</h2>
+          <p>Collecting data on how people use our platform helps us improve it. But you can choose to stop your data being collected if you want to.</p>
+          <p>To turn off analytics cookies, you can:</p>
+          <ul>
+            <li><a href="http://nhs.d3.sc.omtrdc.net/optout.html" target="_blank">opt out of Adobe analytics</a></li>
+            <li><a href="https://www.hotjar.com/legal/compliance/opt-out" target="_blank">opt out of Hotjar analytics</a></li>
+          </ul>
+        </section>
+
+        <section id="changes-to-cookies">
+          <h2 class="terms-heading">Changes to cookies</h2>
+          <p>Our terms of use may change. We will inform you on the platform if we make any changes to our privacy notice, cookies or terms and conditions.</p>
+        </section>
+
+        {{ reviewDate({
+          "lastReview": "13 December 2018"
+        }) }}
+
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

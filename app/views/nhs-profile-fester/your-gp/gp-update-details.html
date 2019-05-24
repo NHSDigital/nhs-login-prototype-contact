@@ -1,0 +1,59 @@
+{% extends 'layouts/layout-nhsprofile-fester.html' %}
+
+{% block pageTitle %}
+  Update your GP details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile-fester/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+          Enter the details your GP surgery gave you
+      </h1>
+
+      <p>Enter letters and numbers exactly as they are written.</p>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="current-password">
+          Linkage Key (could be called a Passphrase)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="current-password" name="test-width-10" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-password">
+          O.D.S. Code (could be called an Organisation Code or Practice I.D.)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="new-password" name="test-width-10" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="confirm-password">
+          Account I.D.
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="confirm-password" name="test-width-10" type="text">
+      </div>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile-fester/your-gp">
+        Update GP details
+      </a>
+
+      {{ backLink({
+        "href": "/nhs-profile-fester/your-gp/your-gp",
+        "text": "Back",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

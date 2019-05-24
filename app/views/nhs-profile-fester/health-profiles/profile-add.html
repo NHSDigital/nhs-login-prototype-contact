@@ -1,0 +1,83 @@
+{% extends 'layouts/layout-nhsprofile-fester.html' %}
+
+{% block pageTitle %}
+  Add someone you care for
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile-fester/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}      
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Enter the details of the person you care for
+      </h1>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="current-password">
+          Full name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="current-password" name="test-width-10" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-password">
+          Relationship to you
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-password" name="test-width-10" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="confirm-password">
+          NHS number (if you know it)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="confirm-password" name="test-width-10" type="text">
+      </div>
+
+      {{ dateInput({
+        "id": "dob",
+        "namePrefix": "dob",
+        "fieldset": {
+          "legend": {
+            "text": "Date of birth"
+          }
+        },
+        "hint": {
+          "text": "For example, 31 3 1980"
+        },
+        "items": [
+          {
+            "name": "day",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "month",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "year",
+            "classes": "nhsuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/nhs-profile-fester/health-profiles/health-profiles">
+        Add person
+      </a>
+
+      {{ backLink({
+        "href": "/nhs-profile-fester/health-profiles/health-profiles",
+        "text": "Back",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

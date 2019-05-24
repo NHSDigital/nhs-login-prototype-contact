@@ -1,0 +1,47 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Enter your email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Enter your NHS login details
+      </h1>
+
+      <form action="/nhs-login/invite/phone-2fa" method="post">
+
+        {{ input({
+          "label": {
+            "text": "Email address"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Password"
+          },
+          "id": "input-width-20a",
+          "name": "test-width-20a",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        <p><a href="#">Forgotten your password?</a></p>
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

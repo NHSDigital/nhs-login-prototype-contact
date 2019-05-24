@@ -1,0 +1,54 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Do you have an NHS login?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/nhs-login/invite/login" method="post">
+
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+            <legend class="nhsuk-fieldset__legend">
+              <h1 class="nhsuk-fieldset__legend--l">
+                Do you have an NHS login?
+              </h1>
+            </legend>
+
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  Yes
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  No - I need to set one up
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+
+        {{ insetText({
+          "HTML": "<h3>What is an NHS login?</h3><p>From September 2018, NHS login is a new way to log in to health websites and apps.</p><p>If you do not have an NHS login, you'll need to set one up. Then you can access online health services wherever you see 'NHS login'.</p>"
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
