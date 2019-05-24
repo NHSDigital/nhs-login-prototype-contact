@@ -1,0 +1,36 @@
+{% extends 'layouts/layout-nhsprofile-fester.html' %}
+
+{% block pageTitle %}
+  Add someone you care for
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/nhs-profile-fester/settings/index",
+    text: "Manage your NHS login"
+  }) }}
+{% endblock %}
+
+{% block content %}      
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel">
+
+        <h1 class="nhsuk-fieldset__legend--l">You now have access to view Morticia Addams' Helm information</h1>
+
+        {{ actionLink({
+        "text": "Visit Helm",
+        "href": "/nhs-login/invite/select-user"
+      }) }}
+
+        <p>Now that you have access to Morticia Addams Helm information you will be asked who you are logging in for when you use your NHS login to access Helm.</p>
+
+        <p>You can <a href="/nhs-profile-fester/health-profiles/health-profiles">see all the people you care for here.</a></p>
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  Enter your email address
+{% endblock %}
+
+{% block content %}
+  <style>
+
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  figure {
+    margin: 0;
+    width: 45px;
+    height: 45px;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+    display:block;
+    border-radius: 50%;
+  }
+
+  </style>
+
+      
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        You are logging into Helm. Who do you want to login as?
+      </h1>
+
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col"></th>
+              <th class="nhsuk-table__header" scope="col">Name</th>
+              <th class="nhsuk-table__header" scope="col">Relationship</th>
+              <th class="nhsuk-table__header" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <figure>
+                  <img src="/images/avatar-fester.png" alt="Morticia Addams">
+                </figure>
+              </td>
+              <td class="nhsuk-table__cell">Morticia Addams</td>
+              <td class="nhsuk-table__cell ">Sister-in-law</td>
+              <td class="nhsuk-table__cell"><a href="https://myhelm.org">Select</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                <figure>
+                  <img src="/images/avatar-gomez.png" alt="Gomez Addams">
+                </figure>
+              </td>
+              <td class="nhsuk-table__cell">Gomez Addams</td>
+              <td class="nhsuk-table__cell ">Brother</td>
+              <td class="nhsuk-table__cell"><a href="https://myhelm.org">Select</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}
