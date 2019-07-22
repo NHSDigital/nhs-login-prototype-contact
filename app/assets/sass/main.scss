@@ -44,3 +44,24 @@
 .body-email .nhsuk-footer .nhsuk-width-container{
 	display: none;
 }
+
+// for manage login homepage
+
+.user-icon {
+	fill: $color_nhsuk-blue;
+}
+
+.user-info {
+	display: inline;
+}
+
+.account-name-link {
+	display: inline-block;
+	position: relative;
+	top: -17px;
+	color: $color_nhsuk-blue
+}
+
+.nhsuk-table-responsive.user-info-table {
+	margin-top: 0px;
+}

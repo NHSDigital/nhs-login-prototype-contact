@@ -1,0 +1,35 @@
+{% extends 'layouts/layout-manage.html' %}
+
+{% block pageTitle %}
+  Enter your new phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+          Enter your new phone number
+      </h1>
+
+      <p>We'll send you a code that you'll need to enter.</p>
+
+      <div class="nhsuk-form-group">
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-phone-number" name="test-width-10" type="number">
+      </div>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/v1/phone-number-code">
+        Continue
+      </a>
+
+      {{ backLink({
+        "href": "/v1/index",
+        "text": "I do not want to change my phone number",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}
