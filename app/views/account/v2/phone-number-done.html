@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-manage.html' %}
 
 {% block pageTitle %}
-  Your email address has been changed
+  Your phone number has been changed
 {% endblock %}
 
 {% block content %}
@@ -10,12 +10,13 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-fieldset__legend--l">
-          Your email address has been changed to jon.vaserelli@gmail.com
+          Phone number changed to {{ data['phone-number']}}
       </h1>
-      <p>Your password will stay the same.</p>
+
+      <p 
 
       {{ backLink({
-        "href": "/v1/index",
+        "href": "index",
         "text": "Back",
         "classes": "nhsuk-u-margin-top-7"
       }) }}

@@ -21,3 +21,8 @@ router.post('/examples/branching/answer', function (req, res) {
 });
 
 module.exports = router;
+
+// Change email routing
+router.get('/account/v2', function (req, res) {
+  res.render('account/v2/index')
+});

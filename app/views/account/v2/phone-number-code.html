@@ -9,11 +9,12 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
+      <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Change phone number</span>
       <h1 class="nhsuk-fieldset__legend--l">
           Check your phone
       </h1>
 
-      <p>Enter the security code we've sent to 077** ***123.</p>
+      <p class="nhsuk-hint">Enter the security code we've sent to {{ data['phone-number']}}</p>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="phone-code">
@@ -23,7 +24,7 @@
         <input class="nhsuk-input nhsuk-input--width-10" id="phone-code" name="phone-code-10" type="number">
       </div>
 
-      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/v1/phone-number-done">
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="phone-number-done">
         Continue
       </a>
 
