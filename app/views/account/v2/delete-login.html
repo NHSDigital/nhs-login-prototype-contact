@@ -9,29 +9,28 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
+      <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Delete account</span>
       <h1 class="nhsuk-fieldset__legend--l">
           Delete your NHS login
       </h1>
 
       <p>You might have used your NHS login to access one or more websites or apps.</p>
 
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">After you've deleted your NHS login</h3>
+        <h3 class="nhsuk-heading-m">After you've deleted your NHS login</h3>
         <ul>
           <li>you will not be able to access those websites or apps using your NHS login (you might have to set up a new login if you want to access them)</li>
           <li>they might keep some information about you</li>
         </ul>
-      </div>
 
-      <p>Do you want to delete your NHS login?</p>
+      <p class="nhsuk-heading-m nhsuk-u-margin-top-3">Do you want to delete your NHS login?</p>
 
       <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="delete-login-password">
-        Yes - continue
+        Yes
       </a>
 
       {{ backLink({
-        "href": "/v1/index",
-        "text": "Back",
+        "href": "index",
+        "text": "I do not want to delete my NHS login",
         "classes": "nhsuk-u-margin-top-7"
       }) }}
 
