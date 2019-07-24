@@ -65,3 +65,19 @@
 .nhsuk-table-responsive.user-info-table {
 	margin-top: 0px;
 }
+
+tr:nth-child(1) > td:nth-child(1) {
+	padding-left: 0px;
+}
+
+tr:nth-child(2) > td:nth-child(1) {
+	padding-left: 0px;
+}
+
+tr:nth-child(3) > td:nth-child(1) {
+	padding-left: 0px;
+}
+
+th:nth-child(1) {
+	padding-left: 0px;
+}

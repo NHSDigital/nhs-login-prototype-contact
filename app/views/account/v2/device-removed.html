@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-manage.html' %}
 
 {% block pageTitle %}
-  Your phone number has been changed
+  Enter your password to change your email address
 {% endblock %}
 
 {% block content %}
@@ -9,11 +9,13 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
+      <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Remove device</span>
       <h1 class="nhsuk-fieldset__legend--l">
-          Phone number changed 
+        Device removed
       </h1>
 
-      <p class="nhsuk-body">Your phone number has been changed to {{ data['phone-number']}}</p>
+      <p class="nhsuk-body-m">You will need to enter the password sent to your phone when using your NHS login on this device.</p>
+
 
       {{ backLink({
         "href": "index",
@@ -21,7 +23,7 @@
         "classes": "nhsuk-u-margin-top-7"
       }) }}
 
-    </div> 
+    </div>
 
   </div>
 {% endblock %}
