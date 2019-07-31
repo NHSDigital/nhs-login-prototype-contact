@@ -1,0 +1,170 @@
+{% extends 'layouts/layout-manage-access.html' %}
+
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+          Connected accounts
+      </h1>
+      
+      <h2>Add a person to your NHS login</h2>
+      <!--<p>Add another person to manage an NHS login service on your behalf.</p>-->
+      {{ details({
+        "text": "What do I need to do to add someone",
+        "HTML": "
+          <p>You will need to know the following</p>
+          <ul>
+            <li>their name</li>
+            <li>their contact email address</li>
+            <li>their postcode</li>
+            <li>their date of birth</li>
+          </ul>
+          <p>If you know their NHS number then you will not need to know their postcode or date of birth.</p>
+          "
+      }) }}
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="">
+        Add a person
+      </a>
+
+      <hr>
+
+      <h2>View people you have given access to</h2>
+      <!--<p>You have given 3 people access to services connected to your NHS login</p> -->
+
+      {{ table({
+  panel: false,
+  caption: "People you have given access to services",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Service"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Smith"
+      },
+      {
+        text: "myHealth, AsthmaApp"
+      }
+    ],
+    [
+      {
+        text: "Susan Smith"
+      },
+      {
+        text: "myHealth"
+      }
+    ],
+    [
+      {
+        text: "Hilda Smith"
+      },
+      {
+        text: "myHealth"
+      }
+    ]
+  ]
+}) }}
+
+    <!--  <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/v1/password-change">
+        Change your password
+      </a>
+-->
+      <!--<hr>-->
+
+      <h2>View people you have access for</h2>
+
+    <!--  <p>You have access the following services on behalf of the following people</p> -->
+    {{ table({
+  panel: false,
+  caption: "People you have access to",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Service"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Tara Smith"
+      },
+      {
+        text: "myHealth"
+      }
+    ],
+    [
+      {
+        text: "Susan Smith"
+      },
+      {
+        text: "myHealth"
+      }
+    ]
+  ]
+}) }}
+
+     <!-- <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/v1/phone-change">
+        Change your phone number
+      </a>
+-->
+     <!-- <hr>-->
+
+      <h2>Revoke access</h2>
+      <p></p>
+      {{ details({
+        "text": "What happens when I revoke all access",
+        "HTML": "
+          
+          <p>When you revoke access to a service we will immedietely</p>
+          <ul>
+            <li><mark>Can we do this?</mark> instruct the services to termimate all sessions relating to the person selected</li>
+            <li>remove service from the person you have selected</li>
+          </ul>
+
+          <p><strong>we will not</strong> tell anyone that access has been revoked</p>  
+          "
+      }) }}
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="">
+        Revoke access
+      </a>
+      
+      <hr>
+
+      <h2>Revoke access to all users for all services</h2>
+    <!--  <p>If you need to remove access from everyone for all your services.</p>-->
+      {{ details({
+        "text": "What happens when I revoke all access",
+        "HTML": "
+          
+          <p>When you revoke all access to all services we will immedietely</p>
+          <ul>
+            <li><mark>Can we do this?</mark> instruct all services to termimate all sessions</li>
+            <li>remove all services you have granted access</li>
+          </ul>
+
+          <p><strong>we will not</strong> tell anyone that access has been revoked</p>  
+          "
+      }) }}
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="">
+        Revoke all access to all services
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}
