@@ -1,20 +1,78 @@
-{% extends 'layouts/layout-manage-access.html' %}
+{% extends 'layouts/layout-manage-access-v2.html' %}
 
 {% block pageTitle %}
   Manage your NHS login
 {% endblock %}
 
 {% block content %}
+
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-xl">Permissions and services</h1>
+    </div>
 
-      <h1>
-          Connected accounts
-      </h1>
-      
-      <h2>Add a person to your NHS login</h2>
-      <!--<p>Add another person to manage an NHS login service on your behalf.</p>-->
+    <div class="nhsuk-grid-column-three-quarters">
+      <h3 class="nhsuk-heading-l">Manage Services</h3>
+        <p class="nhsuk-body-m">You can add and remove services. You can also control who you have given permission to.</p>
+      <div class="nhsuk-table-responsive user-info-table">
+        <table class="nhsuk-table">
+          <!--<caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>-->
+            <thead>
+              <th>Service</th>
+              <th>Recent Activity</th>
+              <th>Actions</th>
+            </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">myhealth</td>
+              <td class="nhsuk-table__cell">You logged in yesterday</td>
+              <td class="nhsuk-table__cell"><a href="email-change">manage</a> or <a href="email-change">login</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">eRedbook</td>
+              <td class="nhsuk-table__cell">David logged in today</td>
+              <td class="nhsuk-table__cell"><a href="email-change">manage</a> or <a href="email-change">login</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">NHS App</td>
+              <td class="nhsuk-table__cell">You logged in on behalf of Doris 2 days ago</td>
+              <td class="nhsuk-table__cell"><a href="email-change">manage</a> or <a href="email-change">login</a></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+
+      <p><a class="nhsuk-button" href="">Add a service</a></p>
+
+      <h3 class="nhsuk-heading-l">Manage who you have given permission to</h3>
+        <p class="nhsuk-body-m">You can view, edit and remove someone you have given permission to.</p>
+      <div class="nhsuk-table-responsive user-info-table">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Name</th>
+              <th class="nhsuk-table__header" scope="col">Status</th>
+              <th class="nhsuk-table__header" scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">David Smith</td>
+              <td class="nhsuk-table__cell">Pending</td>
+              <td class="nhsuk-table__cell">-</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Doris Smith</td>
+              <td class="nhsuk-table__cell">Active</td>
+              <td class="nhsuk-table__cell"><a href="device-remove">manage</a> or <a href="email-change">login</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       {{ details({
         "text": "What do I need to do to add someone",
         "HTML": "
@@ -28,143 +86,59 @@
           <p>If you know their NHS number then you will not need to know their postcode or date of birth.</p>
           "
       }) }}
-      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/v1/email-change">
-        Add a person
-      </a>
 
-      <hr>
-
-      <h2>View people you have given access to</h2>
-      <!--<p>You have given 3 people access to services connected to your NHS login</p> -->
-
-      {{ table({
-  panel: false,
-  caption: "People you have given access to services",
-  firstCellIsHeader: false,
-  head: [
-    {
-      text: "Name"
-    },
-    {
-      text: "Service"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Smith"
-      },
-      {
-        text: "myHealth, AsthmaApp"
-      }
-    ],
-    [
-      {
-        text: "Susan Smith"
-      },
-      {
-        text: "myHealth"
-      }
-    ],
-    [
-      {
-        text: "Hilda Smith"
-      },
-      {
-        text: "myHealth"
-      }
-    ]
-  ]
-}) }}
-
-    <!--  <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/v1/password-change">
-        Change your password
-      </a>
--->
-      <!--<hr>-->
-
-      <h2>View people you have access for</h2>
-
-    <!--  <p>You have access the following services on behalf of the following people</p> -->
-    {{ table({
-  panel: false,
-  caption: "People you have access to",
-  firstCellIsHeader: false,
-  head: [
-    {
-      text: "Name"
-    },
-    {
-      text: "Service"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "Tara Smith"
-      },
-      {
-        text: "myHealth"
-      }
-    ],
-    [
-      {
-        text: "Susan Smith"
-      },
-      {
-        text: "myHealth"
-      }
-    ]
-  ]
-}) }}
-
-     <!-- <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="/v1/phone-change">
-        Change your phone number
-      </a>
--->
-     <!-- <hr>-->
-
-      <h2>Revoke access</h2>
-      <p></p>
-      {{ details({
-        "text": "What happens when I revoke all access",
-        "HTML": "
-          
-          <p>When you revoke access to a service we will immedietely</p>
-          <ul>
-            <li><mark>Can we do this?</mark> instruct the services to termimate all sessions relating to the person selected</li>
-            <li>remove service from the person you have selected</li>
-          </ul>
-
-          <p><strong>we will not</strong> tell anyone that access has been revoked</p>  
-          "
-      }) }}
-      <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="/v1/delete-login">
-        Revoke access
-      </a>
+      <p><a class="nhsuk-button" href="">Add a person</a></p>
       
-      <hr>
+      <h3 class="nhsuk-heading-l">Manage who has given you permission</h3>
+        <p class="nhsuk-body-m">You can view, manage and remove permission from yourself. If you have any requests you can accept and decline them.</p>
+      <div class="nhsuk-table-responsive user-info-table">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Name</th>
+              <th class="nhsuk-table__header" scope="col">Service</th>
+              <th class="nhsuk-table__header" scope="col">Status</th>
+              <th class="nhsuk-table__header" scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Bob Smith</td>
+              <td class="nhsuk-table__cell">myHealth</td>
+              <td class="nhsuk-table__cell">Pending</td>
+              <td class="nhsuk-table__cell"><a href="device-remove">Accept</a> or <a href="device-remove">Decline</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">David smith</td>
+              <td class="nhsuk-table__cell">Multiple</td>
+              <td class="nhsuk-table__cell">Active</td>
+              <td class="nhsuk-table__cell"><a href="device-remove">manage</a> or <a href="email-change">login</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-      <h2>Revoke access to all users for all services</h2>
+      <h2>Remove all permissions to all services</h2>
     <!--  <p>If you need to remove access from everyone for all your services.</p>-->
       {{ details({
-        "text": "What happens when I revoke all access",
+        "text": "What happens when I remove all permissions",
         "HTML": "
           
-          <p>When you revoke all access to all services we will immedietely</p>
+          <p>When you remove all permissions to all services we will immedietely</p>
           <ul>
             <li><mark>Can we do this?</mark> instruct all services to termimate all sessions</li>
-            <li>remove all services you have granted access</li>
+            <li>remove all services you have granted permissions</li>
           </ul>
 
-          <p><strong>we will not</strong> tell anyone that access has been revoked</p>  
+          <p><strong>we will not</strong> tell anyone that their permissions have been removed</p>  
           "
       }) }}
       <a class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-button-red" type="submit" href="/v1/delete-login">
-        Revoke all access to all services
+        Remove all permissions to all services
       </a>
 
-    </div>
 
-  </div>
 {% endblock %}
