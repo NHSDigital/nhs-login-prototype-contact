@@ -76,3 +76,22 @@ tr:nth-child(3) > td:nth-child(1) {
 th:nth-child(1) {
 	padding-left: 0px;
 }
+
+tr:nth-child(1) > td:nth-child(3) {
+	padding-right: 0px;
+	text-align: right;
+}
+tr:nth-child(2) > td:nth-child(3) {
+	padding-right: 0px;
+	text-align: right;
+}
+tr:nth-child(3) > td:nth-child(3) {
+	padding-right: 0px;
+	text-align: right;
+}
+
+th:nth-child(1) {
+	padding-left: 0px;
+}
+
+tr:nth-child(1) > td:nth-child(3)
