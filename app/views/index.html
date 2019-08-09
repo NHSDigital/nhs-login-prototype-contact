@@ -12,24 +12,56 @@
 
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-three-quarters">
 
       <!-- Page title goes here -->
       <h1>
         Manage your NHS login prototypes
       </h1>
-      <p class="nhsuk-body-m"><a href="/account/v1/index">Manage your NHS login v1</a></p>
-      <p class="nhsuk-body-m"><a href="/account/v2/index">Manage your NHS login v2</a></p>
-      <p class="nhsuk-body-m"><a href="/delegated-access/v1/index">Manage your NHS login v1 with delegated access</a></p>
-      <p class="nhsuk-body-m"><a href="/delegated-access/v2/index">Manage your NHS login v2 with delegated access</a></p>
+
+      <h2>Account management</h2>
+        <p>Prototype of the restyled account management section inherited from C.B.</p>
+          <ul>
+            <li><a>JIRA ticket</a></li>
+            <li><a>Current version</a></li>
+          </ul>
+
+
+      <details class="nhsuk-details nhsuk-expander version-list">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Versions
+          </span>
+        </summary>
+        <div class="nhsuk-details__text version-text">
+          <table>
+            <tbody>
+              <tr>
+                <th class="cell-left"><strong>Version</strong></th>
+                <th><strong>Research</strong></th>
+                <th><strong>What was new</strong></th>
+              </tr>
+              <tr>
+                <th class="cell-left"><a href="/account/v1/index">v1</a></th>
+                <td>No research</td>
+                <td>Initial effort by C.B.</td>
+              </tr>
+              <tr>
+                <th class="cell-left"><a href="/account/v2/index">Current version</a></th>
+                <td>Researched 17, 18, 19 July 2019 in labs</td>
+                <td>Reformatted info and altered flows</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <hr> 
 
       <h2>
         NHS profile
       </h2>
-      <ul>
-        <li><a href="/nhs-profile/settings/index">NHS profile example</a></li>
-      </ul>
-      
+        <p><a href="/nhs-profile/settings/index">NHS profile example</a></p>
 
 
 
