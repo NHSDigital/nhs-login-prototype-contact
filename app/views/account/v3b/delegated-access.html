@@ -1,0 +1,96 @@
+{% extends 'layouts/layout-manage.html' %}
+
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+  
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "delegated-access",
+        "text": "Go back"
+      }) }}
+      <h1 class="nhsuk-heading-xl">Permissions and services</h1>
+    </div>
+  </div>
+  <div class="nhsuk-grid-row nhsuk-panel-group">
+    <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+      <div class="nhsuk-panel">
+        <h3 class="nhsuk-heading-xl">5</h3>
+        <p>People connected to you</p>
+        <a href="delegated-access-people">Manage</a>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+      <div class="nhsuk-panel">
+        <h3 class="nhsuk-heading-xl">10</h3>
+        <p>Services you manage on behalf of another person</p>
+        <a href="delegated-access-services">Manage</a>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+      <div class="nhsuk-panel">
+        <h3 class="nhsuk-heading-xl">5</h3>
+        <p>Services others people manage on your behalf</p>
+        <a href="delegated-access-services-by-others">Manage</a>
+      </div>
+    </div>
+  </div>
+  <mark>need to sort out the spacing</mark>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <h2>Activity</h2>
+      <p>something that explains what the next bit is</p>
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Account activity</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">What happened</th>
+              <th class="nhsuk-table__header" scope="col">When</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Dave Smith logged into [service] on your behalf</td>
+              <td class="nhsuk-table__cell ">Yesterday</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">You logged into [service]</td>
+              <td class="nhsuk-table__cell ">2 Days ago</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">You are now connected to Susan Smith - <a href="">manage services</a></td>
+              <td class="nhsuk-table__cell ">Last Week</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Actions</h2>
+      <p><a href="">Remove access</a></p>
+    </div>
+  </div>
+
+
+
+   <!-- <div class="nhsuk-grid-column-three-quarters">
+
+      
+
+      <p>Nothing to see here</p>
+      <ul><li>maybe a list</li></ul>
+      <p>Add a question</p>
+      <p>some options</p>
+
+      <p><a class="nhsuk-button" href="" type="submit">Submit</a></p>  
+    </div>-->
+  </div>
+
+
+
+{% endblock %}
