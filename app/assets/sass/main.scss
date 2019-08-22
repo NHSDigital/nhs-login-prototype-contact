@@ -90,3 +90,24 @@
 	  padding: nhsuk-spacing(0) nhsuk-spacing(0) nhsuk-spacing(0) nhsuk-spacing(0) !important;
 	}
   }
+
+@media (max-width: 385px) {
+	tr,td {
+		display: block;
+	}
+	td.nhsuk-table__cell.cell-right {
+		text-align: left;
+		padding: nhsuk-spacing(1) nhsuk-spacing(1) nhsuk-spacing(3) nhsuk-spacing(0)
+	}
+	td:nth-child(2) {
+		border: none;
+		padding: nhsuk-spacing(1) nhsuk-spacing(1) nhsuk-spacing(2) nhsuk-spacing(0)
+	}
+	td.nhsuk-table__cell.cell-left {
+		border-bottom: none;
+		padding: nhsuk-spacing(3) nhsuk-spacing(1) nhsuk-spacing(2) nhsuk-spacing(0)
+	}
+	.row-responsive {
+		display: none;
+	}
+}
