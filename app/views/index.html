@@ -16,15 +16,14 @@
 
       <!-- Page title goes here -->
       <h1>
-        Manage your NHS login prototypes
+        Manage your NHS login
       </h1>
 
       <h2>Account management</h2>
-        <p>Prototype of the restyled account management section inherited from C.B.</p>
-          <ul>
-            <li><a>JIRA ticket</a></li>
-            <li><a>Current version</a></li>
-          </ul>
+        <ul>
+          <li><a>JIRA ticket</a></li>
+          <li><a>Current version</a></li>
+        </ul>
 
 
       <details class="nhsuk-details nhsuk-expander version-list">
@@ -36,7 +35,7 @@
         <div class="nhsuk-details__text version-text">
           <table>
             <tbody>
-              <tr>
+              <tr class="row-responsive">
                 <th class="cell-left"><strong>Version</strong></th>
                 <th><strong>Research</strong></th>
                 <th><strong>What was new</strong></th>
@@ -64,8 +63,54 @@
             </tbody>
           </table>
         </div>
+
       </details>
 
+      <details class="nhsuk-details nhsuk-expander version-list">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Error messages
+          </span>
+        </summary>
+
+        <h4 class="nhsuk-heading-s nhsuk-u-margin-top-5">Change email</h4>
+          <ul>
+            <li><a href="/account/v2/errors/change-email/link-not-working">Confirm email link not working</a></li>
+            <li><a href="/account/v2/errors/change-email/new-email-input-error">New email front-end validation error</a></li>
+            <li><a href="/account/v2/errors/change-email/new-email-no-input">New email no input error</a></li>
+            <li><a href="/account/v2/errors/change-email/password-incorrect">Password entry back-end validation error</a></li>
+            <li><a href="/account/v2/errors/change-email/password-no-input">Password no input error</a></li>
+          </ul>
+
+          <h4 class="nhsuk-heading-s">Change number</h4>
+          <ul>
+            <li><a href="/account/v2/errors/change-number/new-number-input-error">New number front-end validation error</a></li>
+            <li><a href="/account/v2/errors/change-number/new-number-no-input">New number no input error</a></li>
+            <li><a href="/account/v2/errors/change-number/OTP-input-error">OTP field validation error (front & back-end)</a></li>
+            <li><a href="/account/v2/errors/change-number/OTP-no-input">OTP no input error</a></li>
+            <li><a href="/account/v2/errors/change-number/OTP-not-working">OTP not working error</a></li>
+            <li><a href="/account/v2/errors/change-number/password-incorrect">Password entry back-end validation error</a></li>
+            <li><a href="/account/v2/errors/change-number/password-no-input">Password no input error</a></li>
+          </ul>
+
+          <h4 class="nhsuk-heading-s">Change password</h4>
+          <ul>
+            <li><a href="/account/v2/errors/change-password/existing-password-input-error">Current password back-end validation error</a></li>
+            <li><a href="/account/v2/errors/change-password/existing-password-no-input">Current password no input error</a></li>
+            <li><a href="/account/v2/errors/change-password/new-password-confirmed-no-match">New password front-end validation error</a></li>
+            <li><a href="/account/v2/errors/change-password/new-password-input-error">New password back-end validation error</a></li>
+            <li><a href="/account/v2/errors/change-password/new-password-no-input">No fields inputted error</a></li>
+            <li><a href="/account/v2/errors/change-password/new-password-one-input">Only one field inputted when entering new password error</a></li>
+            <li><a href="/account/v2/errors/change-password/new-password-one-input-reverse">Only one field inputted when entering new password (reverse field of above)</a></li>
+          </ul>
+
+          <h4 class="nhsuk-heading-s">Delete account</h4>
+          <ul>
+            <li><a href="/account/v2/errors/delete-account/password-incorrect">Password incorrect</a></li>
+            <li><a href="/account/v2/errors/delete-account/password-no-input">No password input</a></li>
+          </ul>
+
+      </details>
       <hr> 
 
       <h2>

@@ -110,4 +110,7 @@
 	.row-responsive {
 		display: none;
 	}
+	td:nth-child(3) {
+		padding: nhsuk-spacing(0) nhsuk-spacing(1) nhsuk-spacing(2) nhsuk-spacing(0)
+	}
 }
