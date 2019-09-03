@@ -1,0 +1,43 @@
+{% extends 'layouts/layout-manage.html' %}
+
+{% block pageTitle %}
+  Delete your NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+          Delete your NHS login
+      </h1>
+
+      <p>You might have used your NHS login to access one or more websites or apps.</p>
+      
+      <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">After you've deleted your NHS login</h3>
+          <p>You will lose access to these services you are currently using:</p>
+          <ul>
+            <li>The NHS App</li>
+            <li>eRedbook child health services</li>
+          </ul>
+          <p>These services might keep some information about you.</p>
+        </div>
+
+      <p class="nhsuk-heading-m nhsuk-u-margin-top-3">Are you sure you want to continue?</p>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="delete-login-password">
+        Yes
+      </a>
+
+      {{ backLink({
+        "href": "index",
+        "text": "I do not want to delete my NHS login",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}
