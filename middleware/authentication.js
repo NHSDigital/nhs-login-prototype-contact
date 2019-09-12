@@ -22,6 +22,8 @@ module.exports = function (req, res, next) {
   const username = process.env.PROTOTYPE_USERNAME;
   const password = process.env.PROTOTYPE_PASSWORD;
   const secretQuery = req.query.mattisthebest;
+  req.session.data['primaryUserFirstName'] = req.query.primaryUserFirstName;
+  req.session.data['primaryUserLastName'] = req.query.primaryUserLastName;
   
   if (!secretQuery) {
     if (env === 'production' || env === 'staging') {
