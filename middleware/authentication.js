@@ -24,6 +24,7 @@ module.exports = function (req, res, next) {
   const secretQuery = req.query.mattisthebest;
   req.session.data['primaryUserFirstName'] = req.query.primaryUserFirstName;
   req.session.data['primaryUserLastName'] = req.query.primaryUserLastName;
+  req.session.data['version'] = req.query.version;
   
   if (!secretQuery) {
     if (env === 'production' || env === 'staging') {
