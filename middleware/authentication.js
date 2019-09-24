@@ -22,10 +22,20 @@ module.exports = function (req, res, next) {
   const username = process.env.PROTOTYPE_USERNAME;
   const password = process.env.PROTOTYPE_PASSWORD;
   const secretQuery = req.query.mattisthebest;
-  req.session.data['primaryUserFirstName'] = req.query.primaryUserFirstName;
-  req.session.data['primaryUserLastName'] = req.query.primaryUserLastName;
-  req.session.data['version'] = req.query.version;
-  
+
+  // params from Delegated Access required for versioning and personalised manage login
+  if (req.session.data['version'] === 'undefined') {
+    req.session.data['version'] = req.query.version;
+  }
+
+  if (req.session.data['primaryUserFirstName'] === 'undefined') {
+    req.session.data['primaryUserFirstName'] = req.query.primaryUserFirstName;
+  }
+
+  if (req.session.data['primaryUserLastName'] === 'undefined') {
+    req.session.data['primaryUserLastName'] = req.query.primaryUserLastName;
+  }
+
   if (!secretQuery) {
     if (env === 'production' || env === 'staging') {
       if (!username || !password) {
