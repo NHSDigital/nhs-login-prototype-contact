@@ -14,7 +14,7 @@ const sessionInMemory = require('express-session')
 dotenv.config()
 
 // Local dependencies
-const authentication = require('./middleware/authentication');
+// const authentication = require('./middleware/authentication');
 const automaticRouting = require('./middleware/auto-routing');
 const config = require('./app/config');
 const locals = require('./app/locals');
