@@ -71,15 +71,19 @@
       </div>
 -->
       <h2>Add a person to your NHS login</h2>
-      <p>You can connect your NHS login with another person. You can add services to that person and allow them to access services on your behalf </p>
-      <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/add-delegate/delegate-preflight">Add a person to your NHS login</a></p>
+      <p>You can connect another person to your NHS login. You can then choose which services they can access on your behalf.</p>
+      
+      {% if data.version === 'v1' %}
+            <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/{{ data.version or 'v1' }}/add-delegate/delegate-preflight">Add a person to your NHS login</a></p>
+      {% elif data.version === 'v2' %}
+            <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/{{ data.version or 'v2' }}/service/select-single-service">Add a person to your NHS login</a></p>
+      {% else %}
+            <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/v1/add-delegate/delegate-preflight">Add a person to your NHS login</a></p>
+      {% endif %}
 
       <h2>Remove access</h2>
-      <p>You can remove a person from your NHS login or you can remove access to certain services.</p>
-      <p>If you need to remove access to a person or remove a single service then you will need to <a href="">contact the helpdesk</a></p>
+      <p>You can remove a person from your NHS login, or you can remove their access to services. If you need to remove access to a person or remove a single service, then you will need to <a href="">contact the helpdesk.</a></p>
       
-      <!--<p><a href="">Remove services from another person</a></p>
-      <p><a href="">Remove a person from your NHS login</a></p>-->
     </div>
     </div>
 
