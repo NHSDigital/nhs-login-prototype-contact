@@ -139,7 +139,7 @@ if (!sessionDataDefaultsFileExists) {
 // Check if the app is documentation only
 if(onlyDocumentation !== 'true') {
   // Require authentication if not
-  app.use(authentication);
+  // app.use(authentication);
 }
 
 // Local variables
