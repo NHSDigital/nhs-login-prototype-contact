@@ -24,7 +24,7 @@
 
       <div class="nhsuk-table-responsive user-info-table">
         <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>
+          <caption class="nhsuk-table__caption">Your personal information</caption>
           <tbody class="nhsuk-table__body">
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell cell-left"><b>Email</b></td>
@@ -47,8 +47,19 @@
       </div>
 
       <h3 class="nhsuk-heading-l">Connected people</h3>
-        <p class="nhsuk-body-m">You can access a service and act on behalf of another person. You can also give access to another person to act on your behalf.</p>
-    <p class="nhsuk-body-m nhsuk-u-margin-top-4"><a href="delegated-access">Manage connected people</a></p>
+      
+      <h2>Add a person to your NHS login</h2>
+      <p>You can add a person to your NHS login and choose which services they can access on your behalf.</p>
+      <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/{{ data.version or 'v2' }}/service/select-single-service">Add a person to your NHS login</a></p>
+      
+      
+      <h2>Remove access</h2>
+      <p>You can remove a person from your NHS login, or you can remove their access to services. If you need to remove access to a person or remove a single service, then you will need to <a href="">contact the helpdesk.</a></p>
+      
+    </div>
+    </div>
+
+  </div>
 
 
       <h3 class="nhsuk-heading-l">Manage devices</h3>
