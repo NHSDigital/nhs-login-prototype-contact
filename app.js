@@ -14,7 +14,8 @@ const sessionInMemory = require('express-session')
 dotenv.config()
 
 // Local dependencies
-// const authentication = require('./middleware/authentication');
+const packageInfo = require('./package.json');
+const authentication = require('./middleware/authentication');
 const automaticRouting = require('./middleware/auto-routing');
 const config = require('./app/config');
 const locals = require('./app/locals');
@@ -56,7 +57,8 @@ var nunjucksConfig = {
 
 nunjucksConfig.express = app
 
-var nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig)
+var nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
+nunjucksAppEnv.addGlobal('version', packageInfo.version);
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv)
@@ -72,7 +74,7 @@ let sessionOptions = {
 }
 
 // Support session data in cookie or memory
-if (useCookieSessionStore === 'true') {
+if (useCookieSessionStore === 'true' && !onlyDocumentation) {
   app.use(sessionInCookie(Object.assign(sessionOptions, {
     cookieName: sessionName,
     proxy: true,
@@ -139,7 +141,7 @@ if (!sessionDataDefaultsFileExists) {
 // Check if the app is documentation only
 if(onlyDocumentation !== 'true') {
   // Require authentication if not
-  // app.use(authentication);
+  app.use(authentication);
 }
 
 // Local variables
@@ -161,10 +163,10 @@ if(onlyDocumentation == 'true') {
     // Redirect to the documentation pages if it is
     res.redirect('/docs');
   });
-} else {
-  // Else use custom application routes
-  app.use('/', routes);
 }
+
+// Use custom application routes
+app.use('/', routes);
 
 // Automatically route pages
 app.get(/^([^.]+)$/, function (req, res, next) {
@@ -186,6 +188,7 @@ if (useDocumentation || onlyDocumentation == 'true') {
     autoescape: true,
     express: documentationApp
   });
+  nunjucksAppEnv.addGlobal('version', packageInfo.version);
 
   // Add Nunjucks filters
   utils.addNunjucksFilters(nunjucksAppEnv)
