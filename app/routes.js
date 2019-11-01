@@ -27,8 +27,6 @@ router.get('/account/v2', function (req, res) {
   res.render('account/v2/index')
 });
 
-<<<<<<< HEAD
-=======
 
 // Dev Mode
 
@@ -51,4 +49,3 @@ function devModeRoute(req, res, next) {
 
 router.get("/*", devModeRoute);
 router.get("/", devModeRoute);
->>>>>>> 0ae83a044094636def2509be0930456e7cc7259b

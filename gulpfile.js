@@ -98,6 +98,7 @@ function startBrowserSync(done){
     open: false,
     notify: true,
     watch: true,
+    logLevel: 'debug',
   }, done);
   gulp.watch("public/**/*.*").on("change", reload);
 }
