@@ -59,5 +59,11 @@
         })}}
       {% endblock %}
 
-    {% block bodyEnd %}{% endblock %}
+    {% if data['devMode'] %}
+      {% include "includes/devmode.html" %}
+    {% endif %}
+
+    {% block bodyEnd %}
+
+    {% endblock %}
 </html>
