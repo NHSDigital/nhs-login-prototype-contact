@@ -24,7 +24,7 @@
 
       <div class="nhsuk-table-responsive user-info-table">
         <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">NHS login profile information</caption>
+          <caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>
           <tbody class="nhsuk-table__body">
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell cell-left"><b>Email</b></td>
@@ -46,7 +46,8 @@
 
       </div>
 
-      <h3 class="nhsuk-heading-l">Manage devices</h3>
+      <h3 class="nhsuk-heading-l">Security</h3>
+      <h4 class="nhsuk-heading-s">Remembered devices</h4>
         <p class="nhsuk-body-m">You have asked us not to send a security code when you use NHS login on these devices.</p>
       <div class="nhsuk-table-responsive user-info-table">
         <table class="nhsuk-table">
@@ -78,11 +79,40 @@
         </table>
       </div>
 
+      <h4 class="nhsuk-heading-s">Recovery methods</h4>
+
+      <p class="nhsuk-body-m">We can use these ways to help us make sure that it's you logging in to your NHS login. We can also use these to contact you if there's suspicious activity on your NHS login.</p>
+      <div class="nhsuk-table-responsive user-info-table">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Recovery methods</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row row-responsive">
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left"><b>Recovery email</b></td>
+              <td class="nhsuk-table__cell">liam.kingston@recoveryemail.com</td>
+              <td class="nhsuk-table__cell cell-right"><a href="security/change/recovery-enter-password">Change email</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left"><b>Recovery email</b></td>
+              <td class="nhsuk-table__cell">You don't have a recovery email</td>
+              <td class="nhsuk-table__cell cell-right"><a href="security/add/recovery-enter-password">Add email</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     <h3 class="nhsuk-heading-l">Delete your NHS login</h3>
       <p class="nhsuk-body-m">You will need to enter your password to delete your NHS login.</p>
       <p class="nhsuk-body-m nhsuk-u-margin-top-4"><a href="delete-login">Delete NHS login</a></p>
 
     </div>
+
+    {% if devMode === "true" %}
+      <h1>Test</h1>
+    {% endif %}
 
   </div>
 

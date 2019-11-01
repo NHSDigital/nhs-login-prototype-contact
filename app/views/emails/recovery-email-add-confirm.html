@@ -1,0 +1,24 @@
+{% extends 'layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  Check your email
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Confirm your recovery email address
+      </h1>
+
+      <p>Confirm this recovery email address for your NHS login.</p>
+      <p><a href="/account/v6/security/add/recovery-email-confirmed" class="nhsuk-button">Confirm email address</a></p>
+      <p>If nothing happens when you click the button, try this link instead. You might need to copy and paste it into an internet browser:</p>
+      <p><a href="/account/v6/security/add/recovery-email-confirmed">https://manage-nhs-login.herokuapp.com/account/v6/security/add/recovery-email-confirmed</a></p>
+      <p>If you did not try to set up an NHS login using this email address, then ignore this email. We will delete your information after 48 hours.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

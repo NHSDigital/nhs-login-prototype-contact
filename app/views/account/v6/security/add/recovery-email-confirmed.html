@@ -1,0 +1,26 @@
+{% extends 'layouts/layout-manage.html' %}
+
+{% block pageTitle %}
+  Your email address has been changed
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Add a recovery email address</span>
+      <h1 class="nhsuk-fieldset__legend--l">
+          Recovery email address added
+      </h1>
+      <p>You have added {{ data['user-email-recovery'] }} as your recovery email address.</p>
+
+      {{ backLink({
+        "href": "../index",
+        "text": "Back to account settings",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

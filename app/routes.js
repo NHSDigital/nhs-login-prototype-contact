@@ -26,3 +26,4 @@ module.exports = router;
 router.get('/account/v2', function (req, res) {
   res.render('account/v2/index')
 });
+

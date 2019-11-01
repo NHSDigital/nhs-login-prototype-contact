@@ -1,0 +1,42 @@
+{% extends 'layouts/layout-manage.html' %}
+
+{% block pageTitle %}
+  Enter your new email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="recovery-check-email" method="post" class="form">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Add a recovery email address</span>
+            <h1 class="nhsuk-fieldset__heading">
+              Enter your recovery email address
+            </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <span class="nhsuk-hint">
+              We will send a link to your recovery email address. You will need to follow this link to confirm the email change.
+            </span>
+            <label class="nhsuk-label" for="email-code">
+              New email address
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-half" id="user-password" name="user-password" value="{{ data['user-password'] }}" type="password">
+          </div>
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+
+        {{ backLink({
+          "href": "/account/v6/index",
+          "text": "I do not want to add a recovery email address",
+          "classes": "nhsuk-u-margin-top-4"
+        }) }}
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}
