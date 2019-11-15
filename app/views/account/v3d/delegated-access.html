@@ -1,0 +1,109 @@
+{% extends 'layouts/layout-manage-access-v3c.html' %}
+
+{% block pageTitle %}
+  Manage your NHS login
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+  
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-xl">Connected people</h1>
+    </div>
+  </div>
+  <!--<div class="nhsuk-grid-row nhsuk-panel-group">
+    <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+      <div class="nhsuk-panel">
+        <h3 class="nhsuk-heading-xl">5</h3>
+        <p>People connected to you</p>
+        <a href="delegated-access-people">Manage</a>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+      <div class="nhsuk-panel">
+        <h3 class="nhsuk-heading-xl">10</h3>
+        <p>Services you manage on behalf of another person</p>
+        <a href="delegated-access-services">Manage</a>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+      <div class="nhsuk-panel">
+        <h3 class="nhsuk-heading-xl">5</h3>
+        <p>Services others people manage on your behalf</p>
+        <a href="delegated-access-services-by-others">Manage</a>
+      </div>
+    </div>
+  </div>-->
+  <!--<mark>need to sort out the spacing</mark>-->
+  <!--
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <h2>Activity</h2>
+      <p>something that explains what the next bit is</p>
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Account activity</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">What happened</th>
+              <th class="nhsuk-table__header" scope="col">When</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">you logged into NHS App</td>
+              <td class="nhsuk-table__cell ">Yesterday</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">You logged into myHealth</td>
+              <td class="nhsuk-table__cell ">2 Days ago</td>
+            </tr>
+            
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">You are now connected to Susan Smith - <a href="">manage services</a></td>
+              <td class="nhsuk-table__cell ">Last Week</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+-->
+      <h2>Add a person to your NHS login</h2>
+      <p>You can connect another person to your NHS login. You can then choose which services they can access on your behalf.</p>
+      
+      {% if data.version === 'v1' %}
+            <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/{{ data.version or 'v1' }}/add-delegate/delegate-preflight">Add a person to your NHS login</a></p>
+      {% elif data.version === 'v2' %}
+            <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/{{ data.version or 'v2' }}/service/select-single-service">Add a person to your NHS login</a></p>
+      {% else %}
+            <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/v1/add-delegate/delegate-preflight">Add a person to your NHS login</a></p>
+      {% endif %}
+
+      <h2>Remove access</h2>
+      <p>You can remove a person from your NHS login, or you can remove their access to services. If you need to remove access to a person or remove a single service, then you will need to <a href="">contact the helpdesk.</a></p>
+      
+    </div>
+    </div>
+
+  </div>
+
+
+
+   <!-- <div class="nhsuk-grid-column-three-quarters">
+
+      
+
+      <p>Nothing to see here</p>
+      <ul><li>maybe a list</li></ul>
+      <p>Add a question</p>
+      <p>some options</p>
+
+      <p><a class="nhsuk-button" href="" type="submit">Submit</a></p>  
+    </div>-->
+  </div>
+
+
+
+{% endblock %}
