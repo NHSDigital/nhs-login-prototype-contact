@@ -28,7 +28,12 @@
           <tbody class="nhsuk-table__body">
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell cell-left"><b>Email</b></td>
-              <td class="nhsuk-table__cell">jonkingston@gmail.com</td>
+              {% if data['user-email'] %}
+              <td class="nhsuk-table__cell">{{ data['user-email'] }}</td>
+                {% else %}
+              <td class="nhsuk-table__cell"><p style="margin: 0px;">jonkingston@gmail.com</p></td>
+                {% endif %}
+              </td>
               <td class="nhsuk-table__cell cell-right"><a href="email/email-change">Change email address</a></td>
             </tr>
             <tr class="nhsuk-table__row">
@@ -43,7 +48,6 @@
             </tr>
           </tbody>
         </table>
-
       </div>
 
       <h3 class="nhsuk-heading-l">Security</h3>
