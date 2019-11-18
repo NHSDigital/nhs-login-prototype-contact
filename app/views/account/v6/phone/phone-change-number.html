@@ -18,24 +18,24 @@
             </h1>
           </legend>
           <div class="nhsuk-form-group">
-            <span class="nhsuk-hint">
-              We will send a 6 digit security code to your new phone number.
-              </span>
-            <label class="nhsuk-label" for="phone-code">
-               New phone number
-            </label>
-            <input class="nhsuk-input nhsuk-u-width-one-half" id="phone-number" name="phone-number" value="{{ data['phone-number'] }}" type="text">
-          </div>
-        </fieldset>
-        <button class="nhsuk-button">Continue</button>
-      </form>
+      <p class="nhsuk-body-m nhsuk-hint">We will send a 6 digit security code to your new phone number.</p>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-10">
+          New phone number
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="new-number" name="new-number" type="number">
+      </div>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0 full-width" type="submit" href="phone-number-code">
+        Continue
+      </a>
 
       {{ backLink({
         "href": "../index",
         "text": "I do not want to change my phone number",
         "classes": "nhsuk-u-margin-top-7"
       }) }}
-
     </div>
 
   </div>
