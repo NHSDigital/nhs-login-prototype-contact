@@ -10,13 +10,13 @@
     <div class="nhsuk-grid-column-two-thirds">
       <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Change email address</span>
       <h1 class="nhsuk-fieldset__legend--l">
-          Email sent
+          <a style="text-decoration: none; color:#212b32" href="email-confirm">Email</a> sent
       </h1>
-      <p>Check {{ data['user-email'] }} to confirm your new email address. </p>
+      <p>Check {{ data['user-email'] }} to confirm your new email address.</p>
       <p>If you have not received an email, check your spam folder.</p>
 
       {{ backLink({
-        "href": "index",
+        "href": "../index",
         "text": "I do not want to change my email address",
         "classes": "nhsuk-u-margin-top-7"
       }) }}

@@ -1,0 +1,40 @@
+{% extends 'layouts/layout-manage.html' %}
+
+{% block pageTitle %}
+  Enter your password to change your email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-grid-column-two-thirds">
+  
+        <form action="email-enter" method="post" class="form">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <span class="nhsuk-hint  nhsuk-u-margin-bottom-2">Change email address</span>
+              <h1 class="nhsuk-fieldset__heading">
+                Enter your password
+              </h1>
+            </legend>
+            <div class="nhsuk-form-group">
+              <p class="nhsuk-body-m nhsuk-hint">We need to make sure it's you before you can change your email address.</p>
+              <label class="nhsuk-label" for="email-code">
+                Password
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-one-half" id="password" name="password" value="{{ data['user-email'] }}" type="text">
+            </div>
+          </fieldset>
+          <button class="nhsuk-button">Continue</button>
+        </form>
+  
+        {{ backLink({
+          "href": "../index",
+          "text": "I do not want to change my email address",
+          "classes": "nhsuk-u-margin-top-4"
+        }) }}
+  
+      </div>
+  
+    </div>
+{% endblock %}
