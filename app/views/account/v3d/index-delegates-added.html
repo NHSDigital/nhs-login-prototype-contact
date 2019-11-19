@@ -53,32 +53,51 @@
 
         <div class="nhsuk-table-responsive">
         <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">Connected people</caption>
+          <caption class="nhsuk-table__caption">People who can act on your behalf</caption>
+          <p>People who can act on your behalf</p>
           <thead class="nhsuk-table__head">
             <tr class="nhsuk-table__row">
               <th class="nhsuk-table__header" scope="col">Name</th>
               <th class="nhsuk-table__header" scope="col">Relationship</th>
               <th class="nhsuk-table__header" scope="col">Connected services</th>
-              <th class="nhsuk-table__header" scope="col"> </th>
+              <th class="nhsuk-table__header" scope="col">Actions</th>
               
             </tr>
           </thead>
           <tbody class="nhsuk-table__body">
             <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left"><b>Dave Smith</b></td>
+              <td class="nhsuk-table__cell cell-left"><b>{{ data.firstname or 'Bob' }} {{ data.lastname or 'Smith' }}</b></td>
               <td class="nhsuk-table__cell ">Brother</td>
               <td class="nhsuk-table__cell ">stepWell</td>
               <td class="nhsuk-table__cell "><a href="#">Remove</a></td>
+            </tr>
 
-            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+        <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">People you can act on behalf of</caption>
+          <p>People you can act on behalf of</p>
+          <thead class="nhsuk-table__head">
             <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left">Susan Smith</td>
-              <td class="nhsuk-table__cell ">Mother</td>
+              <th class="nhsuk-table__header" scope="col">Name</th>
+              <th class="nhsuk-table__header" scope="col">Relationship</th>
+              <th class="nhsuk-table__header" scope="col">Connected services</th>
+              <th class="nhsuk-table__header" scope="col">Actions</th>
+              
             </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
             <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left">John Smith</td>
-              <td class="nhsuk-table__cell ">Father</td>
+              <td class="nhsuk-table__cell cell-left"><b>{{ data.firstname or 'Bob' }} {{ data.lastname or 'Smith' }}</b></td>
+              <td class="nhsuk-table__cell ">Brother</td>
+              <td class="nhsuk-table__cell ">stepWell</td>
+              <td class="nhsuk-table__cell "><a href="#">Remove</a></td>
             </tr>
+
           </tbody>
         </table>
       </div>
