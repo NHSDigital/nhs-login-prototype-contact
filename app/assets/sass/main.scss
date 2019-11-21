@@ -8,6 +8,7 @@
 @import 'components/panel-confirmation';
 @import 'components/related-nav';
 @import 'components/dev-mode';
+@import 'components/details/macro.njk';
 
 // Add your extra styles here...
 
@@ -75,6 +76,16 @@
 	fill: #005DB8;
 }
 
+// delegate table styling
+
+.nhsuk-expander {
+	background: $color_nhsuk-white !important;
+}
+
+.nhsuk-details {
+	background: $color_nhsuk-white !important;
+}
+
 // index styling
 
 .nhsuk-expander.version-list {
@@ -83,7 +94,7 @@
   
   .nhsuk-details__summary {
 	background-color: #F0F4F5 !important;
-	padding: 0px !important;
+	padding: 5px !important;
   }
   
   #details-content-0 {
