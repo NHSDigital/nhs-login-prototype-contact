@@ -8,7 +8,10 @@
 @import 'components/panel-confirmation';
 @import 'components/related-nav';
 @import 'components/dev-mode';
+<<<<<<< HEAD
 @import 'components/details';
+=======
+>>>>>>> parent of d15e7eb... trying to make details white background
 
 // Add your extra styles here...
 
@@ -76,16 +79,6 @@
 	fill: #005DB8;
 }
 
-// delegate table styling
-
-.nhsuk-expander {
-	background: $color_nhsuk-white !important;
-}
-
-.nhsuk-details {
-	background: $color_nhsuk-white !important;
-}
-
 // index styling
 
 .nhsuk-expander.version-list {
@@ -94,7 +87,7 @@
   
   .nhsuk-details__summary {
 	background-color: #F0F4F5 !important;
-	padding: 5px !important;
+	padding: 0px !important;
   }
   
   #details-content-0 {
