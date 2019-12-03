@@ -59,24 +59,55 @@
             <thead class="nhsuk-table__head">
               <tr class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="col">Person</th>
+                <th class="nhsuk-table__header" scope="col">Relationship</th>
+                <th class="nhsuk-table__header" scope="col">Service</th>
+                <th class="nhsuk-table__header" scope="col">Status</th>
+                <th class="nhsuk-table__header" scope="col">Actions</th>
+
+
               </tr>
             </thead>
             <tbody class="nhsuk-table__body">
-              
               <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Alexandra Wilson</td>
+                <td class="nhsuk-table__cell">Name</td>
+                <td class="nhsuk-table__cell ">Husband</td>
+                <td class="nhsuk-table__cell "><a href="#">stepWell</a></td>
+                <td class="nhsuk-table__cell ">active</td>
+                <td class="nhsuk-table__cell "><a href="#">Edit</a><br><a href="#">Update relationship</a><br><a href="#">Add to another service</a><br><a href="#">Delete</a></td>
               </tr>
             </tbody>
           </table>
         </div>
         <br>
                 <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/{{ data.version or 'v4' }}/service/select-single-service">Add a person to your NHS login</a></p>
-        <p><a href="#">Contact the helpdesk</a> if you want to remove a person from your NHS login, or if you want to remove their access to a service.</p>
-
+          <p><a href="#">Remove all</a></p>
       </div>  
         
+   
+      <div class="nhsuk-table__panel-with-heading-tab">
+        <h3 class="nhsuk-table__heading-tab">People who you can act on behalf of</h3>
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">People who you can act on behalf of</caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Person</th>
+                <th class="nhsuk-table__header" scope="col">Service</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">NAME</td>
+                <td class="nhsuk-table__cell ">stepWell</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
 
-
+      </div>  
+           
+      
 
 
       <h3 class="nhsuk-heading-l">Manage devices</h3>
