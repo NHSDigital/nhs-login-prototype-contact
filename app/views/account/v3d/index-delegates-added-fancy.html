@@ -1,14 +1,14 @@
 {% extends 'layouts/layout-manage-access-v3b.html' %}
 
 {% block pageTitle %}
-  Manage your NHS login
+  Your NHS login settings
 {% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-      <h1 class="nhsuk-heading-xl">Manage your NHS login</h1>
+      <h1 class="nhsuk-heading-xl">Your NHS login settings</h1>
               <svg class="nhsuk-icon nhsuk-icon__user nhsuk-icon--size-50 nhsuk-u-margin-right-2" xmlns="http://www.w3.org/2000/svg" viewBox="6 0 20 24" width="32" aria-hidden="true">
           <path class="user-icon" d="M16,2a10,10,0,0,0-1.09,19.93H15A6,6,0,0,0,16,22a6,6,0,0,0,1-.06h.05A10,10,0,0,0,16,2Zm5.4,15.88a6.45,6.45,0,0,0,.14-.88,5.3,5.3,0,0,0-2.4-4.14,4.89,4.89,0,0,1-6.28,0A5.3,5.3,0,0,0,10.46,17a6.45,6.45,0,0,0,.14.88,8,8,0,1,1,10.8,0Z"/>
           <circle class="user-icon" cx="16" cy="9" r="3"/>
@@ -51,36 +51,36 @@
       
         <!--<p>Currently, you do not have any people connected to your NHS login.</p>-->
 
-        <h2>People who can act on your behalf</h2>
+        <h2 class="nhsuk-heading-m">People who can act on your behalf</h2>
 
         <div class="nhsuk-expander-group">
 <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary" style="background: white !important; padding: 20px !important">
               <span class="nhsuk-details__summary-text">
-              Lydia Teebay
+              Lydia Smith
               </span>
             </summary>
 
-            <div class="nhsuk-details__text">
+            <div class="nhsuk-details__text" style="padding: 16px !important">
     <table>
       <tbody>
 
         <tr>
           <th>Status</th>
           <td>active</td>
-          <td><i>expires in 202 days</i></td>
+          <td><i>expiry: 42 days</i></td>
         </tr>
 
         <tr>
           <th>Relationship</th>
           <td>sister</td>
-          <td><a href="#">update relationship</a></td>
+          <td><a href="#">update</a></td>
         </tr>
 
         <tr>
-          <th>Services</th>
-          <td>stepWell<br>NHS App</td>
-          <td><a href="#">remove</a><br><a href="#">remove</a></td>
+          <th>Website or app</th>
+          <td>stepWell</td>
+          <td><a href="#">remove</a></td>
         </tr>
 
       </tbody>
@@ -92,7 +92,7 @@
       <path d="M0 0h24v24H0z" fill="none"></path>
       <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
     </svg>
-    <span>Add Lydia to another service</span>
+    <span>Add Lydia to another website or app</span>
   </a>
 </div>
         </details>
@@ -100,7 +100,7 @@
           <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary" style="background: white !important; padding: 20px !important">
               <span class="nhsuk-details__summary-text">
-              Jon Heron
+              Bob Smith
               </span>
             </summary>
 
@@ -110,20 +110,20 @@
 
         <tr>
           <th>Status</th>
-          <td>active</td>
-          <td><i>expires in 209 days</i></td>
+          <td>! expired</td>
+          <td><a href="#">update</a></td>
         </tr>
 
         <tr>
           <th>Relationship</th>
           <td>brother</td>
-          <td><a href="#">update relationship</a></td>
+          <td><a href="#">update</a></td>
         </tr>
 
         <tr>
-          <th>Services</th>
-          <td>stepWell<br>NHS App</td>
-          <td><a href="#">remove</a><br><a href="#">remove</a></td>
+          <th>Website or app</th>
+          <td>stepWell</td>
+          <td><a href="#">remove</a></td>
         </tr>
 
       </tbody>
@@ -135,7 +135,7 @@
       <path d="M0 0h24v24H0z" fill="none"></path>
       <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
     </svg>
-    <span>Add Jon to another service</span>
+    <span>Add Bob to another website or app</span>
   </a>
 </div>
 
@@ -143,43 +143,44 @@
         </details>
 
         <br>
-                <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/{{ data.version or 'v4' }}/service/select-single-service">Add a person to your NHS login</a></p>
+    <p><a class="nhsuk-button nhsuk-u-margin-bottom-0" href="https://delegated-access.herokuapp.com/{{ data.version or 'v4' }}/service/select-single-service">Add a person to your NHS login</a></p>
 
       </div>  
         
           <p><a href="#">Remove all people</a></p>
 
+        <hr>
 
 
-        <h2>People who you can act on behalf of</h2>
-        <div class="nhsuk-expander-group">
+        <h2 class="nhsuk-heading-m">People who you can act on behalf of</h2>
+<div class="nhsuk-expander-group">
 <details class="nhsuk-details nhsuk-expander">
-            <summary class="nhsuk-details__summary">
+            <summary class="nhsuk-details__summary" style="background: white !important; padding: 20px !important">
               <span class="nhsuk-details__summary-text">
-              Alice Smith
+              Martin Smith
               </span>
             </summary>
 
-            <div class="nhsuk-details__text">
+            <div class="nhsuk-details__text" style="padding: 16 0 0 0 !important;">
     <table>
       <tbody>
 
         <tr>
           <th>Status</th>
           <td>active</td>
-          <td><i>expires in 202 days</i></td>
+          <td><i>expiry: 46 days</i></td>
         </tr>
 
         <tr>
-          <th>Your relationship</th>
-          <td>mother</td>
-          <td><a href="#">update relationship</a></td>
+          <th>Relationship</th>
+          <td>father</td>
+          <td><a href="#">update</a></td>
         </tr>
 
         <tr>
-          <th>Services</th>
-          <td>stepWell<br>NHS App<br>Patient Access</td>
-          <td><a href="#">remove</a><br><a href="#">remove</a><br><a href="#">remove</a></td>
+          <th>Website or app</th>
+          <td>stepWell</td>
+          <td><a href="#">remove</a></td>
         </tr>
 
       </tbody>
@@ -191,16 +192,62 @@
       <path d="M0 0h24v24H0z" fill="none"></path>
       <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
     </svg>
-    <span>Stop acting on behalf of Alice in all services</span>
+    <span>Stop acting on behalf of Martin in all websites or apps</span>
   </a>
 </div>
         </details>
+
+          <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary" style="background: white !important; padding: 20px !important">
+              <span class="nhsuk-details__summary-text">
+              Bob Smith
+              </span>
+            </summary>
+
+<div class="nhsuk-details__text">
+    <table>
+      <tbody>
+
+        <tr>
+          <th>Status</th>
+          <td>! expired</td>
+          <td><a href="#">update</a></td>
+        </tr>
+
+        <tr>
+          <th>Relationship</th>
+          <td>brother</td>
+          <td><a href="#">update</a></td>
+        </tr>
+
+        <tr>
+          <th>Website or app</th>
+          <td>stepWell</td>
+          <td><a href="#">remove</a></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="nhsuk-action-link">
+  <a class="nhsuk-action-link__link" href="#">
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    </svg>
+    <span>Stop acting on behalf of Bob in all websites or apps</span>
+  </a>
+</div>
+
+  </div>
+        </details>
         <br> 
         
-          <p><a href="#">Stop acting on behalf of everyone in all services</a></p>
+          <p><a href="#">Stop acting on behalf of everyone in all websites or apps</a></p>
 
     </div>
 
+      <hr>
        <!-- <p><a href="#">Contact the helpdesk</a> if you want to remove a person from your NHS login, or if you want to remove their access to a service.</p>
        -->
 
