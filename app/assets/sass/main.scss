@@ -7,6 +7,7 @@
 // Components that are not in the NHS.UK frontend library
 @import 'components/panel-confirmation';
 @import 'components/related-nav';
+@import 'components/devmode';
 
 // Add your extra styles here...
 
@@ -80,15 +81,9 @@
 	background-color: #F0F4F5 !important;
   }
   
-  .nhsuk-details__summary {
+  .nhsuk-details__summary.index {
 	background-color: #F0F4F5 !important;
 	padding: 0px !important;
-  }
-  
-  #details-content-0 {
-	@include mq($from: mobile) {
-	  padding: nhsuk-spacing(0) nhsuk-spacing(0) nhsuk-spacing(0) nhsuk-spacing(0) !important;
-	}
   }
 
 @media (max-width: 385px) {

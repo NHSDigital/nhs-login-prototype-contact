@@ -94,10 +94,14 @@
             </tr>
           </thead>
           <tbody class="nhsuk-table__body">
-              {% if data['devMode'] %}
+              {% if data['has-recovery-email'] %}
               <tr class="nhsuk-table__row">
                   <td class="nhsuk-table__cell cell-left"><b>Recovery email</b></td>
-                  <td class="nhsuk-table__cell">liam.kingston@recover.com</td>
+                  {% if data['recovery-email'] %}
+                  <td class="nhsuk-table__cell">{{ data['recovery-email'] }}</td>
+                    {% else %}
+                  <td class="nhsuk-table__cell"><p style="margin: 0px;">liam.kingston@recover.com</p></td>
+                  {% endif %}
                   <td class="nhsuk-table__cell cell-right"><a href="security/change/recovery-enter-password">Change email</a></td>
                 </tr>
               {% else %}
@@ -114,6 +118,25 @@
     <h3 class="nhsuk-heading-l">Delete your NHS login</h3>
       <p class="nhsuk-body-m">You will need to enter your password to delete your NHS login.</p>
       <p class="nhsuk-body-m nhsuk-u-margin-top-4"><a href="delete/delete-login">Delete NHS login</a></p>
+
+
+
+      {% if data['devMode'] %}
+      <details class="nhsuk-details dev-mode" role="group">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+          <span class="nhsuk-details__summary-text">
+            Continue with testing scenario
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Recovery</p>
+          <ul>
+            <li><a href="{{ params }}?has-recovery-email=1">User has recovery email</a></li>
+          </ul>
+        </div>
+      </details>
+
+      {% endif %}
 
     </div>
 
