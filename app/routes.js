@@ -42,7 +42,7 @@ function devModeRoute(req, res, next) {
       console.log('devmode not detected');
     }
   } else {
-    console.log('data found and set to ' +  req.session.data['devMode'] )
+    console.log('data found and set to ' + req.session.data['devMode'])
   }
   next()
 }
