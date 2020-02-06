@@ -1,0 +1,203 @@
+{% extends 'layouts/layout-manage-v7.html' %}
+
+{% block pageTitle %}
+  Your contact details
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+      <h1 class="nhsuk-heading-xl">Your contact details</h1>
+        <svg class="nhsuk-icon nhsuk-icon__user nhsuk-icon--size-50 nhsuk-u-margin-right-2" xmlns="http://www.w3.org/2000/svg" viewBox="6 0 20 24" width="32" aria-hidden="true">
+          <path class="user-icon" d="M16,2a10,10,0,0,0-1.09,19.93H15A6,6,0,0,0,16,22a6,6,0,0,0,1-.06h.05A10,10,0,0,0,16,2Zm5.4,15.88a6.45,6.45,0,0,0,.14-.88,5.3,5.3,0,0,0-2.4-4.14,4.89,4.89,0,0,1-6.28,0A5.3,5.3,0,0,0,10.46,17a6.45,6.45,0,0,0,.14.88,8,8,0,1,1,10.8,0Z"/>
+          <circle class="user-icon" cx="16" cy="9" r="3"/>
+        </svg>
+        <div class="account-name-link-2">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Jonathan Liam Kingston</h2>
+          <span class="nhsuk-hint">
+            NHS number: 999 000 8888
+          </span>
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-column-three-quarters">
+      
+      <p class="nhsuk-body-m">
+        These are the contact details that the NHS holds for you.<br />
+        *** Some information about GPs and other services possibly holding different information about the patient ***
+      </p>
+      <p class="nhsuk-body-m">
+        You can change or remove certain details to ensure that they are up to date.
+      </p>
+
+      <div class="nhsuk-table-responsive">
+
+        <h2>Your main contact details</h2>
+
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption"></caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header nhsuk-u-width-one-quarter"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+
+              <td class="nhsuk-table__cell cell-left">
+                <b>Address</b>
+              </td>
+              <td class="nhsuk-table__cell">
+                10 Long Lane<br />
+                Leeds<br />
+                West Yorkshire<br />
+                LS11 2AB
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="address/address-change" class="nhsuk-button nhsuk-button--secondary">Change</a>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                <b>Phone</b>
+              </td>
+              <td class="nhsuk-table__cell">
+                07712345678
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change</a>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row no-bottom-border">
+              <td class="nhsuk-table__cell cell-left">
+                <b>Email address</b>
+              </td>
+              {% if data['user-email'] %}
+              <td class="nhsuk-table__cell">{{ data['user-email'] }}</td>
+                {% else %}
+              <td class="nhsuk-table__cell">
+                jonkingston@gmail.com
+              </td>
+              {% endif %}
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="email/email-enter" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change</a>
+              </td>
+              <tr>
+                <td class="nhsuk-table__cell cell-left" colspan="3">
+                  <span class="nhsuk-hint">
+                    This is the same email address that you're using for <a href="manage-login">your NHS login</a>.
+                  </span>
+                </td>
+              </tr>
+            </tr>
+
+            <!--<tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                <b>NHS Login password</b>
+              </td>
+              <td class="nhsuk-table__cell">
+                &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br />
+                <a href="password/password-change">Change</a>
+              </td>
+              </td>
+              <td class="nhsuk-table__cell cell-right"></td>
+            </tr>-->
+            
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <div class="nhsuk-table-responsive">
+
+        <h2>Your other contact details</h2>
+
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption"></caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header nhsuk-u-width-one-quarter"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+
+            
+
+            <tr class="nhsuk-table__row">
+
+              <td class="nhsuk-table__cell cell-left">
+                <b>Work address</b>
+              </td>
+              <td class="nhsuk-table__cell">
+                ACME Limited<br />
+                Bradford<br />
+                West Yorkshire<br />
+                BD10 2LP
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="phone/phone-remove" class="nhsuk-button nhsuk-button-red">Remove</a>
+                <a href="address/address-change" class="nhsuk-button nhsuk-button--secondary">Change</a>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                <b>Work phone</b>
+              </td>
+              <td class="nhsuk-table__cell">
+                07712345678
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="phone/phone-remove" class="nhsuk-button nhsuk-button-red">Remove</a>
+                <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change</a>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                <b>Email address</b>
+              </td>
+              <td class="nhsuk-table__cell">
+                jonnyk@hotmail.com
+              </td>
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="" class="nhsuk-button nhsuk-button-red">Remove</a>
+                <a href="email/email-enter" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change</a>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row no-bottom-border">
+
+              <td class="nhsuk-table__cell cell-left" colspan="2">
+                <a href="#">Add more contact details</a>
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="#" class="nhsuk-button">Add<span class="nhsuk-u-visually-hidden"> more contact details</span></a>
+              </td>
+
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+
+{% endblock %}
+

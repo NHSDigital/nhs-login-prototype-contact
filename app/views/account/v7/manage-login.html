@@ -1,0 +1,167 @@
+{% extends 'layouts/layout-manage-v7.html' %}
+
+{% block pageTitle %}
+  Your NHS Login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-xl">Your NHS Login</h1>
+    </div>
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <!--<p class="nhsuk-body-m">You can change your email and phone number.</p>-->
+
+      <div class="nhsuk-table-responsive user-info-table">
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption">Manage your NHS login details</caption>
+
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header nhsuk-u-width-one-quarter"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header"></th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                <b>Email address</b>
+              </td>
+              {% if data['user-email'] %}
+              <td class="nhsuk-table__cell cell-left">{{ data['user-email'] }}</td>
+                {% else %}
+              <td class="nhsuk-table__cell cell-left">
+                jonkingston@gmail.com
+              </td>
+              {% endif %}
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="email/email-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> password</span></a>
+              </td>
+            </tr>
+
+            <!--<tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left" colspan="3">
+
+                {% from 'details/macro.njk' import details %}
+
+                {{ details({
+                  "text": "Why can't I change my login email?",
+                  "HTML": "
+                  <p>Some information to help the patient.</p>
+                  "
+                }) }}
+
+              </td>
+            </tr>-->
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left" style="vertical-align: top;">
+                <b>Password</b>
+              </td>
+              <td class="nhsuk-table__cell cell-left">
+                &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="password/password-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> password</span></a>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      
+      <h4 class="nhsuk-heading-l">Remembered devices</h4>
+      <p class="nhsuk-body-m">When you use NHS login on these devices we won't send you a security code by text message.</p>
+      
+      <div class="nhsuk-table-responsive user-info-table">
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption">Devices registered to your NHS login</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header cell-left">Device name</th>
+              <th class="nhsuk-table__header">Date added</th>
+              <th class="nhsuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left"><b>Samsung Galaxy S7 Edge</b></td>
+              <td class="nhsuk-table__cell">18 February 2019</td>
+              <td class="nhsuk-table__cell cell-right">
+                <form action="device-remove" method="POST">
+                  <input type="hidden" name="device" value="Samsung Galaxy S7 Edge">
+                  <button type="submit" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> Samsung Galaxy S7 Edge</span></button>
+                </form>
+              </td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left"><b>iPad Pro</b></td>
+              <td class="nhsuk-table__cell">25 March 2019</td>
+              <td class="nhsuk-table__cell cell-right">
+                <form action="device-remove" method="POST">
+                  <input type="hidden" name="device" value="iPad Pro">
+                  <button type="submit" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> iPad Pro</span></button>
+                </form>
+              </td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left"><b>Windows PC</b></td>
+              <td class="nhsuk-table__cell">4 April 2019</td>
+              <td class="nhsuk-table__cell cell-right"><form action="device-remove" method="POST">
+                  <input type="hidden" name="device" value="Windows PC">
+                  <button type="submit" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> Windows PC</span></button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <h4 class="nhsuk-heading-l">Recovery details</h4>
+
+      <p class="nhsuk-body-m">We'll use these contact details to help you if you have problems logging in. We can also use these to contact you if there's suspicious activity on your NHS login.</p>
+
+      <div class="nhsuk-table-responsive user-info-table">
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption">Recovery methods</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header"></th>
+              <th class="nhsuk-table__header"></th>
+              <th class="nhsuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+              {% if data['devMode'] %}
+              <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left"><b>Recovery email</b></td>
+                  <td class="nhsuk-table__cell">liam.kingston@recover.com</td>
+                  <td class="nhsuk-table__cell cell-right"><a href="security/change/recovery-enter-password" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> recovery email</span></a></td>
+                </tr>
+              {% else %}
+              <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left"><b>Recovery email</b></td>
+                  <td class="nhsuk-table__cell">You don't have a recovery email</td>
+                  <td class="nhsuk-table__cell cell-right"><a href="security/add/recovery-enter-password" class="nhsuk-button">Add<span class="nhsuk-u-visually-hidden"> recovery email</span></a></td>
+                </tr>
+            {% endif %} 
+          </tbody>
+        </table>
+      </div>
+
+    <h3 class="nhsuk-heading-l">Delete your NHS login</h3>
+    <p class="nhsuk-body-m">You will need to enter your password to delete your NHS login.</p>
+    <p class="nhsuk-body-m nhsuk-u-margin-top-4"><a href="delete/delete-login" class="nhsuk-button nhsuk-button--secondary">Start<span class="nhsuk-u-visually-hidden"> to delete your account</span></a></p>
+
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -57,6 +57,11 @@
 	top: -17px;
 }
 
+.account-name-link-2 {
+	display: inline-block;
+	position: relative;
+}
+
 .nhsuk-table-responsive.user-info-table {
 	margin-top: 0px;
 }
@@ -80,6 +85,7 @@
 	background-color: #F0F4F5 !important;
   }
   
+/*### Commented out by Alex for v7 ###
   .nhsuk-details__summary {
 	background-color: #F0F4F5 !important;
 	padding: 0px !important;
@@ -90,6 +96,7 @@
 	  padding: nhsuk-spacing(0) nhsuk-spacing(0) nhsuk-spacing(0) nhsuk-spacing(0) !important;
 	}
   }
+*/
 
 @media (max-width: 385px) {
 	tr,td {
@@ -113,4 +120,14 @@
 	td:nth-child(3) {
 		padding: nhsuk-spacing(0) nhsuk-spacing(1) nhsuk-spacing(2) nhsuk-spacing(0)
 	}
+}
+
+.align-top {
+	th,td{
+		vertical-align: top;
+	}
+}
+
+.no-bottom-border td{
+	border-bottom: none;
 }

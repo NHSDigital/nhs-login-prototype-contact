@@ -1,0 +1,27 @@
+{% extends 'layouts/layout-manage-v7.html' %}
+
+{% block pageTitle %}
+  Your email address has been changed
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Change email address</span>
+      <h1 class="nhsuk-fieldset__legend--l">
+          <a style="text-decoration: none; color:#212b32" href="email-confirm">Email</a> sent
+      </h1>
+      <p>Check {{ data['user-email'] }} to confirm your new email address.</p>
+      <p>If you have not received an email, check your spam folder.</p>
+
+      {{ backLink({
+        "href": "../index",
+        "text": "Back to: My NHS login settings",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}
