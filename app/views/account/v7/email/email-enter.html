@@ -9,22 +9,20 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="email-change" method="post" class="form">
+      <form action="email-sent" method="post">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <span class="nhsuk-hint  nhsuk-u-margin-bottom-2">Change email address</span>
             <h1 class="nhsuk-fieldset__heading">
               Enter your new email address
             </h1>
           </legend>
           <div class="nhsuk-form-group">
-            <span class="nhsuk-hint">
-              We will send a link to your new email address. You will need to follow this link to confirm the email change.
+            <p class="nhsuk-body-m">We will send a link to your new email address. You will need to follow this link to confirm the email change.</p>
             </span>
             <label class="nhsuk-label" for="email-code">
               New email address
             </label>
-            <input class="nhsuk-input nhsuk-u-width-one-half" id="user-email" name="user-email" value="{{ data['user-email'] }}" type="text">
+            <input class="nhsuk-input nhsuk-input--width-20" id="user-email" name="user-email" value="{{ data['user-email'] }}" type="email">
           </div>
         </fieldset>
         <button class="nhsuk-button">Continue</button>
@@ -32,7 +30,7 @@
 
       {{ backLink({
         "href": "../index",
-        "text": "I do not want to change my email address",
+        "text": "I don't want to change my email address",
         "classes": "nhsuk-u-margin-top-4"
       }) }}
 

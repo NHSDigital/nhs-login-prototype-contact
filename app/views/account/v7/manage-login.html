@@ -1,14 +1,14 @@
 {% extends 'layouts/layout-manage-v7.html' %}
 
 {% block pageTitle %}
-  Your NHS Login
+  Your NHS login
 {% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-      <h1 class="nhsuk-heading-xl">Your NHS Login</h1>
+      <h1 class="nhsuk-heading-xl">Your NHS login</h1>
     </div>
 
     <div class="nhsuk-grid-column-three-quarters">
@@ -27,6 +27,7 @@
           </thead>
 
           <tbody class="nhsuk-table__body">
+            
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell cell-left">
                 <b>Email address</b>
@@ -41,6 +42,19 @@
               </td>
               <td class="nhsuk-table__cell cell-right">
                 <a href="email/email-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> password</span></a>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                <b>Mobile phone</b>
+              </td>
+              <td class="nhsuk-table__cell cell-left">
+                07712345678
+              </td>
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> mobile phone</span></a>
               </td>
             </tr>
 
@@ -82,7 +96,7 @@
       <div class="nhsuk-table-responsive user-info-table">
         <table class="nhsuk-table align-top">
           <caption class="nhsuk-table__caption">Devices registered to your NHS login</caption>
-          <thead class="nhsuk-table__head">
+          <thead class="nhsuk-table__head nhsuk-u-hide-385">
             <tr class="nhsuk-table__row">
               <th class="nhsuk-table__header cell-left">Device name</th>
               <th class="nhsuk-table__header">Date added</th>
@@ -131,13 +145,6 @@
       <div class="nhsuk-table-responsive user-info-table">
         <table class="nhsuk-table align-top">
           <caption class="nhsuk-table__caption">Recovery methods</caption>
-          <thead class="nhsuk-table__head">
-            <tr class="nhsuk-table__row">
-              <th class="nhsuk-table__header"></th>
-              <th class="nhsuk-table__header"></th>
-              <th class="nhsuk-table__header"></th>
-            </tr>
-          </thead>
           <tbody class="nhsuk-table__body">
               {% if data['devMode'] %}
               <tr class="nhsuk-table__row">

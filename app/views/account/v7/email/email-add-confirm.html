@@ -1,0 +1,24 @@
+{% extends 'layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  Confirm your email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Confirm your email address
+      </h1>
+
+      <p><a href="email-add-done" class="nhsuk-button">Confirm email address</a></p>
+      <p>If nothing happens when you click the button, try this link instead:</p>
+      <p><a href="email-add-done">http://login.nhs.uk/create-account/v16/confirm-email</a></p>
+      <p>You might need to copy and paste it into an internet browser.</p> 
+      <p>If you did not try to set up an NHS login using this email address, then ignore this email. We will delete your information after 12 hours.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

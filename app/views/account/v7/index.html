@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
@@ -57,57 +58,83 @@
                 LS11 2AB
               </td>
               <td class="nhsuk-table__cell cell-right">
-                <a href="address/address-change" class="nhsuk-button nhsuk-button--secondary">Change</a>
+                <a href="address/address-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> address</span></a>
               </td>
             </tr>
 
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left">
-                <b>Phone</b>
-              </td>
-              <td class="nhsuk-table__cell">
-                07712345678
-              </td>
-              <td class="nhsuk-table__cell cell-right">
-                <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change</a>
-              </td>
-            </tr>
 
-            <tr class="nhsuk-table__row no-bottom-border">
-              <td class="nhsuk-table__cell cell-left">
-                <b>Email address</b>
-              </td>
-              {% if data['user-email'] %}
-              <td class="nhsuk-table__cell">{{ data['user-email'] }}</td>
-                {% else %}
-              <td class="nhsuk-table__cell">
-                jonkingston@gmail.com
-              </td>
-              {% endif %}
-              </td>
-              <td class="nhsuk-table__cell cell-right">
-                <a href="email/email-enter" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change</a>
-              </td>
-              <tr>
-                <td class="nhsuk-table__cell cell-left" colspan="3">
-                  <span class="nhsuk-hint">
-                    This is the same email address that you're using for <a href="manage-login">your NHS login</a>.
-                  </span>
+            {% if data['has-phone'] %}
+
+              <tr class="nhsuk-table__row no-bottom-border">
+                <td class="nhsuk-table__cell cell-left">
+                  <b>Phone</b>
+                </td>
+                <td class="nhsuk-table__cell">
+                  07712345678
+                </td>
+                <td class="nhsuk-table__cell cell-right">
+                  <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change<span class="nhsuk-u-visually-hidden"> phone number</span></a>
+                </td>
+                <tr>
+                  <td class="nhsuk-table__cell nhsuk-u-padding-left-0" colspan="3">
+                    <span class="nhsuk-hint">
+                      This is the same phone number that you're using for <a href="manage-login">your NHS login</a>.
+                    </span>
+                  </td>
+                </tr>
+              </tr>
+
+            {% else %}
+
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+                  <b>Phone</b>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="phone/phone-add" class="nhsuk-button">Add<span class="nhsuk-u-visually-hidden"> phone number</span></a>
+                </td>
+                <td class="nhsuk-table__cell cell-right">
                 </td>
               </tr>
-            </tr>
 
-            <!--<tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left">
-                <b>NHS Login password</b>
-              </td>
-              <td class="nhsuk-table__cell">
-                &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br />
-                <a href="password/password-change">Change</a>
-              </td>
-              </td>
-              <td class="nhsuk-table__cell cell-right"></td>
-            </tr>-->
+            {% endif %}
+
+            {% if data['has-email'] %}
+
+              <tr class="nhsuk-table__row no-bottom-border">
+                <td class="nhsuk-table__cell cell-left">
+                  <b>Email address</b>
+                </td>
+                <td class="nhsuk-table__cell">
+                  jonkingston@gmail.com
+                </td>
+                </td>
+                <td class="nhsuk-table__cell cell-right">
+                  <a href="email/email-change" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change<span class="nhsuk-u-visually-hidden"> email address</span></a>
+                </td>
+                <tr>
+                  <td class="nhsuk-table__cell nhsuk-u-padding-left-0" colspan="3">
+                    <span class="nhsuk-hint">
+                      This is the same email address that you're using for <a href="manage-login">your NHS login</a>.
+                    </span>
+                  </td>
+                </tr>
+              </tr>
+
+            {% else %}
+
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+                  <b>Email address</b>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <a href="email/email-add" class="nhsuk-button">Add<span class="nhsuk-u-visually-hidden"> email address</span></a>
+                </td>
+                <td class="nhsuk-table__cell cell-right">
+                </td>
+              </tr>
+
+            {% endif %}
             
           </tbody>
         </table>
@@ -117,87 +144,106 @@
 
       <div class="nhsuk-table-responsive">
 
-        <h2>Your other contact details</h2>
+        {% if data['has-other'] %}
 
-        <table class="nhsuk-table align-top">
-          <caption class="nhsuk-table__caption"></caption>
-          <thead class="nhsuk-table__head">
-            <tr class="nhsuk-table__row">
-              <th class="nhsuk-table__header nhsuk-u-width-one-quarter"></th>
-              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
-              <th class="nhsuk-table__header"></th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
+          <h2 class="nhsuk-u-margin-bottom-0">Your other contact details</h2 class="nhsuk-u-margin-bottom-0">
 
-            
+          <table class="nhsuk-table align-top">
+            <caption class="nhsuk-table__caption"></caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header nhsuk-u-width-one-quarter"></th>
+                <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+                <th class="nhsuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+                  <b>Work address</b>
+                </td>
+                <td class="nhsuk-table__cell">
+                  ACME Limited<br />
+                  Bradford<br />
+                  West Yorkshire<br />
+                  BD10 2LP
+                </td>
+                <td class="nhsuk-table__cell cell-right">
+                  <a href="address/address-remove" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> address</span></a>
+                  <a href="address/address-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> address</span></a>
+                </td>
+              </tr>
 
-            <tr class="nhsuk-table__row">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+                  <b>Work phone</b>
+                </td>
+                <td class="nhsuk-table__cell">
+                  07712345678
+                </td>
+                <td class="nhsuk-table__cell cell-right">
+                  <a href="phone/phone-remove" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> work phone</span></a>
+                  <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> work phone</span></a>
+                </td>
+              </tr>
 
-              <td class="nhsuk-table__cell cell-left">
-                <b>Work address</b>
-              </td>
-              <td class="nhsuk-table__cell">
-                ACME Limited<br />
-                Bradford<br />
-                West Yorkshire<br />
-                BD10 2LP
-              </td>
-              <td class="nhsuk-table__cell cell-right">
-                <a href="phone/phone-remove" class="nhsuk-button nhsuk-button-red">Remove</a>
-                <a href="address/address-change" class="nhsuk-button nhsuk-button--secondary">Change</a>
-              </td>
-            </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+                  <b>Email address</b>
+                </td>
+                <td class="nhsuk-table__cell">
+                  jonnyk@hotmail.com
+                </td>
+                </td>
+                <td class="nhsuk-table__cell cell-right">
+                  <a href="email/email-remove" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> email address</span></a>
+                  <a href="email/email-change" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change<span class="nhsuk-u-visually-hidden"> email address</span></a>
+                </td>
+              </tr>
 
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left">
-                <b>Work phone</b>
-              </td>
-              <td class="nhsuk-table__cell">
-                07712345678
-              </td>
-              <td class="nhsuk-table__cell cell-right">
-                <a href="phone/phone-remove" class="nhsuk-button nhsuk-button-red">Remove</a>
-                <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change</a>
-              </td>
-            </tr>
+              <tr class="nhsuk-table__row no-bottom-border">
+                <td class="nhsuk-table__cell cell-left" colspan="3">
+                  <a href="#" class="nhsuk-button">Add more contact details</a>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
 
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left">
-                <b>Email address</b>
-              </td>
-              <td class="nhsuk-table__cell">
-                jonnyk@hotmail.com
-              </td>
-              </td>
-              <td class="nhsuk-table__cell cell-right">
-                <a href="" class="nhsuk-button nhsuk-button-red">Remove</a>
-                <a href="email/email-enter" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change</a>
-              </td>
-            </tr>
+        {% endif %}
 
-            <tr class="nhsuk-table__row no-bottom-border">
+        {% if data['can-add'] %}
 
-              <td class="nhsuk-table__cell cell-left" colspan="2">
-                <a href="#">Add more contact details</a>
-              </td>
-              <td class="nhsuk-table__cell cell-right">
-                <a href="#" class="nhsuk-button">Add<span class="nhsuk-u-visually-hidden"> more contact details</span></a>
-              </td>
+          <h2>Your other contact details</h2>
+          <a href="#" class="nhsuk-button">Add more contact details</a>
 
-            </tr>
-            
-          </tbody>
-        </table>
+        {% endif %}
+
       </div>
 
+    {% if data['devMode'] %}
 
+    <details class="nhsuk-details dev-mode" role="group">
+      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <ul>
+          <li><a href="{{ params }}?devMode=y&has-email=&has-phone=&has-other=&can-add=">Patient only has an address in PDS</a></li>
+          <li><a href="{{ params }}?devMode=y&has-email=y&has-phone=&has-other=&can-add=">Patient has email address in PDS</a></li>
+          <li><a href="{{ params }}?devMode=y&has-email=y&has-phone=y&has-other=&can-add=y">Patient has email address & phone in PDS</a></li>
+          <li><a href="{{ params }}?devMode=y&has-email=y&has-phone=y&has-other=y&can-add=">Patient has email address, phone and other in PDS</a></li>
+        </ul>
+      </div>
+    </details>
 
-
+    {% endif %}
 
     </div>
 
   </div>
 
 {% endblock %}
-
