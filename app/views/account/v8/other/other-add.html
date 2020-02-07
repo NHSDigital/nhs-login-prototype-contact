@@ -1,0 +1,62 @@
+{% extends 'layouts/layout-manage-v8.html' %}
+
+{% block pageTitle %}
+  Choose a type
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="other-use" method="POST">
+        
+        <div class="nhsuk-form-group">
+          {{ radios({
+            "name": "other-type",
+            "fieldset": {
+              "legend": {
+                "text": "Choose what you'd like to add",
+                "classes": "nhsuk-fieldset__legend--l",
+                "isPageHeading": true
+              }
+            },
+            "items": [
+            {
+              "value": "address",
+              "text": "Address"
+            },
+            {
+                "value": "landline",
+                "text": "Landline phone number"
+              },
+              {
+                "value": "mobile",
+                "text": "Mobile phone number"
+              },
+              {
+                "value": "email",
+                "text": "Email address"
+              }
+            ]
+          }) }}
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "../index",
+            "text": "Back to your contact details",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

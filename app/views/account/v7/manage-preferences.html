@@ -7,12 +7,169 @@
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds">
-      <h1 class="nhsuk-heading-xl">Your contact preferences</h1>
-    </div>
-
     <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-xl">Your contact preferences</h1>
+
+      <h2 class="nhsuk-heading-m">For anything that isn't urgent, how do you prefer to be contacted?</h2>
       
+      <div class="nhsuk-form-group">
+        {{ radios({
+          "idPrefix": "contact-pref",
+          "name": "contact-pref",
+          "items": [
+            {
+              "value": "email",
+              "text": "Email"
+            },
+            {
+              "value": "mobile",
+              "text": "Mobile phone"
+            },
+            {
+              "value": "sms",
+              "text": "Text message"
+            },
+            {
+              "value": "landline",
+              "text": "Landline phone"
+            },
+            {
+              "value": "post",
+              "text": "Post"
+            }
+          ]
+        }) }}
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a href="#" class="nhsuk-button nhsuk-u-margin-bottom-0">Save</a>
+      </div>
+
+      <div class="nhsuk-table-responsive">
+
+        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Your addresses</h2>
+
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption"></caption>
+          <tbody class="nhsuk-table__body">
+            
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                10 Long Lane<br />
+                Leeds<br />
+                West Yorkshire<br />
+                LS11 2AB
+              </td>
+              <td class="nhsuk-table__cell">
+                <b>Your preferred address</b>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                ACME Limited<br />
+                Bradford<br />
+                West Yorkshire<br />
+                BD10 2LP
+              </td>
+              <td class="nhsuk-table__cell">
+                <a href="#">Set as your preferred address</a>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <h3 class="nhsuk-heading-m nhsuk-u-margin-top-8">Your phone numbers</h2 class="nhsuk-u-margin-bottom-0">
+
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption"></caption>
+          <tbody class="nhsuk-table__body">
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                07736251423
+              </td>
+              <td class="nhsuk-table__cell">
+                <b>Your preferred phone number</b>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                07712345678
+              </td>
+              <td class="nhsuk-table__cell">
+                <a href="#">Set as your preferred phone number</a>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <h3 class="nhsuk-heading-m nhsuk-u-margin-top-8">Your email addresses</h2 class="nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-6">
+
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption"></caption>
+          <tbody class="nhsuk-table__body">
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                jonkingston@gmail.com
+              </td>
+              <td class="nhsuk-table__cell">
+                <b>Your preferred email address</b>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                jonnyk@hotmail.com
+              </td>
+              <td class="nhsuk-table__cell">
+                <a href="#">Set as your preferred email address</a>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </div>
+
+
+      {% if data['devMode'] %}
+
+      <details class="nhsuk-details dev-mode" role="group">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+          <span class="nhsuk-details__summary-text">
+            Testing scenarios
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <ul>
+            <li><a href="{{ params }}?devMode=y&patient-email=&patient-mobile=&has-other=&can-add=">Patient only has an address</a></li>
+            <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=&has-other=&can-add=">Patient has email address</a></li>
+            <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=07736251423&has-other=&can-add=y">Patient has email address & phone</a></li>
+            <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=07736251423&has-other=y&can-add=">Patient has email address, phone and other in PDS</a></li>
+          </ul>
+        </div>
+      </details>
+  
+      {% endif %}
+
 
     </div>
 

@@ -1,4 +1,4 @@
-{% extends 'layouts/layout-manage-v7.html' %}
+{% extends 'layouts/layout-manage-v8.html' %}
 
 {% block pageTitle %}
   Your contact details
@@ -8,11 +8,8 @@
 
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-three-quarters">
-
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
       <h1 class="nhsuk-heading-xl">Your contact details</h1>
-
-      <div class="nhsuk-u-margin-bottom-4">
         <svg class="nhsuk-icon nhsuk-icon__user nhsuk-icon--size-50 nhsuk-u-margin-right-2" xmlns="http://www.w3.org/2000/svg" viewBox="6 0 20 24" width="32" aria-hidden="true">
           <path class="user-icon" d="M16,2a10,10,0,0,0-1.09,19.93H15A6,6,0,0,0,16,22a6,6,0,0,0,1-.06h.05A10,10,0,0,0,16,2Zm5.4,15.88a6.45,6.45,0,0,0,.14-.88,5.3,5.3,0,0,0-2.4-4.14,4.89,4.89,0,0,1-6.28,0A5.3,5.3,0,0,0,10.46,17a6.45,6.45,0,0,0,.14.88,8,8,0,1,1,10.8,0Z"/>
           <circle class="user-icon" cx="16" cy="9" r="3"/>
@@ -23,11 +20,13 @@
             NHS number: 999 000 8888
           </span>
         </div>
-      </div>
+    </div>
 
+    <div class="nhsuk-grid-column-three-quarters">
+      
       <p class="nhsuk-body-m">
         These are the contact details that the NHS holds for you.<br />
-        <i>*** Some information about GPs and other services possibly holding different information about the patient ***</i>
+        *** Some information about GPs and other services possibly holding different information about the patient ***
       </p>
       <p class="nhsuk-body-m">
         You can change or remove certain details to ensure that they are up to date.
@@ -64,54 +63,37 @@
             </tr>
 
 
-            {% if data['patient-mobile'] %}
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                <b>Mobile phone</b><br />
+                <span class="nhsuk-hint">This is used for your NHS login</span>
+              </td>
+              <td class="nhsuk-table__cell">
+                07712345678
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> phone number</span></a>
+              </td>
+            </tr>
 
-              <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell cell-left">
-                  <b>Mobile phone</b>
-                </td>
-                <td class="nhsuk-table__cell">
-                  {{ data['patient-mobile']}}
-                </td>
-                <td class="nhsuk-table__cell cell-right">
-                  <a href="phone/phone-remove" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> address</span></a>
-                  <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> phone number</span></a>
-                </td>
-                <!--<tr>
-                  <td class="nhsuk-table__cell nhsuk-u-padding-left-0" colspan="3">
-                    <span class="nhsuk-hint">
-                      This is the same phone number that you're using for <a href="manage-login">your NHS login</a>.
-                    </span>
-                  </td>
-                </tr>-->
-              </tr>
 
-            {% endif %}
 
-            {% if data['patient-email'] %}
 
-              <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell cell-left">
-                  <b>Email address</b>
-                </td>
-                <td class="nhsuk-table__cell">
-                  {{ data['patient-email']}}
-                </td>
-                </td>
-                <td class="nhsuk-table__cell cell-right">
-                  <a href="email/email-remove" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> address</span></a>
-                  <a href="email/email-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> email address</span></a>
-                </td>
-                <!--<tr>
-                  <td class="nhsuk-table__cell nhsuk-u-padding-left-0" colspan="3">
-                    <span class="nhsuk-hint">
-                      This is the same email address that you're using for <a href="manage-login">your NHS login</a>.
-                    </span>
-                  </td>
-                </tr>-->
-              </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                <b>Email address</b><br />
+                <span class="nhsuk-hint">This is used for your NHS login</span>
+              </td>
+              <td class="nhsuk-table__cell">
+                jonkingston@gmail.com
+              </td>
+              <td class="nhsuk-table__cell cell-right">
+                <a href="email/email-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> email address</span></a>
+              </td>
+            </tr>
 
-            {% endif %}
+
+            
 
             {% if data['has-other'] %}
 
@@ -163,9 +145,7 @@
           </tbody>
         </table>
 
-        <div class="nhsuk-u-margin-top-6">
-          <a href="other/other-add" class="nhsuk-button">Add more contact details</a>
-        </div>
+        <a href="other/other-add" class="nhsuk-button nhsuk-u-margin-top-6">Add more contact details</a>
         
       </div>
 
@@ -261,10 +241,8 @@
       </summary>
       <div class="nhsuk-details__text">
         <ul>
-          <li><a href="{{ params }}?devMode=y&patient-email=&patient-mobile=&has-other=&can-add=">Patient only has an address</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=&has-other=&can-add=">Patient has email address</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=07736251423&has-other=&can-add=y">Patient has email address & phone</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=07736251423&has-other=y&can-add=">Patient has email address, phone and other details</a></li>
+          <li><a href="{{ params }}?devMode=y&has-email=&has-phone=&has-other=&can-add=">Patient only has an address in PDS and login credentials</a></li>
+          <li><a href="{{ params }}?devMode=y&has-email=y&has-phone=y&has-other=y&can-add=">Patient has other contact information</a></li>
         </ul>
       </div>
     </details>
