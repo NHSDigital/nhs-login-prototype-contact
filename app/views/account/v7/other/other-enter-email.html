@@ -1,0 +1,41 @@
+{% extends 'layouts/layout-manage-v7.html' %}
+
+{% block pageTitle %}
+  Enter your email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="" method="POST">
+        
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">Enter your email address</h1>
+        </legend>
+        
+        <div class="nhsuk-form-group">
+          <p class="nhsuk-body-m">We'll send a link to your email address. You'll need to follow this link to add this email address.</p>
+          <label class="nhsuk-label" for="patient-email">Email address</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="patient-email" name="patient-email" type="email">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "other-use",
+            "text": "Back to choose a use",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

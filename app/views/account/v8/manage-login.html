@@ -1,80 +1,28 @@
-{% extends 'layouts/layout-manage-v7.html' %}
+{% extends 'layouts/layout-manage-v8.html' %}
 
 {% block pageTitle %}
-  Your NHS login
+  Your security & password
 {% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-three-quarters">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-xl">Your security & password</h1>
+    </div>
 
-      <h1 class="nhsuk-heading-xl">Your NHS login</h1>
+    <div class="nhsuk-grid-column-three-quarters">
       <!--<p class="nhsuk-body-m">You can change your email and phone number.</p>-->
 
       <div class="nhsuk-table-responsive user-info-table">
         <table class="nhsuk-table align-top">
-          <caption class="nhsuk-table__caption">Manage your NHS login details</caption>
-
-          <thead class="nhsuk-table__head">
-            <tr class="nhsuk-table__row">
-              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
-              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
-              <th class="nhsuk-table__header"></th>
-            </tr>
-          </thead>
+          <caption class="nhsuk-table__caption">Change your password</caption>
 
           <tbody class="nhsuk-table__body">
-            
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left">
-                <b>Email address</b>
-              </td>
-              {% if data['user-email'] %}
-              <td class="nhsuk-table__cell cell-left">{{ data['user-email'] }}</td>
-                {% else %}
-              <td class="nhsuk-table__cell cell-left">
-                jonkingston@gmail.com
-              </td>
-              {% endif %}
-              </td>
-              <td class="nhsuk-table__cell cell-right">
-                <a href="email/email-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> password</span></a>
-              </td>
-            </tr>
-
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left">
-                <b>Mobile phone</b><br />
-                <span class="nhsuk-hint">The phone you use to receive security codes</span>
-              </td>
-              <td class="nhsuk-table__cell cell-left">
-                07712345678
-              </td>
-              </td>
-              <td class="nhsuk-table__cell cell-right">
-                <a href="phone/phone-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> mobile phone</span></a>
-              </td>
-            </tr>
-
-            <!--<tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left" colspan="3">
-
-                {% from 'details/macro.njk' import details %}
-
-                {{ details({
-                  "text": "Why can't I change my login email?",
-                  "HTML": "
-                  <p>Some information to help the patient.</p>
-                  "
-                }) }}
-
-              </td>
-            </tr>-->
 
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell cell-left" style="vertical-align: top;">
-                <b>Password</b>
+                <b>Your NHS login password</b>
               </td>
               <td class="nhsuk-table__cell cell-left">
                 &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;
@@ -163,30 +111,10 @@
       </div>
 
     <h3 class="nhsuk-heading-l">Delete your NHS login</h3>
-    <p class="nhsuk-body-m">Deleting your NHS login won't delete your contact details or contact preferences.</p>
-    <p class="nhsuk-body-m">After you delete your NHS login you won't be able to access certain services online.</p>
     <!--<p class="nhsuk-body-m">You will need to enter your password to delete your NHS login.</p>-->
+    <p class="nhsuk-body-m">Deleting your NHS login won't delete your contact details or preferences.</p>
+    <p class="nhsuk-body-m">After you delete your NHS login you won't be able to access certain services online.</p>
     <p class="nhsuk-body-m nhsuk-u-margin-top-4"><a href="delete/delete-login" class="nhsuk-button nhsuk-button--secondary">Start<span class="nhsuk-u-visually-hidden"> to delete your account</span></a></p>
-
-    {% if data['devMode'] %}
-
-    <details class="nhsuk-details dev-mode" role="group">
-      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
-        <span class="nhsuk-details__summary-text">
-          Testing scenarios
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
-        <ul>
-          <li><a href="{{ params }}?devMode=y&patient-email=&patient-mobile=&has-other=&can-add=">Patient only has an address</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=&has-other=&can-add=">Patient has email address</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=07736251423&has-other=&can-add=y">Patient has email address & phone</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=07736251423&has-other=y&can-add=">Patient has email address, phone and other in PDS</a></li>
-        </ul>
-      </div>
-    </details>
-
-    {% endif %}
 
     </div>
 
