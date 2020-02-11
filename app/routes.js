@@ -20,6 +20,27 @@ router.post('/examples/branching/answer', function (req, res) {
   }
 });
 
+router.post('/account/v7/other/other-add-next', function (req, res) {
+
+  var patientEmail = req.session.data['patient-email']
+  var patientMobile = req.session.data['patient-mobile']
+
+  if (patientEmail == "" && patientMobile == ""){
+    res.redirect('/account/v7/other/other-type')
+  }
+  else {
+    res.redirect('/account/v7/index')
+  }
+
+})
+
+
+// Clear all session data
+router.get('/clear', (req, res) => {
+	req.session.data = {}
+	res.redirect('/index')
+})
+
 module.exports = router;
 
 // Change email routing
