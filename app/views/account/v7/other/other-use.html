@@ -52,22 +52,19 @@
               {
                 "value": "temp",
                 "text": "To contact me on holiday"
-              },
-              {
-                "value": "none",
-                "text": "Other"
               }
             ]
           }) }}
         </div>
 
         <div class="nhsuk-form-group">
-          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+          <a href="other-enter-{{ data['other-type']}}" class="nhsuk-button nhsuk-button--reverse nhsuk-u-margin-bottom-0">Skip this step</a>
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-u-margin-left-4">Continue</button>
         </div>
 
         <div class="nhsuk-form-group">
           {{ backLink({
-            "href": "other-add",
+            "href": "other-type",
             "text": "Back to choose a type",
             "classes": "nhsuk-u-margin-top-7"
           }) }}
