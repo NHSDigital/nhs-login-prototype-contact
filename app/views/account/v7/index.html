@@ -35,8 +35,6 @@
 
       <div class="nhsuk-table-responsive">
 
-        <!--<h2>Your main contact details</h2>-->
-
         <table class="nhsuk-table align-top">
           <caption class="nhsuk-table__caption"></caption>
           <thead class="nhsuk-table__head">
@@ -164,92 +162,15 @@
         </table>
 
         <div class="nhsuk-u-margin-top-6">
+          {% if data['has-added-login-details'] %}
+          <a href="other/other-type" class="nhsuk-button">Add more contact details</a>
+          {% else %}
           <a href="other/other-add" class="nhsuk-button">Add more contact details</a>
+          {% endif %}
         </div>
         
       </div>
 
-
-
-      <!--<div class="nhsuk-table-responsive">
-
-        {% if data['has-other'] %}
-
-          <h2 class="nhsuk-u-margin-bottom-0">Your other contact details</h2 class="nhsuk-u-margin-bottom-0">
-
-          <table class="nhsuk-table align-top">
-            <caption class="nhsuk-table__caption"></caption>
-            <thead class="nhsuk-table__head">
-              <tr class="nhsuk-table__row">
-                <th class="nhsuk-table__header nhsuk-u-width-one-quarter"></th>
-                <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
-                <th class="nhsuk-table__header"></th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              
-              <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell cell-left">
-                  <b>Work address</b>
-                </td>
-                <td class="nhsuk-table__cell">
-                  ACME Limited<br />
-                  Bradford<br />
-                  West Yorkshire<br />
-                  BD10 2LP
-                </td>
-                <td class="nhsuk-table__cell cell-right">
-                  <a href="address/address-remove" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> address</span></a>
-                  <a href="address/address-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> address</span></a>
-                </td>
-              </tr>
-
-              <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell cell-left">
-                  <b>Work phone</b>
-                </td>
-                <td class="nhsuk-table__cell">
-                  07712345678
-                </td>
-                <td class="nhsuk-table__cell cell-right">
-                  <a href="phone/phone-remove" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> work phone</span></a>
-                  <a href="phone/phone-change-number" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> work phone</span></a>
-                </td>
-              </tr>
-
-              <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell cell-left">
-                  <b>Email address</b>
-                </td>
-                <td class="nhsuk-table__cell">
-                  jonnyk@hotmail.com
-                </td>
-                </td>
-                <td class="nhsuk-table__cell cell-right">
-                  <a href="email/email-remove" class="nhsuk-button nhsuk-button-red">Remove<span class="nhsuk-u-visually-hidden"> email address</span></a>
-                  <a href="email/email-enter" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change<span class="nhsuk-u-visually-hidden"> email address</span></a>
-                </td>
-              </tr>
-
-              <tr class="nhsuk-table__row no-bottom-border">
-                <td class="nhsuk-table__cell cell-left" colspan="3">
-                  <a href="other/other-add" class="nhsuk-button">Add more contact details</a>
-                </td>
-              </tr>
-              
-            </tbody>
-          </table>
-
-        {% endif %}
-
-        {% if data['can-add'] %}
-
-          <h2>Your other contact details</h2>
-          <a href="other/other-add" class="nhsuk-button">Add more contact details</a>
-
-        {% endif %}
-
-      </div>-->
 
     {% if data['devMode'] %}
 
