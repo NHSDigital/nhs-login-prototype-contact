@@ -1,0 +1,59 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Your phone number has been added
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l">Your login email address is now {{ data['patient-email'] }}</h1>
+
+      <h2 class="nhsuk-heading-m">Would you like to add this email address to your contact details?</h2>
+
+      <form action="email-add-to-contact" method="POST">
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="email-add-to-contact-1" name="email-add-to-contact" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="email-add-to-contact-1">
+                Yes
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="email-add-to-contact-2" name="email-add-to-contact" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="email-add-to-contact-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Your contact details explained
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>Your contact details are used when the NHS needs to get in touch with you. For example: your GP, the hospital, your pharmacy.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit">Continue</button>
+        </div>
+
+      </form>
+
+    </div> 
+
+  </div>
+{% endblock %}

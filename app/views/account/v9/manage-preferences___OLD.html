@@ -1,0 +1,399 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Your contact preferences
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-xl">Your contact preferences</h1>
+
+      <p>Here you can choose which contact details you would prefer NHS services to use if they need to contact you.</p>
+      <p>Examples of NHS services include; your GP, hospitals...</p>
+
+      <!--<h2 class="nhsuk-heading-m">For anything that isn't urgent, how do you prefer to be contacted?</h2>
+      
+      <div class="nhsuk-form-group">
+        {{ radios({
+          "idPrefix": "contact-pref",
+          "name": "contact-pref",
+          "items": [
+            {
+              "value": "email",
+              "text": "Email"
+            },
+            {
+              "value": "mobile",
+              "text": "Mobile phone"
+            },
+            {
+              "value": "sms",
+              "text": "Text message"
+            },
+            {
+              "value": "landline",
+              "text": "Landline phone"
+            },
+            {
+              "value": "post",
+              "text": "Post"
+            }
+          ]
+        }) }}
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a href="#" class="nhsuk-button nhsuk-u-margin-bottom-0">Save</a>
+      </div>-->
+
+      <div class="nhsuk-u-margin-top-8">
+
+        <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-0">Your paperless settings</h2>
+        <p class="nhsuk-hint">If you opt in, where appropriate and available, the NHS will send you an email or text message instead of a letter.</p>
+
+        <table class="nhsuk-table align-top nhsuk-u-margin-top-0">
+          <caption class="nhsuk-table__caption"></caption>
+
+          <thead class="nhsuk-table__head nhsuk-u-hide-385">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+            
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                Email
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="email-opt-in-1" name="email-opt-in" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="email-opt-in-1">Opt in</label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="email-opt-in-2" name="email-opt-in" type="radio" value="no" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="email-opt-in-2">Opt out</label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                Text message
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="sms-opt-in-1" name="sms-opt-in" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="sms-opt-in-1">Opt in</label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="sms-opt-in-2" name="sms-opt-in" type="radio" value="no" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="sms-opt-in-2">Opt out</label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+        
+        <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-8">Your addresses</h2>
+        <p class="nhsuk-hint">NHS services will use these addresses to contact you about...</p>
+
+        <table class="nhsuk-table align-top nhsuk-u-margin-top-0">
+          <caption class="nhsuk-table__caption"></caption>
+
+          <thead class="nhsuk-table__head nhsuk-u-hide-385">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-two-thirds">
+                Choose your preferred address<br />
+                <a href="#" class="nhsuk-body-s nhsuk-u-margin-bottom-0">Help</a>
+              </th>
+              <th class="nhsuk-table__header"></th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+            
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                10 Long Lane<br />
+                Leeds<br />
+                West Yorkshire<br />
+                LS11 2AB
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="preferred-address-1" name="preferred-address" type="radio" value="yes" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="preferred-address-1"></label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                ACME Limited<br />
+                Bradford<br />
+                West Yorkshire<br />
+                BD10 2LP
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="preferred-address-2" name="preferred-address" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="preferred-address-2"></label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-8">Your phone numbers</h2>
+        <p class="nhsuk-hint">NHS services will use these addresses to contact you about...</p>
+
+        <table class="nhsuk-table align-top nhsuk-u-margin-top-0">
+          <caption class="nhsuk-table__caption"></caption>
+
+          <thead class="nhsuk-table__head nhsuk-u-hide-385">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third">
+                Choose your preferred phone number<br />
+                <a href="#" class="nhsuk-body-s nhsuk-u-margin-bottom-0">Help</a>
+              </th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third">
+                Verification<br />
+                <a href="#" class="nhsuk-body-s nhsuk-u-margin-bottom-0">Help</a>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                07736251423
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="preferred-phone-1" name="preferred-phone" type="radio" value="yes" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="preferred-phone-1"></label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+                <p style="color:#007f3b; min-width: 110px;">
+                  Verified
+                  <svg style="margin-bottom:-8px;" class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                    <path stroke-width="4" stroke-linecap="round" stroke="#007f3b" d="M18.4 7.8l-8.5 8.4L5.6 12" fill="none"></path>
+                  </svg>
+                </p>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                07712345678
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="preferred-phone-2" name="preferred-phone" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="preferred-phone-2"></label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+                <a href="#" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Verify<span class="nhsuk-u-visually-hidden"> 07712345678</span></a>
+                <!--<p style="color:#d5281b;">
+                  Not verified
+                  <svg style="margin-bottom:-9px;" class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"></path>
+                    <path d="M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"></path stroke="#d5281b">
+                  </svg><br />
+                  <a href="#">Verify this phone number</a>
+                </p>-->
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-8">Your email addresses</h2>
+        <p class="nhsuk-hint">NHS services will use these addresses to contact you about...</p>
+
+        <table class="nhsuk-table align-top nhsuk-u-margin-top-0">
+          <caption class="nhsuk-table__caption"></caption>
+
+          <thead class="nhsuk-table__head nhsuk-u-hide-385">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third">
+                Choose your preferred email address<br />
+                <a href="#" class="nhsuk-body-s nhsuk-u-margin-bottom-0">Help</a>
+              </th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third">
+                Verification<br />
+                <a href="#" class="nhsuk-body-s nhsuk-u-margin-bottom-0">Help</a>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                jonkingston@gmail.com
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="preferred-email-1" name="preferred-email" type="radio" value="yes" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="preferred-email-1"></label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+                <p style="color:#007f3b; min-width: 110px;">
+                  Verified
+                  <svg style="margin-bottom:-8px;" class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                    <path stroke-width="4" stroke-linecap="round" stroke="#007f3b" d="M18.4 7.8l-8.5 8.4L5.6 12" fill="none"></path>
+                  </svg>
+                </p>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                jonnyk@hotmail.com
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="preferred-email-2" name="preferred-email" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="preferred-email-2"></label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+                <a href="#" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Verify<span class="nhsuk-u-visually-hidden"> jonnyk@hotmail.com</span></a>
+                <!--<p style="color:#d5281b;">
+                  Not verified
+                  <svg style="margin-bottom:-9px;" class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"></path>
+                    <path d="M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"></path stroke="#d5281b">
+                  </svg><br />
+                  <a href="#">Verify this email address</a>
+                </p>-->
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+
+        
+        <table class="nhsuk-table align-top">
+          <caption class="nhsuk-table__caption"></caption>
+          <tbody class="nhsuk-table__body">
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                jonkingston@gmail.com
+              </td>
+              <td class="nhsuk-table__cell">
+                <b>Your preferred email address</b>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                jonnyk@hotmail.com
+              </td>
+              <td class="nhsuk-table__cell">
+                <a href="#">Set as your preferred email address</a>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                jonnyk@hotmail.com
+              </td>
+              <td class="nhsuk-table__cell">
+                <a href="#">Set as your preferred email address</a>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                jonnyk@hotmail.com
+              </td>
+              <td class="nhsuk-table__cell">
+                <a href="#">Set as your preferred email address</a>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+        
+      </div>
+
+
+      {% if data['devMode'] %}
+
+      <details class="nhsuk-details dev-mode" role="group">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+          <span class="nhsuk-details__summary-text">
+            Testing scenarios
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <ul>
+            <li><a href="{{ params }}?devMode=y&patient-email=&patient-mobile=&has-other=&can-add=">Patient only has an address</a></li>
+            <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=&has-other=&can-add=">Patient has email address</a></li>
+            <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=07736251423&has-other=&can-add=y">Patient has email address & phone</a></li>
+            <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-mobile=07736251423&has-other=y&can-add=">Patient has email address, phone and other in PDS</a></li>
+          </ul>
+        </div>
+      </details>
+  
+      {% endif %}
+
+
+    </div>
+
+  </div>
+
+{% endblock %}
+

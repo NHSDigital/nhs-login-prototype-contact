@@ -1,0 +1,36 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Enter your password to change your phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l">Enter your password</h1>
+
+      <p class="nhsuk-body-m">We need to make sure it's you before you can change your phone number.</p>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="password">Current password</label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password" type="password">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a href="phone-change-enter" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</a>
+      </div>
+
+      <div class="nhsuk-form-group">
+        {{ backLink({
+          "href": "../index",
+          "text": "I don't want to change my phone number",
+          "classes": "nhsuk-u-margin-top-7"
+        }) }}
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

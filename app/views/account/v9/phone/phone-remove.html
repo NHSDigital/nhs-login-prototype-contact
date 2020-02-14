@@ -1,0 +1,38 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Remove phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+        
+        <h1 class="nhsuk-heading-l">
+          Are you sure you want to remove 
+          {% if data['mobile-for-login'] %}
+            {{ data['patient-mobile'] }}?
+          {% else %}
+            {{ data['patient-mobile-2'] }}?
+          {% endif %}
+        </h1>
+  
+        <a href="../index" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4">
+          No
+        </a>
+        
+        {% if data['mobile-for-login'] %}
+        <a href="phone-remove-login" class="nhsuk-button nhsuk-button-red">
+          Yes, I'm sure
+        </a>
+        {% else %}
+        <a href="phone-remove-done?patient-mobile-2=" class="nhsuk-button nhsuk-button-red">
+          Yes, I'm sure
+        </a>
+        {% endif %}
+
+    </div>
+
+  </div>
+{% endblock %}
