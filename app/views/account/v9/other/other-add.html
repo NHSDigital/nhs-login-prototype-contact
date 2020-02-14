@@ -1,0 +1,74 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Choose a type
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="/account/v7/other/other-add-next" method="POST">
+        
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Would you like to add these to your contact details?
+              </h1>
+            </legend>
+          
+            <div class="nhsuk-radios">
+              <p>Email address: <b>jonkingston@gmail.com</b></p>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="login-email-1" name="patient-email" type="radio" value="jonkingston@gmail.com">
+                <label class="nhsuk-label nhsuk-radios__label" for="login-email-1">
+                  Yes
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="login-email-2" name="patient-email" type="radio" value="">
+                <label class="nhsuk-label nhsuk-radios__label" for="login-email-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div class="nhsuk-radios nhsuk-u-margin-top-6">
+              <p>Mobile phone: <b>07736251423</b></p>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="login-phone-1" name="patient-mobile" type="radio" value="07736251423">
+                <label class="nhsuk-label nhsuk-radios__label" for="login-phone-1">
+                  Yes
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="login-phone-2" name="patient-mobile" type="radio" value="">
+                <label class="nhsuk-label nhsuk-radios__label" for="login-phone-2">
+                  No
+                </label>
+              </div>
+            </div>
+            </fieldset>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <input type="hidden" name="has-added-login-details" value="y" />
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "../index",
+            "text": "Back to your contact details",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

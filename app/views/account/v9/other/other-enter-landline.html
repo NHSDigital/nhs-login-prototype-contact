@@ -1,0 +1,40 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Enter your landline phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="" method="POST">
+        
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">Enter your landline phone number</h1>
+        </legend>
+        
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="patient-landline">Landline phone number</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="patient-landline" name="patient-landline" type="number">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "other-use",
+            "text": "Back to choose a use",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

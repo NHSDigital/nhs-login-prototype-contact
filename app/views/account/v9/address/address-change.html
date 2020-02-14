@@ -1,0 +1,37 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Change your address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+        
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">Contact your GP to change your address</h1>
+        </legend>
+
+        <p>Currently you can't change your address online. You can change your address by contacting your GP.</p>
+        <p>Your GP surgery is:</p>
+        <p>
+          <b>The Spa Surgery</b><br />
+          Mowbray Square Medical Centre, Mowbray Square, Harrogate, HG1 5AR<br />
+          01423 503218<br />
+          <a href="#">spa.surgery@nhs.net</a>
+        </p>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "../index",
+            "text": "Back to my contact details",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+
+    </div>
+
+  </div>
+{% endblock %}

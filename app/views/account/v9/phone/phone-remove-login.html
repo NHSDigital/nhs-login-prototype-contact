@@ -1,0 +1,45 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Remove phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+        
+        <h1 class="nhsuk-heading-l">{{ data['patient-mobile'] }} has been removed from your contact details</h1>
+
+        <p>We noticed this mobile phone number is also used for your NHS login.</p>
+        <h2 class="nhsuk-heading-m">Would you like to change this mobile phone number for your NHS login?</h2>
+
+        <form action="patient-change-login-mobile" method="POST">
+
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-change-login-mobile-1" name="patient-change-login-mobile" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-change-login-mobile-1">
+                  Yes
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-change-login-mobile-2" name="patient-change-login-mobile" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-change-login-mobile-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <button class="nhsuk-button" type="submit">Continue</button>
+          </div>
+
+        </form>
+
+    </div>
+
+  </div>
+{% endblock %}

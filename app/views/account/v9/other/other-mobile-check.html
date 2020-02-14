@@ -1,0 +1,42 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+Check your phone
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="other-mobile-done" method="POST">
+        
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">Check your phone</h1>
+        </legend>
+
+        <p class="nhsuk-body-m">Enter the 6 digit security code we've sent to <b>{{ data['other-mobile']}}</b></p>
+        
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="phone-code">Security code</label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="phone-code" name="phone-code-10" type="number">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "other-use",
+            "text": "Back to enter mobile phone number",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Your email address has been changed
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Change your recovery email</span>
+      <h1 class="nhsuk-fieldset__legend--l">
+          <a style="text-decoration: none; color: #212b32;" href="/emails/recovery-email-change-confirm">Email</a> sent
+      </h1>
+      <p>Check {{ data['user-email-recovery'] }} to confirm your new recovery email. </p>
+      <p>If you have not received an email, check your spam folder.</p>
+
+    </div>
+
+  </div>
+{% endblock %}
