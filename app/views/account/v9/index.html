@@ -30,10 +30,18 @@
         <i>*** Some information about GPs and other services possibly holding different information about the patient ***</i>
       </p>
       <p class="nhsuk-body-m">
-        You can change or remove certain details to ensure that they are up to date.
+        You can manage your details to ensure that they are up to date.
       </p>
 
-      <div class="nhsuk-table-responsive">
+      <div class="nhsuk-u-margin-top-8">
+        {% if data['has-added-login-details'] %}
+        <a href="more/more-type" class="nhsuk-button nhsuk-u-margin-bottom-0">Add more contact details</a>
+        {% else %}
+        <a href="more/more-add" class="nhsuk-button nhsuk-u-margin-bottom-0">Add more contact details</a>
+        {% endif %}
+      </div>
+
+      <div class="nhsuk-table-responsive nhsuk-u-margin-top-2">
 
         <table class="nhsuk-table align-top">
           <caption class="nhsuk-table__caption"></caption>
@@ -194,14 +202,6 @@
             
           </tbody>
         </table>
-
-        <div class="nhsuk-u-margin-top-6">
-          {% if data['has-added-login-details'] %}
-          <a href="more/more-type" class="nhsuk-button">Add more contact details</a>
-          {% else %}
-          <a href="more/more-add" class="nhsuk-button">Add more contact details</a>
-          {% endif %}
-        </div>
         
       </div>
 
