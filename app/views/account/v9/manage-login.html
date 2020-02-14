@@ -47,9 +47,12 @@
                 <span class="nhsuk-hint">The phone you use to receive security codes</span>
               </td>
               {% if data['patient-mobile'] %}
-              <td class="nhsuk-table__cell cell-left">{{ data['patient-mobile'] }}</td>
+              <td class="nhsuk-table__cell cell-left">
+                {% set patientMobile = data['patient-mobile'] %}
+                &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(7)}}
+              </td>
               {% else %}
-              <td class="nhsuk-table__cell cell-left">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;423</td>
+              <td class="nhsuk-table__cell cell-left">&bull;&bull;&bull;&bull;&bull;&bull;&bull;1423</td>
               {% endif %}
               </td>
               </td>
