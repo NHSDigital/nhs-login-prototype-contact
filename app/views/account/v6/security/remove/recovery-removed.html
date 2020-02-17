@@ -1,0 +1,27 @@
+{% extends 'layouts/layout-manage.html' %}
+
+{% block pageTitle %}
+  Your recovery email address has been removed
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Remove your recovery email address</span>
+      <h1 class="nhsuk-fieldset__legend--l">
+          Recovery email address removed
+      </h1>
+      <p>Your recovery email has been removed.</p>
+      <p>You can add another recovery email address at any time in your NHS login settings area.</p>
+
+      {{ backLink({
+        "href": "../../index",
+        "text": "Back to: My NHS login settings",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}
