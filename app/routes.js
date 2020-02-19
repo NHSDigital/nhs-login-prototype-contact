@@ -99,6 +99,16 @@ router.post('/account/v9/phone/phone-add-to-contact', function (req, res) {
   }
 })
 
+router.post('/account/v9/prompt-', function (req, res) {
+  var choice = req.session.data['prompt-review']
+  if (choice == "yes"){
+    res.redirect('/account/v9/index?patient-mobile-unverified=07788995544')
+  }
+  else if (choice == "no"){
+    res.redirect('http://nhs-contact.herokuapp.com/app/homepage/homepage-1')
+  }
+})
+
 
 // Clear all session data
 router.get('/clear', (req, res) => {

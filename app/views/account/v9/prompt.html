@@ -1,0 +1,55 @@
+{% extends 'layouts/layout-manage-v9.html' %}
+
+{% block pageTitle %}
+  Your phone number has been changed
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l">Your NHS contact details could be out of date</h1>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Your contact details explained
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Your contact details are used by NHS services such as your GP or hospital to get in touch with you.</p>
+        </div>
+      </details>
+
+      <h2 class="nhsuk-heading-m">Would you like to review your contact details now?</h2>
+
+      <form action="prompt-" method="POST">
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="prompt-review-1" name="prompt-review" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="prompt-review-1">
+                Yes
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="prompt-review-2" name="prompt-review" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="prompt-review-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit">Continue</button>
+        </div>
+
+      </form>
+
+    </div> 
+
+  </div>
+{% endblock %}
