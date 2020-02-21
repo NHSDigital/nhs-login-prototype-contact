@@ -79,25 +79,32 @@ router.post('/account/v9/email/patient-change-login-email', function (req, res) 
   }
 })
 
-router.post('/account/v9/email/email-add-to-contact', function (req, res) {
+
+
+
+router.post('/account/*/email/email-add-to-contact', function (req, res) {
   var choice = req.session.data['email-add-to-contact']
   if (choice == "yes"){
-    res.redirect('/account/v9/email/email-change-done-done')
+    res.redirect('email-change-done-done')
   }
   else if (choice == "no"){
-    res.redirect('/account/v9/manage-login')
+    res.redirect('../manage-login')
   }
 })
 
-router.post('/account/v9/phone/phone-add-to-contact', function (req, res) {
+router.post('/account/*/phone/phone-add-to-contact', function (req, res) {
   var choice = req.session.data['phone-add-to-contact']
   if (choice == "yes"){
-    res.redirect('/account/v9/phone/phone-change-done-done')
+    res.redirect('phone-change-done-done')
   }
   else if (choice == "no"){
-    res.redirect('/account/v9/manage-login')
+    res.redirect('../manage-login')
   }
 })
+
+
+
+
 
 router.post('/account/v9/prompt-', function (req, res) {
   var choice = req.session.data['prompt-review']
@@ -106,6 +113,26 @@ router.post('/account/v9/prompt-', function (req, res) {
   }
   else if (choice == "no"){
     res.redirect('/account/v9/app')
+  }
+})
+
+router.post('/account/v10/more/add-login-email', function (req, res) {
+  var patientEmail = req.session.data['patient-email']
+  if (patientEmail == ""){
+    res.redirect('/account/v10/email/email-add?has-added-login-email=y')
+  }
+  else {
+    res.redirect('/account/v10/email/email-add-done?has-added-login-email=y')
+  }
+})
+
+router.post('/account/v10/more/add-login-mobile', function (req, res) {
+  var patientMobile = req.session.data['patient-mobile']
+  if (patientMobile == ""){
+    res.redirect('/account/v10/phone/phone-add?has-added-login-phone=y')
+  }
+  else {
+    res.redirect('/account/v10/phone/phone-add-done?has-added-login-phone=y')
   }
 })
 

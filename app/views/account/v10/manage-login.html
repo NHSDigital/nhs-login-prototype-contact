@@ -83,27 +83,7 @@
     <p class="nhsuk-u-margin-top-4"><a href="delete/delete-login" class="nhsuk-button nhsuk-button--secondary">Start<span class="nhsuk-u-visually-hidden"> to delete your account</span></a></p>
 
     {% if data['devMode'] %}
-
-    <details class="nhsuk-details dev-mode" role="group">
-      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
-        <span class="nhsuk-details__summary-text">
-          Testing scenarios
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
-        <ul>
-          <li><a href="{{ params }}?devMode=y&patient-email=&patient-email-2=&patient-mobile=&patient-mobile-2=&patient-mobile-unverified=">Patient only has an address</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=&patient-email-2=&patient-mobile=&patient-mobile-2=07788995544&patient-mobile-unverified=">Patient has an address and an unverified phone number</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-email-2=&patient-mobile=&patient-mobile-2=&patient-mobile-unverified=">Patient has email address</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-email-2=&patient-mobile=07736251423&patient-mobile-2=&patient-mobile-unverified=">Patient has email address & phone</a></li>
-          <li><a href="{{ params }}?devMode=y&patient-email=jonkingston@gmail.com&patient-email-2=myOldEmail@hotmail.co.uk&patient-mobile=07736251423&patient-mobile-2=07766554433&patient-mobile-unverified=">Patient has 2 email addresses and 2 phone numbers</a></li>
-          <li><a href="./add-patient-details">Add patient details</a></li>
-          <li><a href="/clear">Clear all data</a></li>
-        </ul>
-      </div>
-    </details>
-
-
+      {% include "includes/test-urls.html" %}
     {% endif %}
 
     </div>

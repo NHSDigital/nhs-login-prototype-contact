@@ -9,7 +9,7 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h1 class="nhsuk-heading-l">Your login email address is now {{ data['patient-email'] }}</h1>
+      <h1 class="nhsuk-heading-l">Your NHS login email address is now {{ data['patient-email'] }}</h1>
 
       <h2 class="nhsuk-heading-m">Would you like to add this email address to your contact details?</h2>
 
@@ -33,18 +33,10 @@
         </div>
 
         <div class="nhsuk-form-group">
-
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                Your contact details explained
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
-              <p>Your contact details are used by NHS services such as your GP or hospital to get in touch with you.</p>
-            </div>
-          </details>
-
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>Your contact details are used by NHS services such as your GP or hospital to get in touch with you.</p>
+          </div>
         </div>
 
         <div class="nhsuk-form-group">
