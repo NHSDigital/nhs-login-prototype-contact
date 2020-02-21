@@ -1,0 +1,26 @@
+{% extends 'layouts/layout-manage-v10.html' %}
+
+{% block pageTitle %}
+  Check your email inbox
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l">Check your email inbox</h1>
+
+      <p>Check <b>{{ data['patient-email'] }}</b> for an <a href="email-change-confirm">email</a> from the NHS. Click on the link in the email.</p>
+      <p>If you have not received an email, check your spam folder.</p>
+
+      {{ backLink({
+        "href": "../index",
+        "text": "Back to my contact details",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

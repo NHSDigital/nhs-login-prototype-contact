@@ -1,0 +1,53 @@
+{% extends 'layouts/layout-manage-v10.html' %}
+
+{% block pageTitle %}
+  Choose a type
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="more-add-2" method="POST">
+        
+        <div class="nhsuk-form-group">
+
+            <h1 class="nhsuk-heading-l">Would you like to add this email address?</h1>
+          
+            <div class="nhsuk-radios">
+              <p class="nhsuk-body-l">jonkingston@gmail.com</p>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="login-email-1" name="patient-email" type="radio" value="jonkingston@gmail.com">
+                <label class="nhsuk-label nhsuk-radios__label" for="login-email-1">
+                  Yes
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="login-email-2" name="patient-email" type="radio" value="">
+                <label class="nhsuk-label nhsuk-radios__label" for="login-email-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "../index",
+            "text": "I don't want to add more contact details",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

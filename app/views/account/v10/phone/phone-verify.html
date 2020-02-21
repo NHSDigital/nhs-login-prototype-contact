@@ -1,0 +1,31 @@
+{% extends 'layouts/layout-manage-v10.html' %}
+
+{% block pageTitle %}
+  Enter the security code
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l">Verify your mobile phone number</h1>
+
+      <p>We'll send a security code by text message to your mobile phone.</p>
+
+      <div class="nhsuk-form-group">
+        <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="phone-verify-code">Continue</a>
+      </div>
+
+      <div class="nhsuk-form-group">
+        {{ backLink({
+          "href": "../index",
+          "text": "I don't want to verify a phone number",
+          "classes": "nhsuk-u-margin-top-7"
+        }) }}
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

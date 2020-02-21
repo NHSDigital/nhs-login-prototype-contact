@@ -105,7 +105,7 @@ router.post('/account/v9/prompt-', function (req, res) {
     res.redirect('/account/v9/index?patient-mobile-unverified=07788995544')
   }
   else if (choice == "no"){
-    res.redirect('http://nhs-contact.herokuapp.com/app/homepage/homepage-1')
+    res.redirect('/account/v9/app')
   }
 })
 
