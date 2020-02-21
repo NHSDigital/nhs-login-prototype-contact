@@ -1,0 +1,47 @@
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-app-new.html' %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">Settings</h1>
+      <ul class="list-menu">
+      	<li>
+      		<a href="#">Fingerprint or face recognition</a>
+      	</li>
+      	<li>
+      		<a href="#">Notifications</a>
+      	</li>
+        <li>
+      		<a href="#">Manage your NHS login</a>
+      	</li>
+        <li>
+      		<a href="#">Cookies</a>
+      	</li>
+      </ul>
+      <form action="#" method="post">
+        <input type="submit" class="nhsuk-button nhsuk-button--secondary" value="Log out">
+        </input>
+      </form>
+      <h2 class="nhsuk-heading-m">About the app</h2>
+      <ul class="list-menu">
+      	<li>
+      		<a href="#">Terms of use</a>
+      	</li>
+      	<li>
+      		<a href="#">Privacy</a>
+      	</li>
+        <li>
+      		<a href="#">Open source licences</a>
+      	</li>
+        <li>
+      		<a href="#">Help and support</a>
+      	</li>
+        <li>
+      		<a href="#">Accessibility statement</a>
+      	</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
