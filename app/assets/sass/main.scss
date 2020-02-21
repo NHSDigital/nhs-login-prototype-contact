@@ -83,7 +83,70 @@
 }
 */
 
+// index styling
+
+.nhsuk-expander.version-list {
+	background-color: #F0F4F5 !important;
+  }
+  
+.nhsuk-details__summary.index {
+background-color: #F0F4F5 !important;
+padding: 0px !important;
+}
+
+@media (max-width: 385px) {
+	tr,td {
+		display: block;
+	}
+	td.nhsuk-table__cell.cell-right {
+		text-align: left;
+		padding: nhsuk-spacing(1) nhsuk-spacing(1) nhsuk-spacing(3) nhsuk-spacing(0)
+	}
+	td:nth-child(2) {
+		//border: none;
+		padding: nhsuk-spacing(1) nhsuk-spacing(1) nhsuk-spacing(2) nhsuk-spacing(0)
+	}
+	td.nhsuk-table__cell.cell-left {
+		border-bottom: none;
+		padding: nhsuk-spacing(3) nhsuk-spacing(1) nhsuk-spacing(2) nhsuk-spacing(0)
+	}
+	.row-responsive {
+		display: none;
+	}
+	td:nth-child(3) {
+		padding: nhsuk-spacing(0) nhsuk-spacing(1) nhsuk-spacing(2) nhsuk-spacing(0)
+	}
+}
+
+.align-top {
+	th,td{
+		vertical-align: top;
+	}
+}
+
+.no-bottom-border td{
+	border-bottom: none;
+}
+
+@media (max-width: 385px) {
+	.nhsuk-u-hide-385{
+		display: none;
+	}
+	.nhsuk-header__logo .nhsuk-logo{
+		width: 80px;
+	}
+	.nhsuk-header__service-name{
+		padding-top: 0;
+	}
+}
+
 // Fixing reverse button bug
 .nhsuk-button--reverse {
     color: #212b32 !important;
+}
+
+@media (max-width: 640px) {
+	.nhsuk-header__logo{
+		max-width: 60%;
+	}
 }
