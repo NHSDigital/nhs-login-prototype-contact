@@ -130,6 +130,9 @@ padding: 0px !important;
 
 .table-contact{
 	background-color: $color_nhsuk-white;
+	tr,td{
+		background-color: $color_nhsuk-white;
+	}
 }
 
 @media (max-width: 385px) {
