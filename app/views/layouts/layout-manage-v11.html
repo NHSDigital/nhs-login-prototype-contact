@@ -1,0 +1,71 @@
+<!-- This layout is setup for NHS.UK pages -->
+
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends "layouts/layout.html" %}
+
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+  NHS.UK prototype kit - NHS.UK page layout
+{% endblock %}
+
+<!-- Header goes inside this block -->
+{% block header %}
+  {{ header({
+      "service": {
+        "name": "Manage your NHS contact details",
+        "longName": "true"
+      },
+      "showNav": "true",
+      "showSearch": "false",
+      "primaryLinks": [
+        {
+          "url"  : "/account/v11/index",
+          "label" : "Your NHS contact details"
+        },
+        {
+          "url"  : "/account/v11/manage-security",
+          "label" : "Your security & password"
+        },
+        {
+          "url"  : "/account/v11/log-out-done",
+          "label" : "Log out"
+        }
+      ]
+    })
+  }}
+{% endblock %}
+
+<!-- Breadcrumb goes inside this block -->
+
+
+<!-- Footer goes inside this block -->
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/account/v1/terms-of-use/terms-conditions",
+        "label": "Terms and conditions"
+      },
+      {
+        "URL": "/account/terms-of-use/privacy-notice",
+        "label": "Privacy notice"
+      },
+      {
+        "URL": "/accountterms-of-use/cookies",
+        "label": "Cookies"
+      },
+      {
+        "URL": "/account/terms-of-use/accessibility-statement",
+        "label": "Accessibility statement"
+      },
+      {
+        "URL": "?devMode=",
+        "label": "Turn off DevMode"
+      },
+      {
+        "URL": "/clear",
+        "label": "Clear data"
+      }
+    ]
+  })}}
+{% endblock %}

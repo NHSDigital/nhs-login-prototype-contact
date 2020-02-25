@@ -1,4 +1,4 @@
-{% extends 'layouts/layout-manage-v10.html' %}
+{% extends 'layouts/layout-manage-v11.html' %}
 
 {% block pageTitle %}
   Your contact details
@@ -10,21 +10,92 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h1 class="nhsuk-heading-xl">Your contact details</h1>
+      <h1 class="nhsuk-heading-xl">Your NHS contact details</h1>
 
-      <div class="nhsuk-u-margin-bottom-4">
         <div class="account-name-link-2">
           <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Jonathan Liam Kingston</h2>
-          <span class="nhsuk-hint">
+          <span class="nhsuk-hint nhsuk-u-margin-bottom-0">
             NHS number: 999 000 8888
           </span>
         </div>
-      </div>
 
-      <div class="nhsuk-u-margin-bottom-6">
+      <!--<div class="nhsuk-u-margin-bottom-6">
         <p>These are the contact details that the NHS holds for you.</p>
         <p>They will be used by NHS services such as your GP or hospital to get in touch with you.</p>
         <p>You can manage these details to keep them up to date.</p>
+      </div>-->
+
+      <div class="nhsuk-table-responsive nhsuk-u-padding-4" style="background-color: #fff;">
+
+        <h3 class="nhsuk-heading-m">Your NHS login</h3>
+
+        <table class="nhsuk-table align-top table-contact">
+          <thead class="nhsuk-table__row">
+            <th class="nhsuk-table__cell cell-left nhsuk-u-width-one-third"></th>
+            <th class="nhsuk-table__cell nhsuk-u-width-one-third">
+              Can the NHS use this to contact you?
+            </th>
+            <th class="nhsuk-table__cell nhsuk-u-width-one-third"></th>
+          </thead>
+          <tbody class="nhsuk-table__body">
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left nhsuk-u-width-one-third">
+                jonkingston@gmail.com
+                <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-u-width-one-third">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="login-email-1" name="patient-email" type="radio" value="" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="login-email-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="login-email-2" name="patient-email" type="radio" value="">
+                    <label class="nhsuk-label nhsuk-radios__label" for="login-email-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </td>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-u-width-one-third">
+                <p class="nhsuk-u-margin-bottom-2"><a href="email/#">Change email address</a></p>
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left nhsuk-u-width-one-third">
+                &bull;&bull;&bull;&bull;&bull;&bull;&bull;1423
+                <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-u-width-one-third">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="login-email-1" name="patient-mobile" type="radio" value="">
+                    <label class="nhsuk-label nhsuk-radios__label" for="login-email-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="login-email-2" name="patient-mobile" type="radio" value="" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="login-email-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </td>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-u-width-one-third">
+                <p class="nhsuk-u-margin-bottom-2"><a href="phone/#">Change phone number</a></p>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
       </div>
       
       <div class="nhsuk-table-responsive nhsuk-u-padding-4" style="background-color: #fff;">
@@ -61,12 +132,12 @@
 
       <div class="nhsuk-table-responsive nhsuk-u-padding-4" style="background-color: #fff;">
 
-        <h3 class="nhsuk-heading-m">Your phone numbers</h3>
+        <h3 class="nhsuk-heading-m">Your contact phone numbers</h3>
 
         <table class="nhsuk-table align-top table-contact">
           <tbody class="nhsuk-table__body">
 
-            {% if data['patient-mobile'] == "" and data['patient-mobile-2'] == "" and data['patient-landine'] == "" %}
+            {% if data['patient-mobile'] == "" and data['patient-mobile-2'] == "" %}
             <p class="nhsuk-hint nhsuk-u-margin-bottom-0">You have no phone numbers.</p>
             {% endif %}
 
@@ -154,7 +225,7 @@
 
       <div class="nhsuk-table-responsive nhsuk-u-padding-4" style="background-color: #fff;">
 
-        <h3 class="nhsuk-heading-m">Your email addresses</h3>
+        <h3 class="nhsuk-heading-m">Your contact email addresses</h3>
 
         <table class="nhsuk-table align-top table-contact">
           <tbody class="nhsuk-table__body">
@@ -172,7 +243,9 @@
                 </td>
                 </td>
                 <td class="nhsuk-table__cell nhsuk-u-width-two-thirds">
-                  <p class="nhsuk-u-margin-bottom-2"><a href="email/email-change?email-for-login=y">Change email address</a></p>
+                  <!--<a href="email/email-remove?email-for-login=y" class="nhsuk-button nhsuk-button-red nhsuk-u-margin-bottom-0">Remove<span class="nhsuk-u-visually-hidden"> email address</span></a>
+                  <a href="email/email-change" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> email address</span></a>-->
+                  <p class="nhsuk-u-margin-bottom-2"><a href="email/#">Change email address</a></p>
                   <p><a href="email/email-remove?email-for-login=y">Remove email address</a></p>
                 </td>
               </tr>
@@ -190,7 +263,9 @@
                 </td>
                 </td>
                 <td class="nhsuk-table__cell">
-                  <p class="nhsuk-u-margin-bottom-2"><a href="email/email-change?email-for-login=">Change email address</a></p>
+                  <!--<a href="email/email-remove?email-for-login=" class="nhsuk-button nhsuk-button-red nhsuk-u-margin-bottom-0">Remove<span class="nhsuk-u-visually-hidden"> email address</span></a>
+                  <a href="email/email-change-enter" class="nhsuk-button nhsuk-button--secondary">Change<span class="nhsuk-u-visually-hidden"> email address</span></a>-->
+                  <p class="nhsuk-u-margin-bottom-2"><a href="email/#">Change email address</a></p>
                   <p><a href="email/email-remove?email-for-login=">Remove email address</a></p>
                 </td>
               </tr>

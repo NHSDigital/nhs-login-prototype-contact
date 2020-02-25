@@ -9,9 +9,11 @@
 
     <div class="nhsuk-grid-column-three-quarters">
         
-        <h1 class="nhsuk-heading-l">{{ data['patient-mobile'] }} has been removed from your contact details</h1>
+        <h1 class="nhsuk-heading-l">We are removing {{ data['patient-mobile'] }} from your contact details</h1>
 
-        <p>It may take up to X hours before this change is updated across the NHS.</p>
+        <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+          <p>Some NHS services may continue to use this phone number until their systems update.</p>
+        </div>
 
         <div class="nhsuk-warning-callout">
           <h3 class="nhsuk-warning-callout__label">Important</h3>
