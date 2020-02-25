@@ -82,7 +82,7 @@ router.post('/account/v9/email/patient-change-login-email', function (req, res) 
 
 
 
-router.post('/account/*/email/email-add-to-contact', function (req, res) {
+router.post('/account/*/login/email-add-to-contact', function (req, res) {
   var choice = req.session.data['email-add-to-contact']
   if (choice == "yes"){
     res.redirect('email-change-done-done')
@@ -92,7 +92,7 @@ router.post('/account/*/email/email-add-to-contact', function (req, res) {
   }
 })
 
-router.post('/account/*/phone/phone-add-to-contact', function (req, res) {
+router.post('/account/*/login/phone-add-to-contact', function (req, res) {
   var choice = req.session.data['phone-add-to-contact']
   if (choice == "yes"){
     res.redirect('phone-change-done-done')

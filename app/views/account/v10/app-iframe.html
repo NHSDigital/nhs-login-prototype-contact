@@ -1,0 +1,15 @@
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-app-new.html' %}
+
+{% block pageScripts %}
+<script>
+$('#loginFrame').on("load", function () {
+    console.log('iframe loaded completely'); //replace with code to hide loader
+    $( ".container--loader" ).hide();
+});
+</script>
+{% endblock %}
+
+{% block main %}
+<iframe id="loginFrame" frameBorder="0" src="https://manage-nhs-login.herokuapp.com/account/v10" width="100%" height="1000px"></iframe>
+{% endblock %}
