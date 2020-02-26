@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-manage-v10.html' %}
 
 {% block pageTitle %}
-  Enter the security code
+Change your login phone number
 {% endblock %}
 
 {% block content %}
@@ -11,11 +11,11 @@
 
       <h1 class="nhsuk-heading-l">Check your phone</h1>
 
-      <p class="nhsuk-body-m">Enter the 6 digit security code we've sent to <b>{{ data['patient-mobile']}}</b></p>
+      <p>Enter the 6 digit security code we have sent by text message to <b>{{ data['login-mobile']}}.</b></p>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="phone-code">Security code</label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="phone-code" name="phone-code-10" type="number">
+        <input class="nhsuk-input nhsuk-input--width-10" id="phone-code" name="phone-code" type="number">
       </div>
 
       <div class="nhsuk-form-group">
@@ -25,7 +25,7 @@
       <div class="nhsuk-form-group">
         {{ backLink({
           "href": "../index",
-          "text": "I don't want to change my phone number",
+          "text": "I do not want to change my phone number",
           "classes": "nhsuk-u-margin-top-7"
         }) }}
       </div>
