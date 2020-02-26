@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-manage-v10.html' %}
 
 {% block pageTitle %}
-  Your phone number has been added
+Change your login email address
 {% endblock %}
 
 {% block content %}
@@ -9,41 +9,9 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h1 class="nhsuk-heading-l">Your NHS login email address is now {{ data['patient-email'] }}</h1>
+      <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-8">Your NHS login email address has been changed</h1>
 
-      <h2 class="nhsuk-heading-m">Would you like to add this email address to your contact details?</h2>
-
-      <form action="email-add-to-contact" method="POST">
-
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="email-add-to-contact-1" name="email-add-to-contact" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="email-add-to-contact-1">
-                Yes
-              </label>
-            </div>
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="email-add-to-contact-2" name="email-add-to-contact" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="email-add-to-contact-2">
-                No
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>Your contact details are used by NHS services such as your GP or hospital to get in touch with you.</p>
-          </div>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <button class="nhsuk-button" type="submit">Continue</button>
-        </div>
-
-      </form>
+      <a href="email-change-done-2" class="nhsuk-button">Continue</a>
 
     </div> 
 

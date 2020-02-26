@@ -1,0 +1,23 @@
+{% extends 'layouts/layout-manage-v10.html' %}
+
+{% block pageTitle %}
+  Remove phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+        
+      <h1 class="nhsuk-heading-l">{{ data['patient-mobile'] }} is still being used for your NHS login</h1>
+
+      <p>Go to your login details if you need to change it.</p>
+
+      <a class="nhsuk-button" href="../manage-login?patient-mobile=">Go to login details</a>
+      
+      <p><a href="../index?patient-mobile=">I do not want to change my login phone number</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}
