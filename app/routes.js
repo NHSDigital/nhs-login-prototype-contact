@@ -143,7 +143,7 @@ router.post('/account/*/phone/add-login-mobile', function (req, res) {
 // Clear all session data
 router.get('/clear', (req, res) => {
 	req.session.data = {}
-	res.redirect('/index')
+	res.redirect('/account/v10/scenarios')
 })
 
 module.exports = router;
