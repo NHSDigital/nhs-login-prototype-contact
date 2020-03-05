@@ -5,7 +5,8 @@
     margin-bottom: 0;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     position: relative;
     padding-right: 7.5em !important;
   }
@@ -19,7 +20,6 @@
 }
 
 .nhs-app-message__unread {
-
   font-size: 14px;
 }
 
@@ -77,9 +77,7 @@
   padding: 4px 6px;
 }
 
-.nhs-app-message__item--read {
-
-}
+.nhs-app-message__item--read {}
 
 .nhs-app-message__date--unread {
 
@@ -155,6 +153,7 @@
   span {
     float: right;
   }
+
   @include clearfix;
 }
 
@@ -178,7 +177,7 @@
     left: 0;
   }
 
-  &:after{
+  &:after {
 
     content: "";
     position: absolute;
@@ -190,9 +189,7 @@
   }
 }
 
-.nhs-app-chat__read-indicator-container {
-
-}
+.nhs-app-chat__read-indicator-container {}
 
 .nhs-app-navicon-messages--active {
   fill: $color_nhsuk-white;
@@ -209,15 +206,18 @@
 .app-link-button {
   @include nhsuk-font(22);
 
-  display: inline-block; /* [1] */
+  display: inline-block;
+  /* [1] */
   font-weight: $nhsuk-font-bold;
-  position: relative; /* [3] */
-  text-decoration: none; /* [4] */
+  position: relative;
+  /* [3] */
+  text-decoration: none;
+  /* [4] */
 
   span {
 
     display: inline-block;
-padding-top: 4px;
+    padding-top: 4px;
   }
 
   @include mq($media-type: print) {
@@ -230,7 +230,8 @@ padding-top: 4px;
 
 
   &:focus {
-    box-shadow: 0 0 0 8px $nhsuk-link-focus-background-color; /* [5] */
+    box-shadow: 0 0 0 8px $nhsuk-link-focus-background-color;
+    /* [5] */
 
     .nhsuk-action-link__text {
       text-decoration: underline;
@@ -239,10 +240,12 @@ padding-top: 4px;
   }
 
   &:hover {
-    box-shadow: 0 0 0 8px $nhsuk-link-hover-background-color; /* [5] */
+    box-shadow: 0 0 0 8px $nhsuk-link-hover-background-color;
+    /* [5] */
 
     .nhsuk-action-link__text {
-      text-decoration: underline; /* [6] */
+      text-decoration: underline;
+      /* [6] */
     }
 
   }
