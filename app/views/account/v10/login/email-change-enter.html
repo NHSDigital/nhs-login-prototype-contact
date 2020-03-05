@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-manage-v10.html' %}
 
 {% block pageTitle %}
-  Enter your new email address
+Change your login email address
 {% endblock %}
 
 {% block content %}
@@ -15,8 +15,8 @@
 
         <div class="nhsuk-form-group">
           <!--<p>We will send a link to your new email address. You will need to follow this link to confirm the email change.</p>-->
-          <label class="nhsuk-label" for="patient-email">New email address</label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="patient-email" name="patient-email" type="email">
+          <label class="nhsuk-label" for="login-email">New email address</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="login-email" name="login-email" type="email">
         </div>
 
         <button class="nhsuk-button">Continue</button>
@@ -25,7 +25,7 @@
 
       {{ backLink({
         "href": "../index",
-        "text": "I don't want to change my email address",
+        "text": "I do not want to change my email address",
         "classes": "nhsuk-u-margin-top-4"
       }) }}
 

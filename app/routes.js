@@ -81,7 +81,7 @@ router.post('/account/v9/email/patient-change-login-email', function (req, res) 
 
 
 
-
+// The patient is choosing whether their login email/phone should be added to their contact details or not (email-change-done.html and phone-change-done.html)
 router.post('/account/*/login/email-add-to-contact', function (req, res) {
   var choice = req.session.data['email-add-to-contact']
   if (choice == "yes"){
@@ -105,34 +105,37 @@ router.post('/account/*/login/phone-add-to-contact', function (req, res) {
 
 
 
-
-router.post('/account/v9/prompt-', function (req, res) {
+// The patient is choosing whether they want to review their contact details or not (prompt-1.html)
+router.post('/account/*/prompt-', function (req, res) {
   var choice = req.session.data['prompt-review']
   if (choice == "yes"){
-    res.redirect('/account/v9/index?patient-mobile-unverified=07788995544')
+    res.redirect('../index?patient-mobile-unverified=07788995544')
   }
   else if (choice == "no"){
-    res.redirect('/account/v9/app')
+    res.redirect('../app')
   }
 })
 
-router.post('/account/v10/more/add-login-email', function (req, res) {
+
+
+// The patient is choosing whether they want to add their new login email/phone to their contact details (more-add.html and more-add-2.html)
+router.post('/account/*/email/add-login-email', function (req, res) {
   var patientEmail = req.session.data['patient-email']
   if (patientEmail == ""){
-    res.redirect('/account/v10/email/email-add?has-added-login-email=y')
+    res.redirect('../email/email-add?has-added-login-email=y')
   }
   else {
-    res.redirect('/account/v10/email/email-add-done?has-added-login-email=y')
+    res.redirect('../email/email-add-done?has-added-login-email=y')
   }
 })
 
-router.post('/account/v10/more/add-login-mobile', function (req, res) {
+router.post('/account/*/phone/add-login-mobile', function (req, res) {
   var patientMobile = req.session.data['patient-mobile']
   if (patientMobile == ""){
-    res.redirect('/account/v10/phone/phone-add?has-added-login-phone=y')
+    res.redirect('../phone/phone-add?has-added-login-phone=y')
   }
   else {
-    res.redirect('/account/v10/phone/phone-add-done?has-added-login-phone=y')
+    res.redirect('../phone/phone-add-done?has-added-login-phone=y')
   }
 })
 
@@ -140,7 +143,7 @@ router.post('/account/v10/more/add-login-mobile', function (req, res) {
 // Clear all session data
 router.get('/clear', (req, res) => {
 	req.session.data = {}
-	res.redirect('/index')
+	res.redirect('/account/v10/scenarios')
 })
 
 module.exports = router;

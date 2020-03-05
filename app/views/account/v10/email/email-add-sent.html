@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-manage-v10.html' %}
 
 {% block pageTitle %}
-  Check your email inbox
+Add an email address
 {% endblock %}
 
 {% block content %}
@@ -11,12 +11,12 @@
 
       <h1 class="nhsuk-heading-l">Check your email inbox</h1>
 
-      <p>Check <b>{{ data['patient-email-2'] }}</b> for an <a href="email-add-confirm">email</a> from the NHS. Click on the link in the email.</p>
+      <p>Check <b>{{ data['patient-email-2'] }}</b> for an <a href="email-add-confirm">email</a> from the NHS. Use the link in the email to verify it.</p>
       <p>If you have not received an email, check your spam folder.</p>
 
       {{ backLink({
         "href": "../index",
-        "text": "Back to my contact details",
+        "text": "Back to your contact details",
         "classes": "nhsuk-u-margin-top-7"
       }) }}
 

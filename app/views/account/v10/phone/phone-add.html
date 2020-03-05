@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-manage-v10.html' %}
 
 {% block pageTitle %}
-  Enter your phone number
+Add a phone number
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="phone-add-code" method="POST">
+      <form action="phone-add-code?patient-mobile-verified=y" method="POST">
         
         <h1 class="nhsuk-heading-l">Enter your phone number</h1>
 
@@ -27,7 +27,7 @@
         <div class="nhsuk-form-group">
           {{ backLink({
             "href": "../index",
-            "text": "I don't want to add a phone number",
+            "text": "I do not want to add a phone number",
             "classes": "nhsuk-u-margin-top-7"
           }) }}
         </div>
