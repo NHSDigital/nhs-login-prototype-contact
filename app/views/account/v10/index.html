@@ -35,13 +35,13 @@
           <tbody class="nhsuk-table__body">
 
             <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell cell-left nhsuk-u-width-one-third">
+              <td class="nhsuk-table__cell cell-left">
                 10 Long Lane<br />
                 Leeds<br />
                 West Yorkshire<br />
                 LS11 2AB
               </td>
-              <td class="nhsuk-table__cell nhsuk-u-width-two-thirds">
+              <td class="nhsuk-table__cell">
                 <!--<a href="address/address-change" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change<span class="nhsuk-u-visually-hidden"> address</span></a>-->
                 <p><a href="address/address-change">How to change your address</a></p>
               </td>
@@ -73,7 +73,7 @@
             {% if data['patient-mobile'] %}
 
               <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell cell-left nhsuk-u-width-one-third">
+                <td class="nhsuk-table__cell cell-left">
                   <!--{% set patientMobile = data['patient-mobile'] %}
                   &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(7)}}-->
                   {{ data['patient-mobile'] }}
@@ -81,7 +81,7 @@
                     <b>Verified</b>
                   </p>
                 </td>
-                <td class="nhsuk-table__cell nhsuk-u-width-two-thirds">
+                <td class="nhsuk-table__cell">
                   <!--<p class="nhsuk-u-margin-bottom-2"><a href="phone/#">Change phone number</a></p>-->
                   <p><a href="phone/phone-remove-1">Remove phone number</a></p>
                 </td>
@@ -133,9 +133,21 @@
               <td class="nhsuk-table__cell cell-left" colspan="2">
 
                 {% if data['has-added-login-phone'] %}
-                <a href="phone/phone-add">Add a phone number</a>
+                <a href="phone/phone-add">
+                  <svg style="margin-bottom: -11px;" class="nhsuk-icon nhsuk-icon__plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 8v8M8 12h8"></path>
+                  </svg>
+                  Add a phone number
+                </a>
                 {% else %}
-                <a href="phone/phone-add-login">Add a phone number</a>
+                <a href="phone/phone-add-login">
+                  <svg style="margin-bottom: -11px;" class="nhsuk-icon nhsuk-icon__plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 8v8M8 12h8"></path>
+                  </svg>
+                  Add a phone number
+                </a>
                 {% endif %}
 
                 <!--<a href="phone/phone-add">Add a phone number</a>-->
@@ -164,12 +176,12 @@
             {% if data['patient-email'] %}
 
               <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell cell-left nhsuk-u-width-one-third">
+                <td class="nhsuk-table__cell cell-left">
                   {{ data['patient-email']}}
                   <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
                 </td>
                 </td>
-                <td class="nhsuk-table__cell nhsuk-u-width-two-thirds">
+                <td class="nhsuk-table__cell">
                   <!--<p class="nhsuk-u-margin-bottom-2"><a href="email/email-change?email-for-login=y&old-email={{data['patient-email']}}">Change email address</a></p>-->
                   <p><a href="email/email-remove-1">Remove email address</a></p>
                 </td>
@@ -199,9 +211,21 @@
               <td class="nhsuk-table__cell cell-left" colspan="2">
 
                 {% if data['has-added-login-email'] %}
-                <a href="email/email-add">Add an email address</a>
+                <a href="email/email-add">
+                  <svg style="margin-bottom: -11px;" class="nhsuk-icon nhsuk-icon__plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 8v8M8 12h8"></path>
+                  </svg>
+                  Add an email address
+                </a>
                 {% else %}
-                <a href="email/email-add-login">Add an email address</a>
+                <a href="email/email-add-login">
+                  <svg style="margin-bottom: -11px;" class="nhsuk-icon nhsuk-icon__plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 8v8M8 12h8"></path>
+                  </svg>
+                  Add an email address
+                </a>
                 {% endif %}
 
                 <!--<a href="email/email-add">Add an email address</a>-->

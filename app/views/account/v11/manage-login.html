@@ -9,8 +9,8 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h1 class="nhsuk-heading-xl">Your security &amp; password</h1>
-      <p class="nhsuk-body-m">These are the details that allow you to log in to NHS services and other online services.</p>
+      <h1 class="nhsuk-heading-xl">Your NHS login details</h1>
+      <p class="nhsuk-body-m">These are the details that allow you to log in to NHS services and other health and care services.</p>
 
       <div class="nhsuk-table-responsive user-info-table">
         <table class="nhsuk-table align-top">
@@ -30,11 +30,13 @@
               <td class="nhsuk-table__cell cell-left">
                 <b>Email address</b>
               </td>
-              {% if data['patient-email'] %}
-              <td class="nhsuk-table__cell cell-left">{{ data['patient-email'] }}</td>
-              {% else %}
-              <td class="nhsuk-table__cell cell-left">jonkingston@gmail.com</td>
-              {% endif %}
+              <td class="nhsuk-table__cell cell-left">
+                {% if data['login-email'] %}
+                  {% set loginEmail = data['login-email'] %}
+                {% else %}
+                  {% set loginEmail = 'jonkingston@gmail.com' %}
+                {% endif %}
+                {{loginEmail}}
               </td>
               <td class="nhsuk-table__cell cell-right">
                 <a href="login/email-change">Change email address</a>
@@ -46,15 +48,13 @@
                 <b>Mobile phone</b><br />
                 <span class="nhsuk-hint">The phone you use to receive security codes</span>
               </td>
-              {% if data['patient-mobile'] %}
               <td class="nhsuk-table__cell cell-left">
-                {% set patientMobile = data['patient-mobile'] %}
-                &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(7)}}
-              </td>
-              {% else %}
-              <td class="nhsuk-table__cell cell-left">&bull;&bull;&bull;&bull;&bull;&bull;&bull;1423</td>
-              {% endif %}
-              </td>
+                {% if data['login-mobile'] %}
+                  {% set loginMobile = data['login-mobile'] %}
+                {% else %}
+                  {% set loginMobile = '07736251423' %}
+                {% endif %}
+                &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{loginMobile.slice(7)}}
               </td>
               <td class="nhsuk-table__cell cell-right">
                 <a href="login/phone-change">Change mobile phone</a>
@@ -77,14 +77,18 @@
         </table>
       </div>
 
-    <h3 class="nhsuk-heading-l">Delete your NHS login</h3>
-    <p>Deleting your NHS login will not delete your contact details.</p>
-    <p>When you delete your NHS login you will no longer be able to use it to access any services.</p>
-    <p class="nhsuk-u-margin-top-4"><a href="delete/delete-login" class="nhsuk-button nhsuk-button--secondary">Start<span class="nhsuk-u-visually-hidden"> to delete your account</span></a></p>
+      <h3 class="nhsuk-heading-l">Delete your NHS login</h3>
+      <p>Deleting your NHS login will not delete your NHS contact details.</p>
+      <p>When you delete your NHS login you will no longer be able to use it to access any services.</p>
+      <p class="nhsuk-u-margin-top-4">
+        <a href="delete/delete-login" class="nhsuk-button nhsuk-button--secondary">
+          Start<span class="nhsuk-u-visually-hidden"> to delete your account</span>
+        </a>
+      </p>
 
-    {% if data['devMode'] %}
-      {% include "includes/test-urls.html" %}
-    {% endif %}
+      {% if data['devMode'] %}
+        {% include "includes/test-urls.html" %}
+      {% endif %}
 
     </div>
 

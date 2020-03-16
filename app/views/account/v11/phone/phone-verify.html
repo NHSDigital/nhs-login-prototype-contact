@@ -1,0 +1,32 @@
+{% extends 'layouts/layout-manage-v11.html' %}
+
+{% block pageTitle %}
+Verify a phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l">Verify your phone number</h1>
+
+      <p>We need an up to date phone number in case we need to contact you.</p>
+      <p>We'll send a security code by text message to your phone.</p>
+
+      <div class="nhsuk-form-group">
+        <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="phone-verify-code">Continue</a>
+      </div>
+
+      <div class="nhsuk-form-group">
+        {{ backLink({
+          "href": "../index",
+          "text": "I do not want to verify a phone number",
+          "classes": "nhsuk-u-margin-top-7"
+        }) }}
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

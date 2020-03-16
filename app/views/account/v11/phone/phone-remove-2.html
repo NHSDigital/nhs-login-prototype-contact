@@ -1,0 +1,23 @@
+{% extends 'layouts/layout-manage-v11.html' %}
+
+{% block pageTitle %}
+Remove a phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+        
+        <h1 class="nhsuk-heading-l">
+          Are you sure you want to remove {{ data['patient-mobile-2'] }}?
+        </h1>
+  
+        <a href="../index" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4">No</a>
+        
+        <a href="phone-remove-done?patient-mobile-2=" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layouts/layout-manage-v11.html' %}
+
+{% block pageTitle %}
+  Enter your password to change your email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        {{ data['device'] }} has been removed
+      </h1>
+
+      <!--<p class="nhsuk-body-m">You will need to enter the password sent to your phone when using your NHS login on this device.</p>-->
+
+      <a href="./manage-login" class="nhsuk-button">
+        Continue
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}

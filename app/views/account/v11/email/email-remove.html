@@ -1,0 +1,38 @@
+{% extends 'layouts/layout-manage-v11.html' %}
+
+{% block pageTitle %}
+Remove an email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+        
+        <h1 class="nhsuk-heading-l">
+          Are you sure you want to remove 
+          {% if data['email-for-login'] %}
+            {{ data['patient-email'] }}?
+          {% else %}
+            {{ data['patient-email-2'] }}?
+          {% endif %}
+        </h1>
+  
+        <a href="../index" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4">
+          No
+        </a>
+        
+        {% if data['email-for-login'] %}
+        <a href="email-remove-login?patient-email" class="nhsuk-button nhsuk-button-red">
+          Yes, I'm sure
+        </a>
+        {% else %}
+        <a href="email-remove-done?patient-email-2=" class="nhsuk-button nhsuk-button-red">
+          Yes, I'm sure
+        </a>
+        {% endif %}
+
+    </div>
+
+  </div>
+{% endblock %}

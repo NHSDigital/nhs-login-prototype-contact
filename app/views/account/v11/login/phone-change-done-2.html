@@ -1,0 +1,50 @@
+{% extends 'layouts/layout-manage-v11.html' %}
+
+{% block pageTitle %}
+Change your login phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h2 class="nhsuk-heading-l">Would you like to add {{data['login-mobile']}} to your NHS contact details?</h2>
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-inset-text nhsuk-u-margin-0">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>Your contact details are used by NHS services such as your GP or hospital to get in touch with you.</p>
+        </div>
+      </div>
+
+      <!-- This form action is not a real page but is used in routes.js -->
+      <form action="phone-add-to-contact" method="POST">
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="phone-add-to-contact-1" name="phone-add-to-contact" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="phone-add-to-contact-1">
+                Yes
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="phone-add-to-contact-2" name="phone-add-to-contact" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="phone-add-to-contact-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit">Continue</button>
+        </div>
+
+      </form>
+
+    </div> 
+
+  </div>
+{% endblock %}

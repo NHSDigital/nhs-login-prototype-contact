@@ -1,0 +1,40 @@
+{% extends 'layouts/layout-manage-v11.html' %}
+
+{% block pageTitle %}
+Add a phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="phone-add-code?patient-mobile-verified=y" method="POST">
+        
+        <h1 class="nhsuk-heading-l">Enter your phone number</h1>
+
+        <!--<p>We'll send a 6 digit security code to your new phone number to verify it.</p>-->
+        
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="patient-mobile-2">Phone number</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="patient-mobile-2" name="patient-mobile-2" type="number">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "../index",
+            "text": "I do not want to add a phone number",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}
