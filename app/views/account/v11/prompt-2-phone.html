@@ -11,7 +11,8 @@
 
       <h1 class="nhsuk-heading-l">Can the NHS use this mobile phone number to contact you?</h1>
 
-      <form action="app" method="POST">
+      <!-- routes.js -->
+      <form action="prompt-2-phone-" method="POST">
 
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
@@ -19,14 +20,14 @@
             <p class="nhsuk-body-l">07736251423</p>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="prompt-review-1" name="prompt-review" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="prompt-review-1">
+              <input class="nhsuk-radios__input" id="prompt-phone-1" name="prompt-phone" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="prompt-phone-1">
                 Yes
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="prompt-review-2" name="prompt-review" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="prompt-review-2">
+              <input class="nhsuk-radios__input" id="prompt-phone-2" name="prompt-phone" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="prompt-phone-2">
                 No
               </label>
             </div>
@@ -35,20 +36,6 @@
 
         <div class="nhsuk-form-group">
           <button class="nhsuk-button" type="submit">Continue</button>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                How the NHS uses your contact details
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
-              <p>By selecting 'Yes' you are adding this mobile phone number to your NHS contact details.</p>
-              <p>NHS services, such as your GP or hospital, might use this mobile phone number to text or call you if they think it is appropriate.</p>
-            </div>
-          </details>
         </div>
 
       </form>

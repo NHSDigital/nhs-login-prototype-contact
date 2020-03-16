@@ -1,0 +1,49 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="prompt-2-complete" method="POST">
+
+        <h1 class="nhsuk-heading-l">Please provide a contact phone number</h1>
+        
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="patient-phone-2">Phone number</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="patient-phone-2" name="patient-phone-2" type="number">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <p><a href="prompt-2-complete">I don't want to provide a contact phone number</a></p>
+        </div>
+
+        <!--
+          <div class="nhsuk-form-group">
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  How the NHS uses your contact details
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>If you enter an email address, NHS services such as your GP or hospital, might use this email address to get in touch with you if they think it is appropriate to use email.</p>
+              </div>
+            </details>
+          </div>
+        -->
+
+      </form>
+
+    </div> 
+
+  </div>
+{% endblock %}

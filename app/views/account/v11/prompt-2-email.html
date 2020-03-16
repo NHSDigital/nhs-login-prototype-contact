@@ -9,9 +9,10 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h1 class="nhsuk-heading-l">Can the NHS use this email address to contact you?</h1>
+      <!-- routes.js -->
+      <form action="prompt-2-email-" method="POST">
 
-      <form action="prompt-2-phone" method="POST">
+        <h1 class="nhsuk-heading-l">Can the NHS use this email address to contact you?</h1>
 
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
@@ -19,14 +20,14 @@
             <p class="nhsuk-body-l">jonkingston@gmail.com</p>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="prompt-review-1" name="prompt-review" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="prompt-review-1">
+              <input class="nhsuk-radios__input" id="prompt-email-1" name="prompt-email" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="prompt-email-1">
                 Yes
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="prompt-review-2" name="prompt-review" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="prompt-review-2">
+              <input class="nhsuk-radios__input" id="prompt-email-2" name="prompt-email" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="prompt-email-2">
                 No
               </label>
             </div>
@@ -37,19 +38,7 @@
           <button class="nhsuk-button" type="submit">Continue</button>
         </div>
 
-        <div class="nhsuk-form-group">
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                How the NHS uses your contact details
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
-              <p>By selecting 'Yes' you are adding this email address to your NHS contact details.</p>
-              <p>NHS services, such as your GP or hospital, might use this email address to get in touch with you if they think it is appropriate to use email.</p>
-            </div>
-          </details>
-        </div>
+        
 
       </form>
 
