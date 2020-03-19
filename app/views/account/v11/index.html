@@ -1,4 +1,8 @@
-{% extends 'layouts/layout-manage-v11.html' %}
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v11.html' %}
+{% endif %}
 
 {% block pageTitle %}
   Your contact details
@@ -22,7 +26,7 @@
       </div>
 
       <div class="nhsuk-u-margin-bottom-6">
-        <p>These are the contact details used by NHS services such as your GP or hospital to get in touch with you.</p>
+        <p>These are the contact details used by NHS services such as your doctor or hospital to get in touch with you.</p>
         <p>You can manage these details to keep them up to date.</p>
       </div>
 
