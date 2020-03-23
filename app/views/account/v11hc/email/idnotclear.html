@@ -5,7 +5,7 @@
 {% endif %}
 
 {% block pageTitle %}
-Remove an email address
+Contact your GP surgery to check your details are correct
 {% endblock %}
 
 {% block content %}
@@ -14,27 +14,33 @@ Remove an email address
     <div class="nhsuk-grid-column-three-quarters">
         
         <h1 class="nhsuk-heading-l">
-          Are you sure you want to remove 
-          {% if data['email-for-login'] %}
-            {{ data['patient-email'] }}?
-          {% else %}
-            {{ data['patient-email-2'] }}?
-          {% endif %}
-        </h1>
-  
-        <a href="../index" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4">
-          No
-        </a>
-        
-        {% if data['email-for-login'] %}
-        <a href="email-remove-login?patient-email" class="nhsuk-button nhsuk-button-red">
-          Yes, I'm sure
-        </a>
-        {% else %}
-        <a href="email-remove-done?patient-email-2=" class="nhsuk-button nhsuk-button-red">
-          Yes, I'm sure
-        </a>
-        {% endif %}
+          </h1>
+
+          <p>
+          You sent the NHS login team some information to prove who you are.
+          </p>
+
+          <p>
+You did not pass our checks because the face in your video did not match the face on your photo I.D.
+          </p>
+
+          <p>
+          <a href="https://support-nhslogin.herokuapp.com/provewhoyouare/with/article#howtotake">How to take a good photo of your I.D.</a><br>
+          <a href="https://support-nhslogin.herokuapp.com/takeandupload/article#recordvideo">How to record a short video of yourself</a>
+          </p>
+      
+<h3>
+How to try again
+</h3>
+
+          <p>
+Go to the website or app you were trying to access. Enter your email address and NHS login password. You will be asked to prove who you are.
+</p>
+
+          <p>
+          </p>
+
+
 
     </div>
 
