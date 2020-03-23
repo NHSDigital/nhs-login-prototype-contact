@@ -19,13 +19,17 @@
 
     <p>Please try again later.</p>
 
-     {{ details({
-        "text": "If you keep getting this message",
-        "HTML": "
-                  <a href="#">Enter your registration details</a>
 
-  "
-}) }}
+<details class="nhsuk-details">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+If you keep getting this message    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <a href="#">Enter your registration details</a>
+
+  </div>
+</details>
 
     <p class="small">Reference: CID7024</p>
 
