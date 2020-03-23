@@ -19,21 +19,13 @@
 
     <p>Please try again later.</p>
 
-    <details class="" role="group">
-        <summary data-analytics="summary" role="button" aria-controls="details-content-0" aria-expanded="true">
-            <span class="details__summary">If you keep getting this message</span>
-        </summary>
-        <div class="callout callout--info callout--friendly" id="details-content-0" aria-hidden="false">
+     {{ details({
+        "text": "If you keep getting this message",
+        "HTML": "
+                  <a href="#">Enter your registration details</a>
 
-<p>
-<a href="">Visit the help centre to find out how to fix this</a>
-</p>
-
-
-                <a class="button" href="/patient-online/v20/patient-online-linkage-key{{ params }}">Enter your registration details</a>
-
-        </div>
-    </details>
+  "
+}) }}
 
     <p class="small">Reference: CID7024</p>
 
