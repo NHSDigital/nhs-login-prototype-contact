@@ -1,0 +1,296 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v11.html' %}
+{% endif %}
+
+{% block pageTitle %}
+  Your contact details
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-xl">Your contact details</h1>
+
+      <div class="nhsuk-u-margin-bottom-4">
+        <div class="account-name-link-2">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Jonathan Liam Kingston</h2>
+          <span class="nhsuk-hint">
+            NHS number: 999 000 8888
+          </span>
+        </div>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-6">
+        <p>These are the contact details used by NHS services such as your doctor or hospital to get in touch with you.</p>
+        <p>You can manage these details to keep them up to date.</p>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-6">
+        {% if data['reveal-details'] %}
+        <a href="?reveal-details=" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Hide your contact details</a>
+        {% else %}
+        <a href="reveal-enter-password" class="nhsuk-button nhsuk-u-margin-bottom-0">Show your contact details</a>
+        {% endif %}
+      </div>
+      
+      <div class="nhsuk-table-responsive nhsuk-u-padding-4" style="background-color: #fff;">
+
+        <h3 class="nhsuk-heading-m">Your address</h3>
+
+        <table class="nhsuk-table align-top table-contact">
+          <tbody class="nhsuk-table__body">
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                {% if data['reveal-details'] %}
+                  10 Long Lane<br />
+                  Leeds<br />
+                  West Yorkshire<br />
+                  LS11 2AB
+                {% else %}
+                  &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;Lane<br />
+                  &bull;eeds<br />
+                  &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;hire<br />
+                  &bull;&bull;&bull;&bull;2AB
+                {% endif %}
+              </td>
+              <td class="nhsuk-table__cell">
+                <!--<a href="address/address-change" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Change<span class="nhsuk-u-visually-hidden"> address</span></a>-->
+                <p><a href="address/address-change">How to change your address</a></p>
+              </td>
+            </tr>
+
+            <!--<tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left" colspan="2">
+                <a href="#" class="nhsuk-button">Add an address</a>
+              </td>
+            </tr>-->
+
+          </tbody>
+        </table>
+
+      </div>
+
+
+      <div class="nhsuk-table-responsive nhsuk-u-padding-4" style="background-color: #fff;">
+
+        <h3 class="nhsuk-heading-m">Your phone numbers</h3>
+
+        <table class="nhsuk-table align-top table-contact">
+          <tbody class="nhsuk-table__body">
+
+            {% if data['patient-mobile'] == "" and data['patient-mobile-2'] == "" and data['patient-landline'] == "" %}
+            <p class="nhsuk-hint nhsuk-u-margin-bottom-0">You have no phone numbers.</p>
+            {% endif %}
+
+            {% if data['patient-mobile'] %}
+
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+
+                  {% if data['reveal-details'] %}
+                    {{ data['patient-mobile'] }}
+                  {% else %}
+                    {% set patientMobile = data['patient-mobile'] %}
+                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(7)}}
+                  {% endif %}
+
+                  <p class="nhsuk-body-s" style="color:#007f3b;">
+                    <b>Verified</b>
+                  </p>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <!--<p class="nhsuk-u-margin-bottom-2"><a href="phone/#">Change phone number</a></p>-->
+                  <p><a href="phone/phone-remove-1">Remove phone number</a></p>
+                </td>
+              </tr>
+
+            {% endif %}
+
+            {% if data['patient-mobile-2'] %}
+
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+
+                  {% if data['reveal-details'] %}
+                    {{data['patient-mobile-2']}}
+                  {% else %}
+                    {% set patientMobile2 = data['patient-mobile-2'] %}
+                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile2.slice(7)}}
+                  {% endif %}
+
+                  {% if data['patient-mobile-verified'] %}
+                  <br /><b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
+                  {% else %}
+                  <br /><b class="nhsuk-body-s" style="color:#d5281b;">Unverified</b>
+                  {% endif %}
+                </td>
+                <td class="nhsuk-table__cell">
+                  {% if data['patient-mobile-verified'] %}{% else %}
+                  <p class="nhsuk-u-margin-bottom-2"><a href="phone/phone-verify">Verify phone number</a></p>
+                  {% endif %}
+                  <!--<p class="nhsuk-u-margin-bottom-2"><a href="phone/#">Change phone number</a></p>-->
+                  <p><a href="phone/phone-remove-2">Remove phone number</a></p>
+                </td>
+              </tr>
+
+            {% endif %}
+
+            {% if data['patient-landline'] %}
+
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+
+                  {% if data['reveal-details'] %}
+                    {{data['patient-landline']}}
+                  {% else %}
+                    {% set patientLandline = data['patient-landline'] %}
+                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientLandline.slice(7)}}
+                  {% endif %}
+
+                </td>
+                <td class="nhsuk-table__cell">
+                  <!--<p class="nhsuk-u-margin-bottom-2"><a href="#">Change phone number</a></p>-->
+                  <p><a href="#">Remove phone number</a></p>
+                </td>
+              </tr>
+
+            {% endif %}
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left" colspan="2">
+
+                {% if data['has-added-login-phone'] %}
+                <a href="phone/phone-add">
+                  <svg style="margin-bottom: -11px;" class="nhsuk-icon nhsuk-icon__plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 8v8M8 12h8"></path>
+                  </svg>
+                  Add a phone number
+                </a>
+                {% else %}
+                <a href="phone/phone-add-login">
+                  <svg style="margin-bottom: -11px;" class="nhsuk-icon nhsuk-icon__plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 8v8M8 12h8"></path>
+                  </svg>
+                  Add a phone number
+                </a>
+                {% endif %}
+
+                <!--<a href="phone/phone-add">Add a phone number</a>-->
+                
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+      
+
+
+      <div class="nhsuk-table-responsive nhsuk-u-padding-4" style="background-color: #fff;">
+
+        <h3 class="nhsuk-heading-m">Your email addresses</h3>
+
+        <table class="nhsuk-table align-top table-contact">
+          <tbody class="nhsuk-table__body">
+
+            {% if data['patient-email'] == "" and data['patient-email-2'] == "" %}
+            <p class="nhsuk-hint nhsuk-u-margin-bottom-0">You have no email addresses.</p>
+            {% endif %}
+
+            {% if data['patient-email'] %}
+
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+
+                  {% if data['reveal-details'] %}
+                    {{ data['patient-email']}}
+                  {% else %}
+                    {% set patientEmail = data['patient-email'] %}
+                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail.slice(7)}}
+                  {% endif %}
+
+                  <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
+                </td>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <!--<p class="nhsuk-u-margin-bottom-2"><a href="email/email-change?email-for-login=y&old-email={{data['patient-email']}}">Change email address</a></p>-->
+                  <p><a href="email/email-remove-1">Remove email address</a></p>
+                </td>
+              </tr>
+
+            {% endif %}
+
+            {% if data['patient-email-2'] %}
+
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell cell-left">
+
+                  {% if data['reveal-details'] %}
+                    {{ data['patient-email-2']}}
+                  {% else %}
+                    {% set patientEmail2 = data['patient-email-2'] %}
+                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail2.slice(7)}}
+                  {% endif %}
+
+                  <p class="nhsuk-body-s" style="color:#007f3b;">
+                    <b>Verified</b>
+                  </p>
+                </td>
+                </td>
+                <td class="nhsuk-table__cell">
+                  <!--<p class="nhsuk-u-margin-bottom-2"><a href="email/email-change?email-for-login=">Change email address</a></p>-->
+                  <p><a href="email/email-remove-2">Remove email address</a></p>
+                </td>
+              </tr>
+
+            {% endif %}
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left" colspan="2">
+
+                {% if data['has-added-login-email'] %}
+                <a href="email/email-add">
+                  <svg style="margin-bottom: -11px;" class="nhsuk-icon nhsuk-icon__plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 8v8M8 12h8"></path>
+                  </svg>
+                  Add an email address
+                </a>
+                {% else %}
+                <a href="email/email-add-login">
+                  <svg style="margin-bottom: -11px;" class="nhsuk-icon nhsuk-icon__plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12 8v8M8 12h8"></path>
+                  </svg>
+                  Add an email address
+                </a>
+                {% endif %}
+
+                <!--<a href="email/email-add">Add an email address</a>-->
+
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+        
+      </div>
+
+      {% if data['devMode'] %}
+        {% include "includes/test-urls.html" %}
+      {% endif %}
+
+    </div>
+
+  </div>
+
+{% endblock %}

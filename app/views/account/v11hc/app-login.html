@@ -1,0 +1,82 @@
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-app-new.html' %}
+
+{% block pageTitle %}
+  The NHS app
+{% endblock %}
+
+{% block header %}
+
+<header class="nhsuk-header nhsuk-header--transactional nhs-app-header--app nhs-app-desktop--hide" role="banner">
+  <div class="nhsuk-width-container">
+
+    <div class="nhsuk-grid-row">
+      
+      <div class="nhsuk-grid-column-one-third nhs-app-u-one-third-mobile" style="padding: 4px 0 0 16px !important">
+
+        <a href="app-start">
+          <svg width="0.58em" height="1.2em" viewBox="0 0 8 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);">
+              <g id="Style-guide" stroke="#ffffff" stroke-width="0.5" stroke-linecap="round" fill="#ffffff" fill-rule="evenodd" transform="translate(-924.000000, -4555.000000)">
+                  <g id="Group-18" transform="translate(571.000000, 4404.000000)" fill="#ffffff" fill-rule="nonzero">
+                      <g id="icon_arrow_left" transform="translate(357.000000, 158.500000) rotate(180.000000) translate(-357.000000, -158.500000) translate(353.000000, 151.000000)">
+                          <path d="M7.47266881,15 C7.61414791,15 7.74276527,14.9482759 7.84565916,14.8448276 C8.05144695,14.637931 8.05144695,14.3017241 7.84565916,14.0948276 L1.28617363,7.5 L7.84565916,0.905172414 C8.05144695,0.698275862 8.05144695,0.362068966 7.84565916,0.155172414 C7.63987138,-0.0517241379 7.30546624,-0.0517241379 7.09967846,0.155172414 L0.154340836,7.125 C-0.0514469453,7.33189655 -0.0514469453,7.66810345 0.154340836,7.875 L7.09967846,14.8448276 C7.20257235,14.9482759 7.33118971,15 7.47266881,15 Z" id="Shape"></path>
+                      </g>
+                  </g>
+              </g>
+          </svg>
+        </a>
+
+      </div>
+
+      <div class="nhsuk-grid-column-one-third nhs-app-u-one-third-mobile" style="padding: 0 8px !important">
+      <div class="nhs-app-logo">
+        <a class="" href="app" aria-label="NHS homepage">
+          <svg class="" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
+            <path fill="#fff" d="M0 0h40v16H0z"></path>
+            <path fill="#005eb8" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+            <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    </div>
+
+  </div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-6">Enter your NHS login details</h1>
+
+  <form action="app" method="post">
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-heading-m" for="email">Email address</label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="email" name="email" type="email">
+    </div>
+    
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-heading-m" for="password">Password</label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password" type="password">
+    </div>
+
+    <div class="nhsuk-form-group">
+      <p><a href="#">Forgotten your password?</a></p>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <button class="nhsuk-button nhsuk-u-margin-bottom-0" style="width: 100%; text-align: center;">Continue</button>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <p><a href="#">Set up an NHS login</a></p>
+    </div>
+
+</form>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

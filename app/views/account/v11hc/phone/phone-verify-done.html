@@ -1,0 +1,23 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v11.html' %}
+{% endif %}
+
+{% block pageTitle %}
+Verify a phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l">Your phone number has been verified</h1>
+
+      <a class="nhsuk-button nhsuk-u-margin-bottom-0" href="../index?patient-mobile-verified=y">Continue</a>
+
+    </div> 
+
+  </div>
+{% endblock %}

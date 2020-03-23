@@ -1,0 +1,39 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v11.html' %}
+{% endif %}
+
+{% block pageTitle %}
+Change your login email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="email-change-sent" method="post">
+
+        <h1 class="nhsuk-heading-l">Enter your new email address</h1>
+
+        <div class="nhsuk-form-group">
+          <!--<p>We will send a link to your new email address. You will need to follow this link to confirm the email change.</p>-->
+          <label class="nhsuk-label" for="login-email">New email address</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="login-email" name="login-email" type="email">
+        </div>
+
+        <button class="nhsuk-button">Continue</button>
+
+      </form>
+
+      {{ backLink({
+        "href": "../index",
+        "text": "I do not want to change my email address",
+        "classes": "nhsuk-u-margin-top-4"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

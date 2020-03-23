@@ -1,0 +1,40 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v11.html' %}
+{% endif %}
+
+{% block pageTitle %}
+Add a phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l">Check your phone</h1>
+
+      <p>Enter the 6 digit security code we have sent by text message to <b>{{ data['patient-mobile-2']}}</b></p>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="phone-code">Security code</label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="phone-code" name="phone-code-10" type="number">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <a class="nhsuk-button nhsuk-u-margin-bottom-0" type="submit" href="phone-add-done">Continue</a>
+      </div>
+
+      <div class="nhsuk-form-group">
+        {{ backLink({
+          "href": "../index",
+          "text": "I do not want to add a phone number",
+          "classes": "nhsuk-u-margin-top-7"
+        }) }}
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

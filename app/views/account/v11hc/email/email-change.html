@@ -1,0 +1,44 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v11.html' %}
+{% endif %}
+
+{% block pageTitle %}
+Change an email address
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="email-change-sent" method="post">
+
+        <h1 class="nhsuk-heading-l">Enter your new email address</h1>
+
+        <div class="nhsuk-form-group">
+          {% if data['email-for-login'] %}
+          <label class="nhsuk-label" for="patient-email">New email address</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="patient-email" name="patient-email" type="email">
+          {% else %}
+          <label class="nhsuk-label" for="patient-email-2">New email address</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="patient-email-2" name="patient-email-2" type="email">
+          {% endif %}
+        </div>
+
+        <button class="nhsuk-button">Continue</button>
+
+      </form>
+
+      {{ backLink({
+        "href": "../index",
+        "text": "I do not want to change my email address",
+        "classes": "nhsuk-u-margin-top-4"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v11.html' %}
+{% endif %}
+
+{% block pageTitle %}
+  Your email address has been changed
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Change your recovery email</span>
+      <h1 class="nhsuk-fieldset__legend--l">
+          Recovery email changed
+      </h1>
+      <p>Your recovery email has been changed to {{ data['user-email-recovery'] }}</p>
+      <p>Your password will stay the same.</p>
+
+      {{ backLink({
+        "href": "../../index{{ data ['devMode'] }}",
+        "text": "Back to: My NHS login settings",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}
