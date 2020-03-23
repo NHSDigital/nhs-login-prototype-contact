@@ -32,9 +32,9 @@
 
       <div class="nhsuk-u-margin-bottom-6">
         {% if data['reveal-details'] %}
-        <a href="?reveal-details=" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0">Hide your contact details</a>
+        <a href="?reveal-details=#show-hide" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" id="show-hide">Hide your contact details</a>
         {% else %}
-        <a href="reveal-enter-password" class="nhsuk-button nhsuk-u-margin-bottom-0">Show your contact details</a>
+        <a href="reveal-enter-password" class="nhsuk-button nhsuk-u-margin-bottom-0" id="show-hide">Show your contact details</a>
         {% endif %}
       </div>
       
