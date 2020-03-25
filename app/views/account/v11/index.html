@@ -34,7 +34,7 @@
         {% if data['reveal-details'] %}
         <a href="?reveal-details=#show-hide" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" id="show-hide">Hide your contact details</a>
         {% else %}
-        <a href="reveal-enter-password" class="nhsuk-button nhsuk-u-margin-bottom-0" id="show-hide">Show your contact details</a>
+        <a href="reveal-enter-password" class="nhsuk-button nhsuk-u-margin-bottom-0" id="show-hide">Reveal your contact details</a>
         {% endif %}
       </div>
       
@@ -85,7 +85,7 @@
           <tbody class="nhsuk-table__body">
 
             {% if data['patient-mobile'] == "" and data['patient-mobile-2'] == "" and data['patient-landline'] == "" %}
-            <p class="nhsuk-hint nhsuk-u-margin-bottom-0">You have no phone numbers.</p>
+            <p class="nhsuk-hint nhsuk-u-margin-bottom-0">You have no contact phone numbers.</p>
             {% endif %}
 
             {% if data['patient-mobile'] %}
@@ -100,9 +100,8 @@
                     &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(7)}}
                   {% endif %}
 
-                  <p class="nhsuk-body-s" style="color:#007f3b;">
-                    <b>Verified</b>
-                  </p>
+                  <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
+
                 </td>
                 <td class="nhsuk-table__cell">
                   <!--<p class="nhsuk-u-margin-bottom-2"><a href="phone/#">Change phone number</a></p>-->
@@ -125,9 +124,9 @@
                   {% endif %}
 
                   {% if data['patient-mobile-verified'] %}
-                  <br /><b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
+                  <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
                   {% else %}
-                  <br /><b class="nhsuk-body-s" style="color:#d5281b;">Unverified</b>
+                  <b class="nhsuk-body-s" style="color:#d5281b;">Unverified</b>
                   {% endif %}
                 </td>
                 <td class="nhsuk-table__cell">
@@ -203,7 +202,7 @@
           <tbody class="nhsuk-table__body">
 
             {% if data['patient-email'] == "" and data['patient-email-2'] == "" %}
-            <p class="nhsuk-hint nhsuk-u-margin-bottom-0">You have no email addresses.</p>
+            <p class="nhsuk-hint nhsuk-u-margin-bottom-0">You have no contact email addresses.</p>
             {% endif %}
 
             {% if data['patient-email'] %}
@@ -241,9 +240,8 @@
                     &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail2.slice(7)}}
                   {% endif %}
 
-                  <p class="nhsuk-body-s" style="color:#007f3b;">
-                    <b>Verified</b>
-                  </p>
+                  <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
+
                 </td>
                 </td>
                 <td class="nhsuk-table__cell">

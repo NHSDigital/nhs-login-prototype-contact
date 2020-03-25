@@ -118,7 +118,7 @@ router.post('/account/*/prompt-', function (req, res) {
 
 
 
-// The patient is choosing whether to add their email or phone to their contact details, or enter one.
+// The patient is choosing whether to add their email or phone to their contact details, or enter one (prompt-2-email.html and prompt-2-phone.html)
 router.post('/account/*/prompt-2-email-', function (req, res) {
   var choice = req.session.data['prompt-email']
   if (choice == "yes"){
@@ -141,7 +141,7 @@ router.post('/account/*/prompt-2-phone-', function (req, res) {
 
 
 
-// The patient is choosing whether they want to add their new login email/phone to their contact details (more-add.html and more-add-2.html)
+// The patient is choosing whether they want to add their new login email/phone to their contact details (phone-add-login.html and email-add-login.html)
 router.post('/account/*/email/add-login-email', function (req, res) {
   var patientEmail = req.session.data['patient-email']
   if (patientEmail == ""){
