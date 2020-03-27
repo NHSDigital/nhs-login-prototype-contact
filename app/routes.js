@@ -120,22 +120,22 @@ router.post('/account/*/prompt-', function (req, res) {
 
 // The patient is choosing whether to add their email or phone to their contact details, or enter one (prompt-2-email.html and prompt-2-phone.html)
 router.post('/account/*/prompt-2-email-', function (req, res) {
-  var choice = req.session.data['prompt-email']
-  if (choice == "yes"){
-    res.redirect('prompt-2-phone')
-  }
-  else if (choice == "no"){
+  var choice = req.session.data['patient-email']
+  if (choice == ""){
     res.redirect('prompt-2-email-enter')
+  }
+  else {
+    res.redirect('prompt-2-phone')
   }
 })
 
 router.post('/account/*/prompt-2-phone-', function (req, res) {
-  var choice = req.session.data['prompt-phone']
-  if (choice == "yes"){
-    res.redirect('prompt-2-complete')
-  }
-  else if (choice == "no"){
+  var choice = req.session.data['patient-mobile']
+  if (choice == ""){
     res.redirect('prompt-2-phone-enter')
+  }
+  else {
+    res.redirect('prompt-2-complete')
   }
 })
 
@@ -166,7 +166,7 @@ router.post('/account/*/phone/add-login-mobile', function (req, res) {
 // Clear all session data
 router.get('/clear', (req, res) => {
 	req.session.data = {}
-	res.redirect('/account/v11/scenarios')
+	res.redirect('/index')
 })
 
 module.exports = router;
