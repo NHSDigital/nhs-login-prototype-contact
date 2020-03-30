@@ -26,7 +26,7 @@
       </div>
 
       <div class="nhsuk-u-margin-bottom-6">
-        <p>These are the contact details used by NHS services such as your doctor or hospital to get in touch with you.</p>
+        <p>These are the contact details used by NHS services such as your GP surgery, hospital or pharmacy to get in touch with you.</p>
         <p>You can manage these details to keep them up to date.</p>
       </div>
 
@@ -97,7 +97,7 @@
                     {{ data['patient-mobile'] }}
                   {% else %}
                     {% set patientMobile = data['patient-mobile'] %}
-                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(7)}}
+                    {{patientMobile | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(8)}}
                   {% endif %}
 
                   <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
@@ -120,7 +120,7 @@
                     {{data['patient-mobile-2']}}
                   {% else %}
                     {% set patientMobile2 = data['patient-mobile-2'] %}
-                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile2.slice(7)}}
+                    {{patientMobile2 | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile2.slice(8)}}
                   {% endif %}
 
                   {% if data['patient-mobile-verified'] %}
@@ -149,13 +149,13 @@
                     {{data['patient-landline']}}
                   {% else %}
                     {% set patientLandline = data['patient-landline'] %}
-                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientLandline.slice(7)}}
+                    {{patientLandline | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;{{patientLandline.slice(8)}}
                   {% endif %}
 
                 </td>
                 <td class="nhsuk-table__cell">
                   <!--<p class="nhsuk-u-margin-bottom-2"><a href="#">Change phone number</a></p>-->
-                  <p><a href="#">Remove phone number</a></p>
+                  <p><a href="phone/phone-remove-3">Remove phone number</a></p>
                 </td>
               </tr>
 
@@ -214,7 +214,7 @@
                     {{ data['patient-email']}}
                   {% else %}
                     {% set patientEmail = data['patient-email'] %}
-                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail.slice(7)}}
+                    {{patientEmail | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail.slice(7)}}
                   {% endif %}
 
                   <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
@@ -237,7 +237,7 @@
                     {{ data['patient-email-2']}}
                   {% else %}
                     {% set patientEmail2 = data['patient-email-2'] %}
-                    &bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail2.slice(7)}}
+                    {{patientEmail2 | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail2.slice(7)}}
                   {% endif %}
 
                   <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>

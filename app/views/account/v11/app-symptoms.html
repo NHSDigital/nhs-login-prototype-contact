@@ -1,0 +1,29 @@
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-app-new.html' %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-xl">
+        Check your symptoms
+      </h1>
+      <ul class="list-menu">
+        <li>
+          <a href="#" id="btn_az">
+            <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">A-Z of conditions and treatments</h2>
+            <p>Search trusted information and advice on hundreds of conditions</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" id="btn_111" target="_blank">
+            <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Check if you need urgent help</h2>
+            <p>Answer online questions to get instant advice or medical help near you</p>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+{% endblock %}

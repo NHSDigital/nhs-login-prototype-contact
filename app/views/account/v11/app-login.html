@@ -51,7 +51,11 @@
 
   <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-6">Enter your NHS login details</h1>
 
-  <form action="prompt" method="post">
+  {% if data['prompt'] == "3" %}
+  <form action="prompt-3" method="post">
+  {% else %}
+  <form action="prompt-2" method="post">
+  {% endif %}
 
     <div class="nhsuk-form-group">
       <label class="nhsuk-heading-m" for="email">Email address</label>
