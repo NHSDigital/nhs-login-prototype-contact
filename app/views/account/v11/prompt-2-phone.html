@@ -45,7 +45,13 @@
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
 
-            <p class="nhsuk-body-l">07736251423</p>
+            <p class="nhsuk-body-l">
+              {% if data['reveal-details'] %}
+              07736251423
+              {% else %}
+              07&bull;&bull;&bull;&bull;&bull;&bull;423
+              {% endif %}
+            </p>
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423">

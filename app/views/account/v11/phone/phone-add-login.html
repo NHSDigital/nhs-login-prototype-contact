@@ -21,7 +21,13 @@ Add a phone number
             <h1 class="nhsuk-heading-l">Would you like to add this phone number to your NHS contact details?</h1>
           
             <div class="nhsuk-radios">
-              <p class="nhsuk-body-l">07736251423</p>
+              <p class="nhsuk-body-l">
+                {% if data['reveal-details'] %}
+                07736251423
+                {% else %}
+                07&bull;&bull;&bull;&bull;&bull;&bull;423
+                {% endif %}
+              </p>
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="login-phone-1" name="patient-mobile" type="radio" value="07736251423">
                 <label class="nhsuk-label nhsuk-radios__label" for="login-phone-1">

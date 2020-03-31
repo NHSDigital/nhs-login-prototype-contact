@@ -210,12 +210,7 @@
               <tr class="nhsuk-table__row">
                 <td class="nhsuk-table__cell cell-left">
 
-                  {% if data['reveal-details'] %}
-                    {{ data['patient-email']}}
-                  {% else %}
-                    {% set patientEmail = data['patient-email'] %}
-                    {{patientEmail | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail.slice(7)}}
-                  {% endif %}
+                  {{ data['patient-email']}}
 
                   <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
                 </td>
@@ -233,12 +228,7 @@
               <tr class="nhsuk-table__row">
                 <td class="nhsuk-table__cell cell-left">
 
-                  {% if data['reveal-details'] %}
-                    {{ data['patient-email-2']}}
-                  {% else %}
-                    {% set patientEmail2 = data['patient-email-2'] %}
-                    {{patientEmail2 | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;&bull;{{patientEmail2.slice(7)}}
-                  {% endif %}
+                  {{ data['patient-email-2']}}
 
                   <b class="nhsuk-body-s" style="color:#007f3b;">Verified</b>
 
