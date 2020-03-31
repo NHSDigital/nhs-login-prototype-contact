@@ -51,7 +51,11 @@
         </div>
 
         <div class="nhsuk-form-group">
-          <p><a href="app">I do not want to provide a contact phone number</a></p>
+          {% if data['patient-email'] %}
+          <p><a href="prompt-2-complete">I do not want to provide a contact phone number</a></p>
+          {% else %}
+          <p><a href="app?mobileMode=y&devMode=&patient-email=&patient-email-2=&patient-mobile=&patient-mobile-2=07888364455&patient-landline=&patient-mobile-verified=&login-email=jonkingston@gmail.com&login-mobile=07736251423">I do not want to provide a contact phone number</a></p>
+          {% endif %}
         </div>
 
       </form>

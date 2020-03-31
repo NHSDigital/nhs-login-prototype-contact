@@ -9,12 +9,16 @@ Remove a phone number
 {% endblock %}
 
 {% block content %}
+
+<!-- convert DATA to Nunjucks variable -->
+{% set patientLandline = data['patient-landline'] %}
+
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-three-quarters">
         
         <h1 class="nhsuk-heading-l">
-          Are you sure you want to remove {{ data['patient-landline'] }}?
+          Are you sure you want to remove {{patientLandline | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;{{patientLandline.slice(8)}}?
         </h1>
   
         <a href="../index" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4">No</a>
