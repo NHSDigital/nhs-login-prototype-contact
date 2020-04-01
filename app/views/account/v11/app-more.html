@@ -5,28 +5,32 @@
 {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <h1 class="nhsuk-heading-xl">More</h1>
-      <ul class="list-menu">
-		<li>
-			<a href="index?mobileMode=y&patient-mobile={{data['patient-mobile']}}&patient-mobile-2={{data['patient-mobile-2']}}&patient-landline={{data['patient-landline']}}&patient-email={{data['patient-email']}}&patient-email-2={{data['patient-email-2']}}&login-email=jonkingston@gmail.com&login-mobile=07736251423" id="btn_contact">
-				<h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Update your NHS contact details</h2>
-				<p>Make sure your contact details are up to date so that NHS services can contact you.</p>
-			</a>
-		</li>
-		<li>
-      		<a href="#" id="btn_organdonation">
-      			<h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Manage organ donation decision</h2>
-      			<p>Help save thousands of lives in the UK every year by signing up to become a donor on the NHS Organ Donor Register.</p>
-      		</a>
-      	</li>
-        <li>
-          <a href="#" id="btn_organdonation">
-      			<h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Find out why your data matters</h2>
-      			<p>Find out how the NHS uses your confidential patient information and choose whether or not it can be used for research and planning.</p>
-      		</a>
-      	</li>
-      </ul>
-
+      	<h1 class="nhsuk-heading-xl">More</h1>
+		<ul class="list-menu">
+			<li>
+				<a href="index?mobileMode=y&patient-mobile={{data['patient-mobile']}}&patient-mobile-2={{data['patient-mobile-2']}}&patient-landline={{data['patient-landline']}}&patient-email={{data['patient-email']}}&patient-email-2={{data['patient-email-2']}}&login-email=jonkingston@gmail.com&login-mobile=07736251423" id="btn_contact">
+					<h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Update your NHS contact details</h2>
+					<p>Make sure your contact details are up to date so that NHS services can contact you.</p>
+				</a>
+			</li>
+			<li>
+				<a href="#" id="btn_organdonation">
+					<h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Manage organ donation decision</h2>
+					<p>Help save thousands of lives in the UK every year by signing up to become a donor on the NHS Organ Donor Register.</p>
+				</a>
+			</li>
+			<li>
+				<a href="#" id="btn_organdonation">
+					<h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Find out why your data matters</h2>
+					<p>Find out how the NHS uses your confidential patient information and choose whether or not it can be used for research and planning.</p>
+				</a>
+			</li>
+			<li>
+				<a href="/clear" id="btn_organdonation">
+					<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Clear data</h2>
+				</a>
+			</li>
+		</ul>
     </div>
   </div>
 {% endblock %}
