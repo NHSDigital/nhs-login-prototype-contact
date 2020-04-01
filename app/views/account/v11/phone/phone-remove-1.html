@@ -18,8 +18,13 @@
     <div class="nhsuk-grid-column-three-quarters">
         
         <h1 class="nhsuk-heading-l">
-          Are you sure you want to remove {{patientMobile | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(8)}}?
-        </h1>
+          Are you sure you want to remove 
+          {% if data['reveal-details'] %}
+            {{patientMobile}}?
+          {% else %}
+            {{patientMobile | truncate(2, true, "")}}&bull;&bull;&bull;&bull;&bull;&bull;{{patientMobile.slice(8)}}?
+          {% endif %}
+        </h1>  
   
         <a href="../index" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4">No</a>
         
