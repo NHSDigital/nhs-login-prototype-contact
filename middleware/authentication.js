@@ -27,14 +27,13 @@ module.exports = function (req, res, next) {
     }
 
 
-        // Remove this if we don't want password
-   /*  const user = basicAuth(req)
+    // Remove this if we don't want password
+    const user = basicAuth(req)
 
     if (!user || user.name !== username || user.pass !== password) {
       res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
       return res.sendStatus(401)
     }
- */
     // up to here!
 
     

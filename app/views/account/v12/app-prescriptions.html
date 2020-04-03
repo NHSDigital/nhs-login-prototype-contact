@@ -1,0 +1,41 @@
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout-app-new.html' %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl nhs-app-xl">
+      Prescriptions
+    </h1>
+
+    <p>Manage your prescriptions and your nominated pharmacy.</p>
+
+    <ul class="list-menu">
+      <li>
+        <a href="#">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Order a repeat prescription</h2>
+       </a>
+     </li>
+    </ul>
+
+    <ul class="list-menu">
+      <li>
+        <a href="#">
+          <h2 class="nhsuk-heading-s">Your repeat prescription orders</h2>
+            <p>See repeat prescriptions you have ordered</p>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <h2 class="nhsuk-heading-s">Nominate a pharmacy</h2>
+          <p>Choose a pharmacy for your prescriptions to be sent to</p>
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</div>
+{% endblock %}

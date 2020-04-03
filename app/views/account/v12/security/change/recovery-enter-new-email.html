@@ -1,0 +1,46 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v12.html' %}
+{% endif %}
+
+{% block pageTitle %}
+  Enter your new email address
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="recovery-check-email" method="post" class="form">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <span class="nhsuk-hint nhsuk-u-margin-bottom-2">Change your recovery email</span>
+            <h1 class="nhsuk-fieldset__heading">
+              Enter your new recovery email
+            </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <span class="nhsuk-hint">
+              We will send a link to this new recovery email. You will need to follow this link to confirm the email change.
+            </span>
+            <label class="nhsuk-label" for="email-code">
+              New email address
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="user-password" name="user-password" value="{{ data['user-password'] }}" type="password">
+          </div>
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+
+        {{ backLink({
+          "href": "/account/v6/index",
+          "text": "I do not want to change my recovery email",
+          "classes": "nhsuk-u-margin-top-4"
+        }) }}
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

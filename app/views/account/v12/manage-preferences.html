@@ -1,0 +1,234 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v12.html' %}
+{% endif %}
+
+{% block pageTitle %}
+  Your contact preferences
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-xl">Your contact preferences</h1>
+
+      <p>Here you can choose which contact details you would prefer NHS services to use if they need to contact you.</p>
+      <p>Examples of NHS services include; your GP, hospitals...</p>
+
+      <div class="nhsuk-u-margin-top-8">
+
+        <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-0">Your paperless settings</h2>
+        <p class="nhsuk-hint">If you opt in, where appropriate and available, the NHS will send you an email or text message instead of a letter.</p>
+
+        <table class="nhsuk-table align-top nhsuk-u-margin-top-0">
+          <caption class="nhsuk-table__caption"></caption>
+
+          <thead class="nhsuk-table__head nhsuk-u-hide-385">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+              <th class="nhsuk-table__header nhsuk-u-width-one-third"></th>
+            </tr>
+          </thead>
+
+          <tbody class="nhsuk-table__body">
+            
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                Email
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="email-opt-in-1" name="email-opt-in" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="email-opt-in-1">Opt in</label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="email-opt-in-2" name="email-opt-in" type="radio" value="no" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="email-opt-in-2">Opt out</label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell cell-left">
+                Text message
+              </td>
+              <td class="nhsuk-table__cell">
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="sms-opt-in-1" name="sms-opt-in" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="sms-opt-in-1">Opt in</label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="sms-opt-in-2" name="sms-opt-in" type="radio" value="no" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="sms-opt-in-2">Opt out</label>
+                  </div>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell">
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+        
+        <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-8">Your preferred details</h2>
+        <p class="nhsuk-hint">Choose which details you prefer the NHS to use first when trying to contact you.</p>
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Your addresses
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            
+            <table class="nhsuk-table align-top nhsuk-u-margin-top-0">
+              <caption class="nhsuk-table__caption"></caption>
+    
+              <tbody class="nhsuk-table__body">
+                
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left">
+                    10 Long Lane<br />
+                    Leeds<br />
+                    West Yorkshire<br />
+                    LS11 2AB
+                  </td>
+                  <td class="nhsuk-table__cell">
+                    <b>Your preferred address</b>
+                  </td>
+                  <td class="nhsuk-table__cell"></td>
+                </tr>
+    
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left">
+                    ACME Limited<br />
+                    Bradford<br />
+                    West Yorkshire<br />
+                    BD10 2LP
+                  </td>
+                  <td class="nhsuk-table__cell">
+                    <a href="#">Set as your preferred address</a>
+                  </td>
+                  <td class="nhsuk-table__cell"></td>
+                </tr>
+    
+              </tbody>
+            </table>
+
+          </div>
+        </details>
+
+
+
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Your phone numbers
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            
+            <table class="nhsuk-table align-top nhsuk-u-margin-top-0">
+              <caption class="nhsuk-table__caption"></caption>
+    
+              <tbody class="nhsuk-table__body">
+    
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left">
+                    07736251423
+                  </td>
+                  <td class="nhsuk-table__cell">
+                    <b>Your preferred phone number</b>
+                  </td>
+                  <td class="nhsuk-table__cell"></td>
+                </tr>
+    
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left">
+                    07712345678
+                  </td>
+                  <td class="nhsuk-table__cell">
+                    <a href="#">Set as your preferred phone number</a>
+                  </td>
+                  <td class="nhsuk-table__cell"></td>
+                </tr>
+    
+              </tbody>
+            </table>
+
+          </div>
+        </details>
+
+
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Your email addresses
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            
+            <table class="nhsuk-table align-top nhsuk-u-margin-top-0">
+              <caption class="nhsuk-table__caption"></caption>
+    
+              <tbody class="nhsuk-table__body">
+    
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left">
+                    paulsmith@hotmail.com
+                  </td>
+                  <td class="nhsuk-table__cell">
+                    <b>Your preferred email address</b>
+                  </td>
+                  <td class="nhsuk-table__cell">
+                  </td>
+                </tr>
+    
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left">
+                    jonnyk@hotmail.com
+                  </td>
+                  <td class="nhsuk-table__cell">
+                    <a href="#">Set as your preferred email address</a>
+                  </td>
+                  <td class="nhsuk-table__cell">
+                  </td>
+                </tr>
+
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell cell-left">
+                    jon1986@hotmail.co.uk
+                  </td>
+                  <td class="nhsuk-table__cell">
+                    <a href="#">Set as your preferred email address</a>
+                  </td>
+                  <td class="nhsuk-table__cell">
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+          </div>
+        </details>
+        
+        
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+

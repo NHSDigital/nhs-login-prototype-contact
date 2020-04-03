@@ -1,0 +1,61 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v12.html' %}
+{% endif %}
+
+{% block pageTitle %}
+Add a phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- This ACTION is not a real page but is used in routes.js -->
+      <form action="add-login-mobile" method="POST">
+        
+        <div class="nhsuk-form-group">
+
+            <h1 class="nhsuk-heading-l">Would you like to add this phone number to your NHS contact details?</h1>
+          
+            <div class="nhsuk-radios">
+              <p class="nhsuk-body-l">
+                07736251423
+              </p>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="login-phone-1" name="patient-mobile" type="radio" value="07736251423">
+                <label class="nhsuk-label nhsuk-radios__label" for="login-phone-1">
+                  Yes
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="login-phone-2" name="patient-mobile" type="radio" value="">
+                <label class="nhsuk-label nhsuk-radios__label" for="login-phone-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+        </div>
+
+        <div class="nhsuk-form-group">
+          <input type="hidden" name="has-added-login-details" value="y" />
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "../index",
+            "text": "I do not want to add a phone number",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}
