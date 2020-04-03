@@ -1,0 +1,47 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v12.html' %}
+{% endif %}
+
+{% block pageTitle %}
+  Delete your NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+          Enter your password
+      </h1>
+
+      <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="phone-code">
+              Password
+            </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="current-password" name="test-width-10" type="text">
+      </div>
+
+      <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">When you delete your NHS login</h3>
+          <p>You will no longer be able to use NHS login to access any services.</p>
+          <p>Any services you have used with NHS login may keep some information about you in line with their terms and conditions and privacy notice.</p>
+          <p>We may also keep some information about you in line with NHS login's data retention policy.</p>
+      </div>
+      
+      <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" type="submit" href="delete-login-password">
+        Next step
+      </a>
+
+      {{ backLink({
+        "href": "../manage-login",
+        "text": "I do not want to delete my NHS login",
+        "classes": "nhsuk-u-margin-top-7"
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

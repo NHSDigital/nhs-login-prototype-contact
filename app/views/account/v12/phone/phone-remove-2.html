@@ -1,0 +1,31 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v12.html' %}
+{% endif %}
+
+{% block pageTitle %}
+Remove a phone number
+{% endblock %}
+
+{% block content %}
+
+<!-- convert DATA to Nunjucks variable -->
+{% set patientMobile2 = data['patient-mobile-2'] %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+        
+        <h1 class="nhsuk-heading-l">
+          Are you sure you want to remove {{patientMobile2}}?
+        </h1>
+  
+        <a href="../index" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4">No</a>
+        
+        <a href="phone-remove-done?patient-mobile-2=" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>
+
+    </div>
+
+  </div>
+{% endblock %}

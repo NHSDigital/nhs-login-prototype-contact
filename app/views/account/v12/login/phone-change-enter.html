@@ -1,0 +1,44 @@
+{% if data['mobileMode'] %}
+  {% extends 'layouts/layout-app-new.html' %}
+{% else %}
+  {% extends 'layouts/layout-manage-v12.html' %}
+{% endif %}
+
+{% block pageTitle %}
+Change your login phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="phone-change-code" method="POST">
+        
+        <h1 class="nhsuk-heading-l">Enter your new phone number</h1>
+
+        <!--<p>We'll send a 6 digit security code to your new phone number.</p>-->
+        
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="login-mobile">New phone number</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="login-mobile" name="login-mobile" type="number">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          {{ backLink({
+            "href": "../index",
+            "text": "I do not want to change my phone number",
+            "classes": "nhsuk-u-margin-top-7"
+          }) }}
+        </div>
+          
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

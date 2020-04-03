@@ -135,6 +135,19 @@ padding: 0px !important;
 	}
 }
 
+.table-login{
+	background-color: $color_nhsuk-white;
+	tr{
+		padding: 18px 0;
+		background-color: $color_nhsuk-white;
+		border-bottom:$nhsuk-border-color 1px solid;
+	}
+	td{
+		border: none !important;
+		background-color: $color_nhsuk-white;
+	}
+}
+
 @media (max-width: 385px) {
 	.nhsuk-u-hide-385{
 		display: none;
