@@ -9,19 +9,16 @@ Remove a phone number
 {% endblock %}
 
 {% block content %}
-
-<!-- convert DATA to Nunjucks variable -->
-{% set patientMobile = data['patient-mobile'] %}
-
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-three-quarters">
 
       <h1 class="nhsuk-heading-l">
-        We are removing {{patientMobile}} from your NHS contact details
+        We are removing {{data['patient-mobile']}} from your NHS contact details
       </h1>
 
-      <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">Please note</h3>
         <p>Some NHS services may continue to use this phone number to contact you until their systems update.</p>
       </div>
 

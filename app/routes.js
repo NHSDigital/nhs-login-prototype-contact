@@ -125,7 +125,7 @@ router.post('/account/*/prompt-2-email-', function (req, res) {
     res.redirect('prompt-2-email-enter')
   }
   else {
-    res.redirect('prompt-2-phone')
+    res.redirect('prompt-2-phone?has-added-login-email=y')
   }
 })
 
@@ -135,7 +135,7 @@ router.post('/account/*/prompt-2-phone-', function (req, res) {
     res.redirect('prompt-2-phone-enter')
   }
   else {
-    res.redirect('prompt-2-complete')
+    res.redirect('prompt-2-complete?has-added-login-phone=y')
   }
 })
 
