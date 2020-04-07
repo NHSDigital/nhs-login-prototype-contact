@@ -9,16 +9,12 @@
 {% endblock %}
 
 {% block content %}
-
-<!-- convert DATA to Nunjucks variable -->
-{% set patientMobile = data['patient-mobile'] %}
-
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-three-quarters">
         
         <h1 class="nhsuk-heading-l">
-          Are you sure you want to remove {{patientMobile}}?
+          Are you sure you want to remove {{data['patient-mobile'] }}?
         </h1>  
   
         <a href="../index" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4">No</a>
