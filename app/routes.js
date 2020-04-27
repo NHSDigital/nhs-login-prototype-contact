@@ -118,11 +118,11 @@ router.post('/account/*/prompt-', function (req, res) {
 
 
 
-// The patient is choosing whether to add their email or phone to their contact details, or enter one (prompt-2-email.html and prompt-2-phone.html)
+// Prompt 2 - the patient is choosing whether to add their email or phone to their contact details, or enter one (prompt-2-email.html and prompt-2-phone.html)
 router.post('/account/*/prompt-2-email-', function (req, res) {
   var choice = req.session.data['patient-email']
   if (choice == ""){
-    res.redirect('prompt-2-email-enter')
+    res.redirect('prompt-2-phone?has-added-login-email=y')
   }
   else {
     res.redirect('prompt-2-phone?has-added-login-email=y')
@@ -132,7 +132,7 @@ router.post('/account/*/prompt-2-email-', function (req, res) {
 router.post('/account/*/prompt-2-phone-', function (req, res) {
   var choice = req.session.data['patient-mobile']
   if (choice == ""){
-    res.redirect('prompt-2-phone-enter')
+    res.redirect('prompt-2-complete?has-added-login-phone=y')
   }
   else {
     res.redirect('prompt-2-complete?has-added-login-phone=y')
@@ -159,6 +159,19 @@ router.post('/account/*/phone/add-login-mobile', function (req, res) {
   }
   else {
     res.redirect('../phone/phone-add-done?has-added-login-phone=y')
+  }
+})
+
+
+
+// Prompt 3 - the patient is telling use whether their contact details are correct or not (prompt-3-check.html)
+router.post('/account/*/prompt-3-choice', function (req, res) {
+  var patientEmail = req.session.data['prompt-3']
+  if (patientEmail == "yes"){
+    res.redirect('prompt-3-complete')
+  }
+  else {
+    res.redirect('index')
   }
 })
 

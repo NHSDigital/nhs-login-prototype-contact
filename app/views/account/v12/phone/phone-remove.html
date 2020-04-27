@@ -27,13 +27,10 @@ Remove a phone number
         </a>
         
         {% if data['mobile-for-login'] %}
-        <a href="phone-remove-login" class="nhsuk-button nhsuk-button-red">
-          Yes, I'm sure
-        </a>
+        <a href="phone-remove-login" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>
         {% else %}
-        <a href="phone-remove-done?patient-mobile-2=" class="nhsuk-button nhsuk-button-red">
-          Yes, I'm sure
-        </a>
+        <a href="phone-remove-done?patient-mobile-2-removed=y" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>
+        <!--<a href="phone-remove-done?patient-mobile-2=" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>-->
         {% endif %}
 
     </div>
