@@ -22,7 +22,8 @@
         {% if data['patient-mobile'] == data['login-mobile'] %}
         <a href="phone-remove-login" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>
         {% else %}
-        <a href="phone-remove-done?patient-mobile=" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>
+        <a href="phone-remove-done?patient-mobile-removed=y" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>
+        <!--<a href="phone-remove-done?patient-mobile=" class="nhsuk-button nhsuk-button-red">Yes, I'm sure</a>-->
         {% endif %}
 
     </div>

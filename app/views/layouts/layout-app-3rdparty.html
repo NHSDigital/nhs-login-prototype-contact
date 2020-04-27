@@ -1,9 +1,12 @@
-{% extends 'layouts/layout-app-new.html' %}
+{% extends 'layouts/template-app.html' %}
 
-{% block pageTitle %}
-  NHS login
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsapp.css" rel="stylesheet">
 {% endblock %}
 
+
+<!-- Header goes inside this block -->
 {% block header %}
 
 <header class="nhsuk-header nhsuk-header--transactional nhs-app-header--app nhs-app-desktop--hide" role="banner">
@@ -32,33 +35,18 @@
 
 {% endblock %}
 
-{% block content %}
-  <div class="nhsuk-grid-row">
+<!-- Footer goes inside this block -->
 
-    <div class="nhsuk-grid-column-three-quarters">
-
-      <div class="nhsuk-u-margin-bottom-6">
-
-        <h1 class="nhsuk-heading-l">The NHS is missing some contact details</h1>
-        <!--<h1 class="nhsuk-heading-l">Update your NHS contact details</h1>
-        <h1 class="nhsuk-heading-l">Add your email address and mobile phone to your NHS contact details</h1>-->
-    
-        <p>NHS services like your GP surgery, hospital or pharmacy use your contact details to get in touch with you.</p>
-
+{% block footer %}
+<nav class="menu nhs-app-desktop--hide">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full" style="text-align: center;">
+        <a href="#" class="nhsuk-button" style="margin-top: 5px;">Continue to the Evergreen app</a>
       </div>
-
-      <div class="nhsuk-form-group">
-        <a href="prompt-2-email" class="nhsuk-button" type="submit">Update my contact details</a>
-      </div>
-
-      <div class="nhsuk-form-group">
-        <p><a href="app?mobileMode=y&devMode=&patient-email=&patient-email-2=&patient-mobile=&patient-mobile-2=07888364455&patient-landline=&patient-mobile-verified=&login-email=paulsmith@hotmail.com&login-mobile=07736251423">I do not want to update my contact details</a></p>
-      </div>
-
-
-    </div> 
-
+    </div>
   </div>
-{% endblock %}
+</nav>
 
-{% block footer %}{% endblock %}
+
+{% endblock %}
