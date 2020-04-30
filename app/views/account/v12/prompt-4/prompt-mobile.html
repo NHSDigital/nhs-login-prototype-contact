@@ -41,24 +41,22 @@
 
         {% if data['scenario'] == "1" %}
       
-        <h1 class="nhsuk-heading-l">
-          Would you like to update your primary mobile number<br />
-          from 07777733344<br />
-          to 07736251423?
-        </h1>
+        <h1 class="nhsuk-heading-l">Choose your primary contact mobile number</h1>
 
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">
-                Yes
+              <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="07777733344" {% if data['patient-mobile'] == "07777733344" %}checked{% endif %}>
+              <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">
+                <strong>07777733344</strong><br />
+                This is currently your primary mobile phone on your NHS record
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="07777733344" {% if data['patient-mobile'] == "07777733344" %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">
-                No
+              <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
+              <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">
+                <strong>07736251423</strong><br />
+                We think this could be a better mobile number for the NHS to use
               </label>
             </div>
           </div>
@@ -68,7 +66,10 @@
 
         {% if (data['scenario'] == "2") or (data['scenario'] == "3") %}
       
-        <h1 class="nhsuk-heading-l">Can the NHS use 07736251423 to contact you if appropriate?</h1>
+        <!--<h1 class="nhsuk-heading-l">Can the NHS use 07736251423 to contact you if appropriate?</h1>-->
+
+        <h1 class="nhsuk-heading-l">Can the NHS use this mobile number to contact you if appropriate?</h1>
+        <p class="nhsuk-body-l">07736251423</p>
 
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
@@ -92,6 +93,10 @@
 
         <div class="nhsuk-form-group">
           <button class="nhsuk-button" type="submit">Continue</button>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <p><a href="prompt-complete-no-update?mobileMode=y&devMode=&patient-email=&patient-email-2=&patient-mobile=&patient-mobile-2=07888364455&patient-landline=&patient-mobile-verified=&login-email=paulsmith@hotmail.com&login-mobile=07736251423">Skip this and take me to the NHS App</a></p>
         </div>
 
       </form>
