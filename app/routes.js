@@ -118,24 +118,24 @@ router.post('/account/*/prompt-', function (req, res) {
 
 
 
-// Prompt 2 - the patient is choosing whether to add their email or phone to their contact details, or enter one (prompt-2-email.html and prompt-2-phone.html)
-router.post('/account/*/prompt-2-email-', function (req, res) {
+// Prompt 2 - the patient is choosing whether to add their email or phone to their contact details, or enter one (prompt-email.html and prompt-phone.html)
+router.post('*/prompt-2-email-', function (req, res) {
   var choice = req.session.data['patient-email']
   if (choice == ""){
-    res.redirect('prompt-2-phone?has-added-login-email=y')
+    res.redirect('prompt-phone?has-added-login-email=y')
   }
   else {
-    res.redirect('prompt-2-phone?has-added-login-email=y')
+    res.redirect('prompt-phone?has-added-login-email=y')
   }
 })
 
-router.post('/account/*/prompt-2-phone-', function (req, res) {
+router.post('*/prompt-phone-', function (req, res) {
   var choice = req.session.data['patient-mobile']
   if (choice == ""){
-    res.redirect('prompt-2-complete?has-added-login-phone=y')
+    res.redirect('prompt-complete?has-added-login-phone=y')
   }
   else {
-    res.redirect('prompt-2-complete?has-added-login-phone=y')
+    res.redirect('prompt-complete?has-added-login-phone=y')
   }
 })
 
@@ -165,13 +165,25 @@ router.post('/account/*/phone/add-login-mobile', function (req, res) {
 
 
 // Prompt 3 - the patient is telling use whether their contact details are correct or not (prompt-3-check.html)
-router.post('/account/*/prompt-3-choice', function (req, res) {
+router.post('*/prompt-3-choice', function (req, res) {
   var patientEmail = req.session.data['prompt-3']
   if (patientEmail == "yes"){
-    res.redirect('prompt-3-complete')
+    res.redirect('prompt-complete')
   }
   else {
-    res.redirect('index')
+    res.redirect('../index')
+  }
+})
+
+
+// Prompt 4 - the patient is telling use whether their contact details are correct or not (prompt-3-check.html)
+router.post('*/prompt-4-choice', function (req, res) {
+  var patientEmail = req.session.data['prompt-4']
+  if (patientEmail == "yes"){
+    res.redirect('prompt-complete')
+  }
+  else {
+    res.redirect('prompt-mobile')
   }
 })
 
