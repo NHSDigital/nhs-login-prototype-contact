@@ -39,45 +39,57 @@
 
       <h1 class="nhsuk-heading-l">Check before you confirm</h1>
 
-      {% if data['scenario'] != "4" %}
+      <dl class="nhsuk-summary-list">
 
-      <div class="nhsuk-form-group nhsuk-u-padding-4" style="background-color: #fff;">
-          <p><strong>Your primary mobile phone</strong></p>
-          {% if data['patient-mobile'] %}
-            <p class="nhsuk-u-margin-bottom-0">{{ data['patient-mobile'] }}</p>
-          {% else %}
-            <p class="nhsuk-u-margin-bottom-0">You do not have a primary mobile phone</p>
-          {% endif %}
-      </div>
+        {% if data['scenario'] != "4" %}
 
-      {% endif %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Your primary mobile phone
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['patient-mobile'] %}
+              <p class="nhsuk-u-margin-bottom-0">{{ data['patient-mobile'] }}</p>
+            {% else %}
+              <p class="nhsuk-u-margin-bottom-0">You do not have a primary mobile phone</p>
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="prompt-mobile">
+              Go back and change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
 
-      <div class="nhsuk-form-group nhsuk-u-padding-4" style="background-color: #fff;">
-        <p><strong>Your primary email address</strong></p>
-        {% if data['patient-email'] %}
-          <p class="nhsuk-u-margin-bottom-0">{{ data['patient-email'] }}</p>
-        {% else %}
-          <p class="nhsuk-u-margin-bottom-0">You do not have a primary email address</p>
         {% endif %}
-      </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Your primary email address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['patient-email'] %}
+              <p class="nhsuk-u-margin-bottom-0">{{ data['patient-email'] }}</p>
+            {% else %}
+              <p class="nhsuk-u-margin-bottom-0">You do not have a primary email address</p>
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="prompt-email">
+              Go back and change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+      
+      </dl>
 
       <div class="nhsuk-form-group">
         <a href="prompt-complete" class="nhsuk-button">Confirm</a>
       </div>
 
-      {% if data['scenario'] != "4" %}
       <div class="nhsuk-form-group">
-        <p><a href="prompt-mobile">Back to update mobile number</a></p>
+        <p><a href="prompt-complete-no-update?mobileMode=y&devMode=&patient-email=&patient-email-2=&patient-mobile=&patient-mobile-2=07888364455&patient-landline=&patient-mobile-verified=&login-email=paulsmith@hotmail.com&login-mobile=07736251423">Skip this and take me to the NHS App</a></p>
       </div>
-      {% endif %}
-
-      <div class="nhsuk-form-group">
-        <p><a href="prompt-email">Back to update email address</a></p>
-      </div>
-
-      <!--<div class="nhsuk-form-group">
-        <p><a href="prompt-complete-no-update?mobileMode=y&devMode=&patient-email=&patient-email-2=&patient-mobile=&patient-mobile-2=07888364455&patient-landline=&patient-mobile-verified=&login-email=paulsmith@hotmail.com&login-mobile=07736251423">I do not want to update my contact details</a></p>
-      </div>-->
 
     </div> 
 

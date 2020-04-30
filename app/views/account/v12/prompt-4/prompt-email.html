@@ -41,7 +41,10 @@
 
         {% if (data['scenario'] == "1") or (data['scenario'] == "3") or (data['scenario'] == "4") %}
 
-        <h1 class="nhsuk-heading-l">Can the NHS use paulsmith@hotmail.com to contact you if appropriate?</h1>
+        <!--<h1 class="nhsuk-heading-l">Can the NHS use paulsmith@hotmail.com to contact you if appropriate?</h1>-->
+
+        <h1 class="nhsuk-heading-l">Can the NHS use this email address to contact you if appropriate?</h1>
+        <p class="nhsuk-body-l">paulsmith@hotmail.com</p>
 
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
@@ -65,24 +68,22 @@
 
         {% if data['scenario'] == "2" %}
 
-        <h1 class="nhsuk-heading-l">
-          Would you like to update your primary email address<br />
-          from mynameispaul123@gmail.com<br />
-          to paulsmith@hotmail.com?
-        </h1>
+        <h1 class="nhsuk-heading-l">Choose your primary contact email address</h1>
 
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="patient-email-1" name="patient-email" type="radio" value="paulsmith@hotmail.com" {% if data['patient-email'] == "paulsmith@hotmail.com" %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="patient-email-1">
-                Yes
+              <input class="nhsuk-radios__input" id="patient-email-2" name="patient-email" type="radio" value="mynameispaul123@gmail.com" {% if data['patient-email'] == "mynameispaul123@gmail.com" %}checked{% endif %}>
+              <label class="nhsuk-label nhsuk-radios__label" for="patient-email-2">
+                <strong>mynameispaul123@gmail.com</strong><br />
+                This is currently your primary email address on your NHS record
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="patient-email-2" name="patient-email" type="radio" value="mynameispaul123@gmail.com" {% if data['patient-email'] == "mynameispaul123@gmail.com" %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="patient-email-2">
-                No
+              <input class="nhsuk-radios__input" id="patient-email-1" name="patient-email" type="radio" value="paulsmith@hotmail.com" {% if data['patient-email'] == "paulsmith@hotmail.com" %}checked{% endif %}>
+              <label class="nhsuk-label nhsuk-radios__label" for="patient-email-1">
+                <strong>paulsmith@hotmail.com</strong><br />
+                We think this could be a better email address for the NHS to use
               </label>
             </div>
           </div>
@@ -94,8 +95,12 @@
           <button class="nhsuk-button" type="submit">Continue</button>
         </div>
 
-        <div class="nhsuk-form-group">
+        <!--<div class="nhsuk-form-group">
           <p><a href="prompt-mobile">Back to update mobile phone</a></p>
+        </div>-->
+
+        <div class="nhsuk-form-group">
+          <p><a href="prompt-complete-no-update?mobileMode=y&devMode=&patient-email=&patient-email-2=&patient-mobile=&patient-mobile-2=07888364455&patient-landline=&patient-mobile-verified=&login-email=paulsmith@hotmail.com&login-mobile=07736251423">Skip this and take me to the NHS App</a></p>
         </div>
 
       </form>
