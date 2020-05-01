@@ -1,36 +1,4 @@
-{% extends 'layouts/layout-app-new.html' %}
-
-{% block pageTitle %}
-  NHS login
-{% endblock %}
-
-{% block header %}
-
-<header class="nhsuk-header nhsuk-header--transactional nhs-app-header--app nhs-app-desktop--hide" role="banner">
-  <div class="nhsuk-width-container">
-
-    <div class="nhsuk-grid-row">
-      
-      <div class="nhsuk-grid-column-one-third nhs-app-u-one-third-mobile" style="padding: 4px 0 0 16px !important"></div>
-
-      <div class="nhsuk-grid-column-one-third nhs-app-u-one-third-mobile" style="padding: 0 8px !important">
-        <div class="nhs-app-logo">
-          <a class="" href="../app" aria-label="NHS homepage">
-            <svg class="" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
-              <path fill="#fff" d="M0 0h40v16H0z"></path>
-              <path fill="#005eb8" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
-              <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</header>
-
-{% endblock %}
+{% extends 'layouts/layout-app-nhslogin.html' %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
@@ -41,52 +9,63 @@
 
         {% if data['scenario'] == "1" %}
       
-        <h1 class="nhsuk-heading-l">Choose your primary contact mobile number</h1>
-
         <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="07888364455" {% if data['patient-mobile'] == "07888364455" %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">
-                <strong>07888364455</strong><br />
-                This is currently your primary mobile phone on your NHS record
-              </label>
+
+          <fieldset class="nhsuk-fieldset">
+            
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">Which mobile number should the NHS use to contact you?</h1>
+              <!--<h1 class="nhsuk-fieldset__heading">Choose your contact mobile number</h1>-->
+            </legend>
+
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="07888364455" {% if data['patient-mobile'] == "07888364455" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">07888364455</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is your current contact mobile number</span>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">07736251423</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">You use this mobile number for your NHS login</span>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-both" name="patient-mobile" type="radio" value="both" {% if data['patient-mobile'] == "both" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-both">Both</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">We will add both mobile numbers to your contact details</span>
+              </div>
             </div>
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">
-                <strong>07736251423</strong><br />
-                We think this could be a better mobile number for the NHS to use
-              </label>
-            </div>
-          </div>
+
+          </fieldset>
+
         </div>
 
         {% endif %}
 
         {% if (data['scenario'] == "2") or (data['scenario'] == "3") %}
-      
-        <!--<h1 class="nhsuk-heading-l">Can the NHS use 07736251423 to contact you if appropriate?</h1>-->
-
-        <h1 class="nhsuk-heading-l">Can the NHS use this mobile number to contact you if appropriate?</h1>
-        <p class="nhsuk-body-l">07736251423</p>
 
         <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">
-                Yes
-              </label>
+          <fieldset class="nhsuk-fieldset">
+            
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">Can the NHS use this mobile number to contact you if appropriate?</h1>
+              <p class="nhsuk-body-l nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">07736251423</p>
+            </legend>
+
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">Yes</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="" {% if data['patient-mobile'] == "" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">No</label>
+              </div>
             </div>
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="" {% if data['patient-mobile'] == "" %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">
-                No
-              </label>
-            </div>
-          </div>
+
+          </fieldset>
+
         </div>
 
         {% endif %}
@@ -96,7 +75,7 @@
         </div>
 
         <div class="nhsuk-form-group">
-          <p><a href="prompt-complete-no-update">Cancel this and take me to the NHS App</a></p>
+          <p><a href="prompt-complete-no-update">Cancel and take me to the NHS App</a></p>
         </div>
 
       </form>
@@ -105,5 +84,3 @@
 
   </div>
 {% endblock %}
-
-{% block footer %}{% endblock %}
