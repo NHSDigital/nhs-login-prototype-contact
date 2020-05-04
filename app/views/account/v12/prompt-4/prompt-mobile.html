@@ -7,7 +7,7 @@
 
       <form action="prompt-email" method="POST">
 
-        {% if data['scenario'] == "1" %}
+        {% if (data['scenario'] == "1") or (data['scenario'] == "4") %}
       
         <div class="nhsuk-form-group">
 
@@ -22,18 +22,18 @@
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="07888364455" {% if data['patient-mobile'] == "07888364455" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">07888364455</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">This is your current contact mobile number</span>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is your current mobile number</span>
               </div>
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">07736251423</label>
                 <span class="nhsuk-hint nhsuk-radios__hint">You use this mobile number for your NHS login</span>
               </div>
-              <div class="nhsuk-radios__item">
+              <!--<div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-mobile-both" name="patient-mobile" type="radio" value="both" {% if data['patient-mobile'] == "both" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-both">Both</label>
                 <span class="nhsuk-hint nhsuk-radios__hint">We will add both mobile numbers to your contact details</span>
-              </div>
+              </div>-->
             </div>
 
           </fieldset>

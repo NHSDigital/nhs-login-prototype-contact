@@ -7,7 +7,41 @@
 
       <form action="prompt-confirm" method="POST">
 
-        {% if (data['scenario'] == "1") or (data['scenario'] == "3") or (data['scenario'] == "4") %}
+        {% if (data['scenario'] == "2") or (data['scenario'] == "4") %}
+
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">Which email address should the NHS use to contact you?</h1>
+            </legend>
+
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-email-2" name="patient-email" type="radio" value="mynameispaul123@gmail.com" {% if data['patient-email'] == "mynameispaul123@gmail.com" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-2">mynameispaul123@gmail.com</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is your current contact email address</span>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-email-1" name="patient-email" type="radio" value="paulsmith@hotmail.com" {% if data['patient-email'] == "paulsmith@hotmail.com" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-1">paulsmith@hotmail.com</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">You use this email address for your NHS login</span>
+              </div>
+              <!--<div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-email-3" name="patient-email" type="radio" value="both" {% if data['patient-email'] == "both" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-3">Both</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">We will add both email addresses to your contact details</span>
+              </div>-->
+            </div>
+
+          </fieldset>
+
+        </div>
+
+        {% endif %}
+
+        {% if (data['scenario'] == "1") or (data['scenario'] == "3") or (data['scenario'] == "5") %}
 
         <div class="nhsuk-form-group">
 
@@ -30,42 +64,6 @@
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-email-2">
                   No
                 </label>
-              </div>
-            </div>
-
-          </fieldset>
-
-        </div>
-
-        {% endif %}
-
-        {% if data['scenario'] == "2" %}
-
-        <h1 class="nhsuk-heading-l"></h1>
-
-        <div class="nhsuk-form-group">
-
-          <fieldset class="nhsuk-fieldset">
-
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-fieldset__heading">Which email address should the NHS use to contact you?</h1>
-            </legend>
-
-            <div class="nhsuk-radios">
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="patient-email-2" name="patient-email" type="radio" value="mynameispaul123@gmail.com" {% if data['patient-email'] == "mynameispaul123@gmail.com" %}checked{% endif %}>
-                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-2">mynameispaul123@gmail.com</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">This is your current contact email address</span>
-              </div>
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="patient-email-1" name="patient-email" type="radio" value="paulsmith@hotmail.com" {% if data['patient-email'] == "paulsmith@hotmail.com" %}checked{% endif %}>
-                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-1">paulsmith@hotmail.com</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">You use this email address for your NHS login</span>
-              </div>
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="patient-email-3" name="patient-email" type="radio" value="both" {% if data['patient-email'] == "both" %}checked{% endif %}>
-                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-3">Both</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">We will add both email addresses to your contact details</span>
               </div>
             </div>
 
