@@ -52,42 +52,46 @@
 
         {% endif %}
 
-        {% if data['patient-email'] == "both" %}
+        {% if data['scenario'] != "6" %}
 
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Your contact email addresses
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-                <p class="nhsuk-u-margin-bottom-0">mynameispaul123@gmail.com</p>
-                <p class="nhsuk-u-margin-bottom-0">paulsmith@hotmail.com</p>
-            </dd>
-            <dd class="nhsuk-summary-list__actions">
-              <a href="prompt-email">
-                Change<span class="nhsuk-u-visually-hidden"> email address</span>
-              </a>
-            </dd>
-          </div>
+          {% if data['patient-email'] == "both" %}
 
-        {% else %}
-      
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Your contact email address
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              {% if data['patient-email'] %}
-                <p class="nhsuk-u-margin-bottom-0">{{ data['patient-email'] }}</p>
-              {% else %}
-                <p class="nhsuk-u-margin-bottom-0">You do not have an email address</p>
-              {% endif %}
-            </dd>
-            <dd class="nhsuk-summary-list__actions">
-              <a href="prompt-email">
-                Change<span class="nhsuk-u-visually-hidden"> email address</span>
-              </a>
-            </dd>
-          </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Your contact email addresses
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                  <p class="nhsuk-u-margin-bottom-0">mynameispaul123@gmail.com</p>
+                  <p class="nhsuk-u-margin-bottom-0">paulsmith@hotmail.com</p>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="prompt-email">
+                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                </a>
+              </dd>
+            </div>
+
+          {% else %}
+        
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Your contact email address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['patient-email'] %}
+                  <p class="nhsuk-u-margin-bottom-0">{{ data['patient-email'] }}</p>
+                {% else %}
+                  <p class="nhsuk-u-margin-bottom-0">You do not have an email address</p>
+                {% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="prompt-email">
+                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                </a>
+              </dd>
+            </div>
+
+          {% endif %}
 
         {% endif %}
 
@@ -98,7 +102,7 @@
       </div>
 
       <div class="nhsuk-form-group">
-        <p><a href="prompt-complete-no-update">Cancel and take me to the NHS App</a></p>
+        <p><a href="prompt-complete-no-update">Cancel and take me to [SERVICE NAME]</a></p>
       </div>
 
     </div> 
