@@ -5,6 +5,14 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
+      <!--<div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="prompt">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back to: Your NHS contact details could be out of date</a>
+      </div>-->
+
       {% if data['scenario'] == "6" %}
       <form action="prompt-confirm" method="POST">
       {% else %}
@@ -26,7 +34,7 @@
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="07888364455" {% if data['patient-mobile'] == "07888364455" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">07888364455</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">This is the current mobile number on your NHS record</span>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is the mobile number currently in your NHS contact details</span>
               </div>
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
@@ -41,6 +49,51 @@
             </div>
 
           </fieldset>
+
+        </div>
+
+        {% endif %}
+
+        {% if (data['scenario'] == "7") %}
+      
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset">
+            
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">Which mobile number should the NHS use to contact you?</h1>
+              <!--<h1 class="nhsuk-fieldset__heading">Choose your contact mobile number</h1>-->
+            </legend>
+
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07888364455" {% if data['patient-mobile'] == "07888364455" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">07888364455</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is one of the mobile numbers currently in your NHS contact details</span>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="07111222333" {% if data['patient-mobile'] == "07111222333" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">07111222333</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is one of the mobile numbers currently in your NHS contact details</span>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-3" name="patient-mobile" type="radio" value="07333222111" {% if data['patient-mobile'] == "07333222111" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-3">07333222111</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is one of the mobile numbers currently in your NHS contact details</span>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-mobile-4" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-4">07736251423</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">You provided this mobile number when you set up your NHS login</span>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <div class="nhsuk-inset-text nhsuk-u-margin-top-4">
+            <p>So that you can be contacted easily, please choose which email address you want the NHS to use.</p>
+            <p>Your other email addresses will no longer be used.</p>
+          </div>
 
         </div>
 
