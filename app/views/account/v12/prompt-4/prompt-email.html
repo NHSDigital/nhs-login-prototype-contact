@@ -21,12 +21,12 @@
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-email-2" name="patient-email" type="radio" value="mynameispaul123@gmail.com" {% if data['patient-email'] == "mynameispaul123@gmail.com" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-email-2">mynameispaul123@gmail.com</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">This is your current contact email address</span>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is the current email address on your NHS record</span>
               </div>
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-email-1" name="patient-email" type="radio" value="paulsmith@hotmail.com" {% if data['patient-email'] == "paulsmith@hotmail.com" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-email-1">paulsmith@hotmail.com</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">You use this email address for your NHS login</span>
+                <span class="nhsuk-hint nhsuk-radios__hint">You provided this email address when you set up your NHS login</span>
               </div>
               <!--<div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-email-3" name="patient-email" type="radio" value="both" {% if data['patient-email'] == "both" %}checked{% endif %}>
@@ -48,7 +48,8 @@
           <fieldset class="nhsuk-fieldset">
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-fieldset__heading">Can the NHS use this email address to contact you if appropriate?</h1>
+              <!--<h1 class="nhsuk-fieldset__heading">Can the NHS use this email address to contact you if appropriate?</h1>-->
+              <h1 class="nhsuk-fieldset__heading">Would you like to add this email address to your NHS contact details?</h1>
               <p class="nhsuk-body-l nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">paulsmith@hotmail.com</p>
             </legend>
 

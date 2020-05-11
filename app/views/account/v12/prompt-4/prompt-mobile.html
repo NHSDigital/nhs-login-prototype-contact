@@ -26,12 +26,12 @@
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-mobile-2" name="patient-mobile" type="radio" value="07888364455" {% if data['patient-mobile'] == "07888364455" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-2">07888364455</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">This is your current mobile number</span>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is the current mobile number on your NHS record</span>
               </div>
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-mobile-1" name="patient-mobile" type="radio" value="07736251423" {% if data['patient-mobile'] == "07736251423" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-mobile-1">07736251423</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">You use this mobile number for your NHS login</span>
+                <span class="nhsuk-hint nhsuk-radios__hint">You provided this mobile number when you set up your NHS login</span>
               </div>
               <!--<div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-mobile-both" name="patient-mobile" type="radio" value="both" {% if data['patient-mobile'] == "both" %}checked{% endif %}>
@@ -53,7 +53,8 @@
           <fieldset class="nhsuk-fieldset">
             
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-fieldset__heading">Can the NHS use this mobile number to contact you if appropriate?</h1>
+              <!--<h1 class="nhsuk-fieldset__heading">Can the NHS use this mobile number to contact you if appropriate?</h1>-->
+              <h1 class="nhsuk-fieldset__heading">Would you like to add this mobile number to your NHS contact details?</h1>
               <p class="nhsuk-body-l nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">07736251423</p>
             </legend>
 
@@ -73,6 +74,11 @@
         </div>
 
         {% endif %}
+
+        <!--<div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>When an NHS service needs to contact you, they will still choose a contact method (phone call, text message, email, letter) which is appropriate to the situation.</p>
+        </div>-->
 
         <div class="nhsuk-form-group">
           <button class="nhsuk-button" type="submit">Continue</button>
