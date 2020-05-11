@@ -5,6 +5,14 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="prompt-mobile">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back to: Choose a mobile number</a>
+      </div>
+
       <form action="prompt-confirm" method="POST">
 
         {% if (data['scenario'] == "2") or (data['scenario'] == "4") %}
@@ -21,7 +29,7 @@
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-email-2" name="patient-email" type="radio" value="mynameispaul123@gmail.com" {% if data['patient-email'] == "mynameispaul123@gmail.com" %}checked{% endif %}>
                 <label class="nhsuk-label nhsuk-radios__label" for="patient-email-2">mynameispaul123@gmail.com</label>
-                <span class="nhsuk-hint nhsuk-radios__hint">This is the current email address on your NHS record</span>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is the email address currently in your NHS contact details</span>
               </div>
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="patient-email-1" name="patient-email" type="radio" value="paulsmith@hotmail.com" {% if data['patient-email'] == "paulsmith@hotmail.com" %}checked{% endif %}>
@@ -36,6 +44,50 @@
             </div>
 
           </fieldset>
+
+        </div>
+
+        {% endif %}
+
+        {% if (data['scenario'] == "7") %}
+
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">Which email address should the NHS use to contact you?</h1>
+            </legend>
+
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-email-1" name="patient-email" type="radio" value="mynameispaul123@gmail.com" {% if data['patient-email'] == "mynameispaul123@gmail.com" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-1">mynameispaul123@gmail.com</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is one of the email addresses currently in your NHS contact details</span>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-email-2" name="patient-email" type="radio" value="psmithy123@tiscali.co.uk" {% if data['patient-email'] == "psmithy123@tiscali.co.uk" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-2">psmithy123@tiscali.co.uk</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">This is one of the email addresses currently in your NHS contact details</span>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-email-3" name="patient-email" type="radio" value="paulsmith@hotmail.com" {% if data['patient-email'] == "paulsmith@hotmail.com" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-3">paulsmith@hotmail.com</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">You provided this email address when you set up your NHS login</span>
+              </div>
+              <!--<div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="patient-email-3" name="patient-email" type="radio" value="both" {% if data['patient-email'] == "both" %}checked{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="patient-email-3">Both</label>
+                <span class="nhsuk-hint nhsuk-radios__hint">We will add both email addresses to your contact details</span>
+              </div>-->
+            </div>
+
+          </fieldset>
+
+          <div class="nhsuk-inset-text nhsuk-u-margin-top-4">
+            <p>So that you can be contacted easily, please choose which mobile number you want the NHS to use.</p>
+            <p>Your other mobile numbers will no longer be used.</p>
+          </div>
 
         </div>
 
