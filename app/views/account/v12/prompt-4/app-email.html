@@ -1,0 +1,70 @@
+{% extends 'layouts/layout-nhslogin.html' %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="app-password" method="POST" autocomplete="off">
+      <fieldset class="nhsuk-fieldset">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-heading-l">Enter your email address</h1>
+        </legend>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="userEmail">Email address</label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="userEmail" name="userEmail" value="" type="email">
+        </div>
+        <a>
+          <button data-redirect="register-create-password" class="nhsuk-button full-width" id="button--save">Continue</button>
+        </a>
+
+        <div class="nhsuk-inset-text nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+          <span class="nhsuk-u-visually-hidden">Information:</span>
+          <h3>What is NHS login?</h3>
+          <p>NHS login is a way to access online health services wherever you see ’NHS login’. If you do not have an NHS
+            login, enter your email address to register.</p>
+        </div>
+
+      </fieldset>
+    </form>
+
+  </div>
+</div>
+
+
+
+<!--
+
+  <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-6">Enter your NHS login details</h1>
+
+  <form action="auth" method="post">
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-heading-m" for="email">Email address</label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="email" name="email" type="email">
+    </div>
+    
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-heading-m" for="password">Password</label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password" type="password">
+    </div>
+
+    <div class="nhsuk-form-group">
+      <p><a href="#">Forgotten your password?</a></p>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <button class="nhsuk-button nhsuk-u-margin-bottom-0" style="width: 100%; text-align: center;">Continue</button>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <p><a href="#">Set up an NHS login</a></p>
+    </div>
+
+</form>
+
+-->
+
+{% endblock %}
