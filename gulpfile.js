@@ -96,7 +96,7 @@ function startBrowserSync(done){
     files: ['app/views/**/*.*', 'docs/views/**/*.*'],
     ghostmode: false,
     open: false,
-    notify: true,
+    notify: false,
     watch: true,
     logLevel: 'debug',
   }, done);
