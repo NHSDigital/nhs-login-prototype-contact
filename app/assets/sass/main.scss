@@ -77,11 +77,6 @@
 	text-align: right;
 }
 
-/*
-.nhsuk-icon {
-	fill: #005DB8;
-}
-*/
 
 // index styling
 
@@ -344,4 +339,42 @@ padding: 0px !important;
 .ppc-percents,
 .ppc-loading {
     margin-top: 0!important;
+}
+
+
+
+/* Header in: layouts/layout-nhslogin.html */
+
+
+.nhsuk-header__link--service-short-name {
+  -ms-flex-align: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 0;
+  height: auto;
+  text-decoration: none;
+  width: auto;
+}
+
+
+.nhsuk-header__logo .nhsuk-logo {
+  height: 40px;
+  width: 100px;
+  border: 0;
+}
+
+.nhsuk-header__service-name {
+  padding-left: 16px;
+  padding-right: 0px;
+  padding-top: 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 20em) {
+  .nhsuk-button.full-width {
+    width: 100%; }
+}
+
+.nhsuk-body-l{
+  font-weight: 500;
 }
