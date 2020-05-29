@@ -1,0 +1,106 @@
+{% extends 'layouts/layout-nhslogin.html' %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-6">Check your contact details before you save</h1>
+
+      <dl class="nhsuk-summary-list">
+
+        {% if data['scenario'] != "5" %}
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Your chosen mobile number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['patient-mobile'] %}
+                <p class="nhsuk-u-margin-bottom-0">{{ data['patient-mobile'] }}</p>
+              {% else %}
+                <p class="nhsuk-u-margin-bottom-0">You do not have a mobile number</p>
+              {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="prompt-mobile?change=y">
+                Change
+              </a>
+            </dd>
+          </div>
+
+        {% endif %}
+
+        {% if data['scenario'] != "6" %}
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Your chosen email address
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['patient-email'] %}
+                <p class="nhsuk-u-margin-bottom-0">{{ data['patient-email'] }}</p>
+              {% else %}
+                <p class="nhsuk-u-margin-bottom-0">You do not have an email address</p>
+              {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="prompt-email?change=y">
+                Change
+              </a>
+            </dd>
+          </div>
+
+        {% endif %}
+
+        {% if (data['scenario'] == "1") or (data['scenario'] == "2") or (data['scenario'] == "4") or (data['scenario'] == "6") %}
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Details you are removing
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+                <p class="nhsuk-u-margin-bottom-0">
+                {% if (data['scenario'] == "1") or (data['scenario'] == "4") or (data['scenario'] == "6") %}
+                  {% if (data['patient-mobile'] == "07736251423") %}
+                    07888364455
+                  {% else %}
+                    07736251423
+                  {% endif %}
+                {% endif %}
+                </p>
+                <p class="nhsuk-u-margin-bottom-0">
+                  {% if (data['scenario'] == "2") or (data['scenario'] == "4") %}
+                    {% if (data['patient-email'] == "paulsmith@hotmail.com") %}
+                      mynameispaul123@gmail.com
+                    {% else %}
+                      paulsmith@hotmail.com
+                    {% endif %}
+                  {% endif %}
+                  </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+
+        {% endif %}
+
+      </dl>
+
+      <div class="nhsuk-form-group">
+        <p>These changes will not affect your NHS login details.</p>
+      </div>
+
+
+      <div class="nhsuk-form-group">
+        <a href="prompt-complete" class="nhsuk-button">Save and continue</a>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <p><a href="prompt-complete-no-update">Cancel and take me to the NHS App</a></p>
+      </div>
+
+    </div> 
+
+  </div>
+{% endblock %}
