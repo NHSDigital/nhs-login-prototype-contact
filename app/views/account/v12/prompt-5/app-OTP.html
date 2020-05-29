@@ -1,0 +1,43 @@
+{% extends 'layouts/layout-nhslogin.html' %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <h1 class="nhsuk-heading-l">Check your mobile phone</h1>
+    <p>Enter the 6 digit security code we have sent to 07736251423.</p>
+
+    <form action="auth" method="POST" autocomplete="off">
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-with-hint-text">Security code</label>
+        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6" class="nhsuk-input nhsuk-input--width-10" id="input-with-hint-text" name="otp" type="number">
+      </div>
+
+      <div class="nhsuk-checkboxes nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-checkboxes__item">
+          <input style="padding-right: 16px;" class="nhsuk-checkboxes__input" id="rmd" name="rmd" type="checkbox">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="rmd">Remember this device and stop sending security codes</label>
+        </div>
+      </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">What does remember this device mean?</span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>We can remember the device you are using now, so you will not need to enter a security code when you log in with this device in the future.</p>
+          <p>To keep your NHS login secure, you should only do this on your own personal or trusted devices.</p>
+          <p>We may ask if you still want us to remember this device in the future.</p>
+        </div>
+      </details>
+
+      <button class="nhsuk-button full-width" type="submit">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
