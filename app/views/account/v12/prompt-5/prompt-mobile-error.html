@@ -50,7 +50,7 @@
             </legend>
 
             <span class="nhsuk-hint">
-              Your other mobile number will be removed from your contact details.
+              The mobile number you do not choose will be removed from your NHS record.
             </span>
 
             <span class="nhsuk-error-message">
@@ -95,7 +95,7 @@
             </legend>
 
             <span class="nhsuk-hint">
-              Your other mobile numbers will be removed from your contact details.
+              The mobile number you do not choose will be removed from your NHS record.
             </span>
 
             <span class="nhsuk-error-message">
@@ -134,19 +134,19 @@
 
         {% if (data['scenario'] == "2") or (data['scenario'] == "3") %}
 
-        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">We do not have a contact mobile number for you</h1>
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Your NHS record is missing a contact mobile number</h1>
         
         <div class="nhsuk-form-group nhsuk-form-group--error">
 
           <fieldset class="nhsuk-fieldset">
             
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-              <h1 class="nhsuk-fieldset__heading">Would you like to add 07736251423 to your NHS contact details?</h1>
+              <h1 class="nhsuk-fieldset__heading">Would you like to add +447736251423?</h1>
             </legend>
 
             <span class="nhsuk-error-message">
               There is a problem.<br />
-              You must select Yes or No before continuing.
+              You must select yes or no before continuing.
             </span>
             
             <div class="nhsuk-radios">
@@ -165,11 +165,6 @@
         </div>
 
         {% endif %}
-
-        <!--<div class="nhsuk-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>When an NHS service needs to contact you, they will still choose a contact method (phone call, text message, email, letter) which is appropriate to the situation.</p>
-        </div>-->
 
         <div class="nhsuk-form-group">
           <button class="nhsuk-button" type="submit">Continue</button>
