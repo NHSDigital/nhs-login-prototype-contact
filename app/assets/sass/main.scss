@@ -8,6 +8,7 @@
 
 // Patterns that are not in the NHS.UK frontend library
 @import 'patterns/check-your-answers';
+@import 'patterns/list-panel';
 @import 'patterns/devmode';
 @import 'patterns/index';
 
@@ -378,4 +379,8 @@ padding: 0px !important;
 
 p{
   font-weight: 500;
+}
+
+.nhsuk-expander--no-border {
+  border: none;
 }
