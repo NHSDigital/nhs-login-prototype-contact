@@ -1,14 +1,15 @@
 // Import NHS.UK frontend library
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
-// Patterns that are not in the NHS.UK frontend library
-@import 'patterns/check-your-answers';
-
 // Components that are not in the NHS.UK frontend library
 @import 'components/panel-confirmation';
+@import 'components/list-border';
 @import 'components/related-nav';
-@import 'components/devmode';
-@import 'components/index';
+
+// Patterns that are not in the NHS.UK frontend library
+@import 'patterns/check-your-answers';
+@import 'patterns/devmode';
+@import 'patterns/index';
 
 // Add your extra styles here...
 
